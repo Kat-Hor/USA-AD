@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<!--
+  Original author: Horlacher (LK E1, Abitur 2028)
+  Created: 2026-08-28
+  This material was created for Horlacher's own English LK course.
+  Not authorized for redistribution under a different author's name.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The American Dream — Background Material &amp; Research Mission</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A3161;
+  --navy-light:#E7EDF4;
+  --red:#B31942;
+  --red-light:#F7E5EA;
+  --gold:#A9843C;
+  --gold-light:#F5EEDD;
+  --slate:#5B6570;
+  --slate-light:#EAE8E2;
+  --ink:#132238;
+  --paper:#F2F4F8;
+  --card:#FFFFFF;
+  --border:#DDD8CB;
+  --border-strong:#C8C2AF;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  line-height:1.6;
+}
+.page{ max-width:880px; margin:0 auto; padding:0 1.5rem 1.5rem; }
+
+/* header with flag motif */
+header.masthead{ position:relative; padding:2.2rem 0 0; margin-bottom:1.6rem; }
+.flag-corner{
+  position:absolute; top:0; left:0;
+  width:64px; height:44px;
+  background:var(--navy);
+  border-radius:4px 0 8px 0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(3,1fr);
+  padding:6px 7px;
+  gap:2px;
+}
+.flag-corner span{
+  width:4px; height:4px; background:#fff; border-radius:50%;
+  justify-self:center; align-self:center;
+}
+.stripes{
+  height:22px;
+  margin-top:0.6rem;
+  background:repeating-linear-gradient(
+    to bottom,
+    var(--red) 0px, var(--red) 3.14px,
+    #fff 3.14px, #fff 6.28px
+  );
+  border-radius:0 0 4px 4px;
+}
+.head-text{ text-align:center; padding:0 0 0.2rem; }
+.eyebrow{
+  font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--red); font-weight:600; margin-bottom:0.35rem;
+}
+h1.title{
+  font-family:'Source Serif 4',serif; font-weight:700; font-size:34px;
+  margin:0 0 0.3rem; color:var(--navy);
+}
+.subtitle{ font-size:14px; color:var(--slate); font-style:italic; }
+
+/* tabs */
+nav.tabs{
+  display:flex; flex-wrap:nowrap; overflow-x:auto; gap:2px;
+  margin-bottom:1.5rem;
+  border-bottom:2px solid var(--navy);
+  scrollbar-width:thin;
+}
+.tab-btn{
+  font-family:'Inter',sans-serif; font-size:12.5px; font-weight:500;
+  color:var(--slate); background:#EDEAE1;
+  border:1px solid var(--border-strong); border-bottom:none;
+  padding:0.55rem 0.75rem; border-radius:6px 6px 0 0;
+  cursor:pointer; position:relative; top:2px;
+  display:flex; align-items:center; gap:5px;
+  flex:0 0 auto; white-space:nowrap;
+}
+.tab-btn i{ font-size:15px; }
+.tab-btn:hover{ background:#F2F0E7; color:var(--ink); }
+.tab-btn.active{
+  background:var(--card); color:var(--navy);
+  border:1px solid var(--navy); border-bottom:2px solid var(--card);
+  font-weight:600;
+}
+.tab-select-mobile{ display:none; }
+@media (max-width:720px){
+  nav.tabs{ display:none; }
+  .tab-select-mobile{
+    display:block; width:100%; margin-bottom:1.5rem;
+    font-family:'Inter',sans-serif; font-size:14px; padding:0.6rem 0.7rem;
+    border:2px solid var(--navy); border-radius:6px; background:var(--card); color:var(--ink);
+  }
+}
+.panel{ display:none; }
+.panel.active{ display:block; animation:fade 0.15s ease; }
+@keyframes fade{ from{opacity:0.4;} to{opacity:1;} }
+
+.card{
+  background:var(--card); border:1px solid var(--border);
+  border-radius:8px; padding:1.4rem 1.6rem; margin-bottom:1rem;
+}
+h2.section-title{
+  font-family:'Source Serif 4',serif; font-size:22px; font-weight:600;
+  margin:0 0 0.8rem; color:var(--navy);
+  display:flex; align-items:center; gap:0.5rem;
+}
+h2.section-title i{ font-size:20px; color:var(--red); }
+p{ margin:0 0 0.9rem; font-size:15px; }
+.lede{ font-size:16px; color:var(--slate); }
+
+.badge{
+  display:inline-block; font-size:11px; font-weight:600; letter-spacing:0.03em;
+  text-transform:uppercase; padding:2px 8px; border-radius:20px; margin-right:0.4rem;
+  white-space:nowrap;
+}
+.badge.legislation{ background:var(--navy-light); color:var(--navy); }
+.badge.court{ background:var(--red-light); color:var(--red); }
+.badge.turning{ background:var(--slate-light); color:var(--slate); }
+.badge.executive{ background:var(--gold-light); color:#7A5A18; }
+
+/* timeline */
+.timeline{ position:relative; padding-left:2rem; }
+.timeline::before{
+  content:""; position:absolute; left:11px; top:6px; bottom:6px;
+  width:2px; background:var(--border-strong);
+}
+.tl-item{ position:relative; margin-bottom:0.6rem; }
+.tl-year-dot{
+  position:absolute; left:-2rem; top:0.55rem;
+  width:24px; height:24px; border-radius:50%;
+  background:var(--navy); color:#fff; font-size:10px; font-weight:600;
+  display:flex; align-items:center; justify-content:center;
+}
+.tl-year-dot.cat-court{ background:var(--red); }
+.tl-year-dot.cat-turning{ background:var(--slate); }
+.tl-year-dot.cat-executive{ background:#8A6A22; }
+.tl-item.exec-highlight .tl-header{ background:var(--gold-light); border-color:var(--gold); }
+.spotlight-card{
+  background:var(--gold-light); border:1px solid var(--gold); border-left:5px solid var(--gold);
+  border-radius:8px; padding:1.1rem 1.3rem; margin-top:1rem;
+}
+.spotlight-card h3{
+  font-family:'Source Serif 4',serif; font-size:16px; margin:0 0 0.5rem; color:#7A5A18;
+  display:flex; align-items:center; gap:6px;
+}
+.nra-card{
+  background:var(--navy-light); border:1px solid #C7D5E6; border-left:5px solid var(--navy);
+  border-radius:8px; padding:1.1rem 1.3rem; margin-top:1rem;
+}
+.nra-card h3{
+  font-family:'Source Serif 4',serif; font-size:16px; margin:0 0 0.5rem; color:var(--navy);
+  display:flex; align-items:center; gap:6px;
+}
+.tl-header{
+  width:100%; text-align:left; background:var(--card);
+  border:1px solid var(--border); border-radius:6px; padding:0.7rem 1rem;
+  cursor:pointer; font-family:'Inter',sans-serif;
+  display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;
+}
+.tl-header:hover{ border-color:var(--border-strong); }
+.tl-year{ font-family:'Source Serif 4',serif; font-weight:700; font-size:17px; color:var(--navy); min-width:78px; }
+.tl-name{ font-size:14.5px; font-weight:500; flex:1; min-width:180px; }
+.tl-chevron{ margin-left:auto; color:var(--slate); font-size:13px; transition:transform 0.15s; }
+.tl-item.open .tl-chevron{ transform:rotate(90deg); }
+.tl-body{ display:none; padding:0.9rem 1.1rem 0.3rem 1.1rem; font-size:14.5px; }
+.tl-item.open .tl-body{ display:block; }
+
+/* mission / incident-style cards */
+.incident-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:0.9rem; }
+.incident-card{
+  background:var(--card); border:1px solid var(--border); border-left:4px solid var(--red);
+  border-radius:6px; padding:0.9rem 1.1rem;
+}
+.incident-year{ font-family:'Source Serif 4',serif; font-weight:700; color:var(--red); font-size:15px; }
+.incident-name{ font-weight:600; font-size:14.5px; margin:0.15rem 0 0.35rem; }
+.incident-meta{ font-size:12.5px; color:var(--slate); margin-bottom:0.4rem; }
+.incident-note{ font-size:13.5px; }
+.incident-note ul{ margin:0.4rem 0 0; padding-left:1.1rem; }
+.incident-note li{ margin-bottom:0.3rem; }
+
+/* two column debate */
+.debate-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+@media (max-width:640px){ .debate-grid{ grid-template-columns:1fr; } }
+.debate-col{ border-radius:8px; padding:1.1rem 1.2rem; }
+.debate-col.rights{ background:var(--navy-light); border:1px solid #C7D5E6; }
+.debate-col.control{ background:var(--red-light); border:1px solid #EAC7D2; }
+.debate-col h3{ font-family:'Source Serif 4',serif; font-size:16px; margin:0 0 0.6rem; display:flex; align-items:center; gap:6px;}
+.debate-col.rights h3{ color:var(--navy); }
+.debate-col.control h3{ color:var(--red); }
+.debate-col ul{ margin:0; padding-left:1.1rem; font-size:14px; }
+.debate-col li{ margin-bottom:0.55rem; }
+
+/* stats */
+.stat-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:0.8rem; margin-bottom:1rem; }
+.stat-card{ background:var(--slate-light); border-radius:8px; padding:0.9rem 1rem; }
+.stat-num{ font-family:'Source Serif 4',serif; font-size:24px; font-weight:700; color:var(--navy); }
+.stat-label{ font-size:12px; color:var(--slate); margin-top:0.2rem; }
+.stat-card.c-navy{ background:var(--navy-light); }
+.stat-card.c-navy .stat-num{ color:var(--navy); }
+.stat-card.c-red{ background:var(--red-light); }
+.stat-card.c-red .stat-num{ color:var(--red); }
+.stat-card.c-gold{ background:var(--gold-light); }
+.stat-card.c-gold .stat-num{ color:#7A5A18; }
+
+/* vocab */
+.vocab-toolbar{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem; }
+.print-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--navy); color:#fff; border:none; border-radius:6px;
+  padding:0.5rem 0.9rem; font-size:13px; font-weight:600; cursor:pointer;
+  font-family:'Inter',sans-serif;
+}
+.print-btn:hover{ background:#082448; }
+.vocab-sub{
+  font-family:'Source Serif 4',serif; font-size:16px; font-weight:600;
+  color:var(--navy); margin:1.3rem 0 0.5rem;
+}
+table.vocab-table{ width:100%; border-collapse:collapse; font-size:13.5px; table-layout:fixed; }
+table.vocab-table th{
+  text-align:left; font-size:11.5px; text-transform:uppercase; letter-spacing:0.03em;
+  color:var(--slate); border-bottom:2px solid var(--border-strong); padding:0.4rem 0.5rem;
+}
+table.vocab-table td{ padding:0.5rem; border-bottom:1px solid var(--border); vertical-align:top; word-wrap:break-word; }
+table.vocab-table th:nth-child(1), table.vocab-table td.term{ width:19%; font-weight:600; }
+table.vocab-table th:nth-child(2), table.vocab-table td.de{
+  width:17%; color:var(--red); font-style:italic;
+  hyphens:auto; -webkit-hyphens:auto; -ms-hyphens:auto; overflow-wrap:break-word;
+}
+table.vocab-table th:nth-child(3), table.vocab-table td:nth-child(3){ width:64%; }
+
+/* quiz */
+.quiz-q{ margin-bottom:1.2rem; }
+.quiz-q-title{ font-weight:600; font-size:14.5px; margin-bottom:0.5rem; }
+.quiz-opts{ display:grid; gap:6px; }
+.quiz-opt{
+  text-align:left; background:var(--card); border:1px solid var(--border);
+  border-radius:6px; padding:0.55rem 0.8rem; font-size:14px; cursor:pointer;
+  font-family:'Inter',sans-serif; color:var(--ink);
+}
+.quiz-opt:hover{ border-color:var(--border-strong); }
+.quiz-opt.correct{ background:#E9F2E9; border-color:#5C8A5C; color:#2C4A2C; font-weight:600; }
+.quiz-opt.incorrect{ background:var(--red-light); border-color:var(--red); color:var(--red); }
+.quiz-opt[disabled]{ cursor:default; }
+.quiz-score{
+  position:sticky; top:0.5rem; float:right;
+  background:var(--navy); color:#fff; font-size:13px; font-weight:600;
+  padding:0.4rem 0.9rem; border-radius:20px;
+}
+
+/* further reading */
+.source-list{ list-style:none; padding:0; margin:0; }
+.source-list li{ font-size:13.5px; padding:0.5rem 0; border-bottom:1px solid var(--border); }
+.source-list li:last-child{ border-bottom:none; }
+.source-list a{ color:var(--red); text-decoration:none; }
+.source-list a:hover{ text-decoration:underline; }
+.source-tag{ font-size:11px; color:var(--slate); text-transform:uppercase; letter-spacing:0.03em; margin-right:0.5rem; }
+
+footer.stamp{
+  text-align:center; margin:2rem 0 0.5rem;
+  font-family:'Source Serif 4',serif; font-style:italic; font-size:13px;
+  color:var(--slate); border-top:1px solid var(--border); padding-top:0.9rem;
+}
+
+@media print{
+  body.print-vocab-mode header,
+  body.print-vocab-mode nav,
+  body.print-vocab-mode footer,
+  body.print-vocab-mode .panel{ display:none !important; }
+  body.print-vocab-mode #vocab{ display:block !important; }
+  body.print-vocab-mode .no-print{ display:none !important; }
+  body.print-vocab-mode .card{ border:none; padding:0; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="masthead">
+  <div class="flag-corner">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="head-text">
+    <div class="eyebrow">Background material · USA in focus</div>
+    <h1 class="title">The American Dream</h1>
+    <div class="subtitle">From "the pursuit of happiness" to a 21st-century debate</div>
+  </div>
+  <div class="stripes"></div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab-btn active" data-tab="overview"><i class="ti ti-flag"></i>Overview</button>
+  <button class="tab-btn" data-tab="origins"><i class="ti ti-scroll"></i>Origins</button>
+  <button class="tab-btn" data-tab="timeline"><i class="ti ti-timeline"></i>Timeline</button>
+  <button class="tab-btn" data-tab="mission"><i class="ti ti-search"></i>Research Mission</button>
+  <button class="tab-btn" data-tab="debate"><i class="ti ti-message-circle-2"></i>Perspectives</button>
+  <button class="tab-btn" data-tab="sources"><i class="ti ti-certificate"></i>Sources &amp; further reading</button>
+  <button class="tab-btn" data-tab="quiz"><i class="ti ti-help-circle"></i>Quiz</button>
+</nav>
+<select class="tab-select-mobile" id="tabSelect" aria-label="Choose a section">
+  <option value="overview">Overview</option>
+  <option value="origins">Origins</option>
+  <option value="timeline">Timeline</option>
+  <option value="mission">Research Mission</option>
+  <option value="debate">Perspectives</option>
+  <option value="sources">Sources &amp; further reading</option>
+  <option value="quiz">Quiz</option>
+</select>
+
+<!-- OVERVIEW -->
+<section class="panel active" id="overview">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-flag"></i>Why this topic matters</h2>
+    <p class="lede">No phrase claims to explain American identity as confidently as "the American Dream" — and few phrases are argued about as fiercely.</p>
+    <p>At its core, the American Dream is the belief that anyone, regardless of where or to whom they were born, can achieve success and a better life through hard work. You have already met its legal root: the Declaration of Independence's promise of "life, liberty and the pursuit of happiness," and the constitutional system of checks and balances that was designed to protect that promise. The American Dream is what many Americans imagine that promise looks like in everyday life — a good job, a home of one's own, a better future for one's children.</p>
+    <p>But the phrase has never meant one single thing. It has been used to sell land, to justify inequality, to inspire immigrants, to organise the Civil Rights Movement, and to sell products. It has been celebrated in speeches and mocked in novels. This unit asks a simple but hard question: is the American Dream a description of reality, a national myth, or a goal still worth striving for?</p>
+    <p>Use the tabs above to explore the topic: the historical and literary <strong>Origins</strong> of the idea, a chronological <strong>Timeline</strong> from the 1600s to today, a group-based <strong>Research Mission</strong> that you will carry out yourselves, the strongest <strong>Perspectives</strong> on each side of the debate, <strong>Sources &amp; further reading</strong>, and a self-test <strong>Quiz</strong> at the end.</p>
+  </div>
+</section>
+
+<!-- ORIGINS -->
+<section class="panel" id="origins">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-scroll"></i>Where the idea comes from</h2>
+    <p>Six texts and voices trace the arc of the idea: from a Puritan sermon about a model society, through a founding legal promise and a myth about self-made men, to a Depression-era definition and a civil-rights reclaiming of the Dream for those it had long excluded.</p>
+  </div>
+  <div class="card">
+    <span class="badge legislation">1630</span><strong>John Winthrop, "A City upon a Hill"</strong>
+    <p style="margin-top:0.5rem;">Aboard the ship <em>Arbella</em>, Puritan leader John Winthrop told fellow settlers that their new colony would be "as a city upon a hill" — a model community watched by the world. This is centuries older than the phrase "American Dream," but it planted an idea that later generations kept returning to: that America has a special, almost chosen, purpose and destiny.</p>
+  </div>
+  <div class="card">
+    <span class="badge legislation">1776</span><strong>The Declaration of Independence</strong>
+    <p style="margin-top:0.5rem;">Thomas Jefferson wrote that all men are created equal and endowed with unalienable rights, among them "life, liberty and the pursuit of happiness." Jefferson's choice of "happiness" instead of the philosopher John Locke's "property" is often read as the founding legal seed of the American Dream: success and fulfilment as something every citizen is entitled to pursue, not guaranteed to receive.</p>
+  </div>
+  <div class="card">
+    <span class="badge court">1868–1899</span><strong>Horatio Alger's "rags-to-riches" novels</strong>
+    <p style="margin-top:0.5rem;">Alger wrote over a hundred wildly popular boys' novels — <em>Ragged Dick</em> among them — in which a poor young man rises to respectability through hard work, honesty and a bit of luck. These books did more than almost anything else to popularise the "self-made man" as a national ideal, even though Alger's heroes usually needed a wealthy patron's help along the way — a detail later critics love to point out.</p>
+  </div>
+  <div class="card">
+    <span class="badge executive">1931</span><strong>James Truslow Adams coins "the American Dream"</strong>
+    <p style="margin-top:0.5rem;">Writing in the middle of the Great Depression, historian James Truslow Adams gave the phrase its name in his book <em>The Epic of America</em>. He explicitly warned against reducing it to money: it was, he wrote, "not a dream of motor cars and high wages merely, but a dream of a social order in which each man and each woman shall be able to attain to the fullest stature of which they are innately capable" — regardless of the class or circumstances of their birth.</p>
+  </div>
+  <div class="card">
+    <span class="badge court">1963</span><strong>Martin Luther King Jr., "I Have a Dream"</strong>
+    <p style="margin-top:0.5rem;">Speaking at the March on Washington, King used the language of the Dream deliberately, insisting that the promise of the Declaration of Independence — "life, liberty and the pursuit of happiness" — had never been honoured for Black Americans. His speech reclaimed the Dream as an unfinished promise rather than a settled fact, a framing that still shapes the debate today.</p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="panel" id="timeline">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-timeline"></i>Timeline: the Dream through American history</h2>
+    <p>The American Dream is not a fixed idea — it has been rewritten by every generation, shaped by land, immigration, war, suburbs and economic crisis. The timeline below runs from a 17th-century sermon to the debates of today. Click on any year to expand it.</p>
+  </div>
+  <div class="timeline" id="timelineList"></div>
+  <div class="spotlight-card">
+    <h3><i class="ti ti-alert-circle"></i>The Dream at 250</h3>
+    <p style="margin:0;">As the United States approaches the 250th anniversary of the Declaration of Independence in 2026, polling shows a country genuinely split: most Americans still say they personally expect to achieve the Dream, but fewer than half think everyone in the country has a fair opportunity to do so — a gap between personal optimism and belief in the system that is itself a good discussion topic.</p>
+  </div>
+</section>
+
+<!-- RESEARCH MISSION -->
+<section class="panel" id="mission">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-search"></i>Your research mission</h2>
+    <p class="lede">Before anyone tells you what the American Dream "really" means, find out for yourselves.</p>
+    <p>Work in 5 groups. Each group takes <strong>one station</strong> below, researches it using reliable sources (start with the links in the Sources tab, then search further), and prepares a short 3–4 minute presentation for the class — a poster, a slide, or a shared board (e.g. Padlet) all work. Together, your five stations will build the class's first overview of the topic, before we look at what other writers, politicians and researchers have said.</p>
+  </div>
+  <div class="incident-grid" id="missionGrid"></div>
+  <div class="spotlight-card">
+    <h3><i class="ti ti-presentation"></i>How to present your findings</h3>
+    <p style="margin:0;">For each station: (1) answer the guiding question in your own words, (2) give one concrete example or statistic you found, (3) end with one open question your research raised that the class could discuss. Note down every source you use — you'll need it for the Sources discussion afterwards.</p>
+  </div>
+</section>
+
+<!-- PERSPECTIVES -->
+<section class="panel" id="debate">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-message-circle-2"></i>Is the Dream still alive?</h2>
+    <p>This is not a simple "yes or no" question. Both the Dream's defenders and its critics point to real evidence. For classroom debate and essay writing, know the strongest version of each case.</p>
+  </div>
+  <div class="debate-grid">
+    <div class="debate-col rights">
+      <h3><i class="ti ti-sun"></i>"The Dream is alive"</h3>
+      <ul>
+        <li>Most Americans still say in surveys that they personally expect to achieve the Dream, and a large majority say it remains important to strive for, even amid rising pessimism about the system as a whole.</li>
+        <li>The United States remains the world's top destination for immigrants, and immigrants themselves consistently report the most optimistic views of the Dream — evidence, supporters argue, that opportunity is still real and visible from the outside.</li>
+        <li>Legal equality has expanded dramatically since the mid-20th century: the Civil Rights Act, the Voting Rights Act and decades of anti-discrimination law removed barriers that once excluded whole groups from the Dream by law.</li>
+        <li>The US economy has produced enormous new industries — technology, biotech, media — that created new paths to wealth that did not exist a generation ago, for people without inherited wealth or connections.</li>
+        <li>Higher education and entrepreneurship remain genuinely more accessible in the US than in many countries, through community colleges, scholarships and a culture that celebrates starting a business.</li>
+        <li>Defenders argue that measuring the Dream only in income ignores Adams's original 1931 definition, which was about dignity and self-realisation, not just money.</li>
+      </ul>
+    </div>
+    <div class="debate-col control">
+      <h3><i class="ti ti-cloud-storm"></i>"The Dream is a myth"</h3>
+      <ul>
+        <li>Economist Raj Chetty's research shows that the chance of a child earning more than their parents has fallen from about 90% for children born in 1940 to roughly 50% for children born in the 1980s — a coin flip, not a promise.</li>
+        <li>Critics point out that the Dream was never equally available: the 1944 GI Bill and 1950s suburban home loans that built the mid-century middle class were routinely denied to Black families through discriminatory practices such as redlining.</li>
+        <li>Rising costs for housing, healthcare and higher education, alongside decades of stagnant wages for many workers, mean hard work alone often no longer guarantees the stability earlier generations associate with the Dream.</li>
+        <li>Wealth inequality in the US is historically high; critics argue that starting capital and family background now predict outcomes more strongly than individual effort does.</li>
+        <li>Literature and film have long pushed back on the myth — from <em>The Great Gatsby</em> to <em>Death of a Salesman</em> — portraying the pursuit of the Dream as materialistic and, ultimately, hollow or even destructive.</li>
+        <li>Recent polling shows a sharp generational divide: younger and lower-income Americans are far less likely than older, wealthier Americans to believe the Dream is still achievable today.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <p style="margin:0;">A 2026 Gallup/Milken Institute survey found that 69% of Americans expect to personally achieve the Dream, but only 46% believe everyone in the country has the opportunity to do so — a 23-point gap between personal hope and belief in the fairness of the system, which the researchers call the Dream's central tension.</p>
+  </div>
+  <div class="nra-card">
+    <h3><i class="ti ti-users"></i>Spotlight: whose Dream?</h3>
+    <p style="margin:0;">The same word has meant very different things to different groups. For 19th-century immigrants arriving at Ellis Island, it meant simply the right to own land and work freely. For Black Americans under Jim Crow segregation, it meant the promise of the Declaration finally being honoured — the reason Martin Luther King Jr. reclaimed the phrase in 1963. For Native Americans, whose land the Homestead Act redistributed to settlers, the Dream's frontier mythology has a far darker meaning. Today, recent immigrants remain, according to Gallup's 2026 survey, the group most likely to believe in the Dream's promise of upward mobility — a reminder that "the American Dream" was never one single story.</p>
+  </div>
+</section>
+
+<!-- SOURCES & FURTHER READING -->
+<section class="panel" id="sources">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-certificate"></i>Key primary sources</h2>
+    <p>The original documents and core data hubs behind this material — start here for your research mission if you want to check or cite original wording rather than a secondary summary.</p>
+    <ul class="source-list">
+      <li><span class="source-tag">Founding document</span><a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank" rel="noopener">National Archives — full transcript, Declaration of Independence (1776)</a></li>
+      <li><span class="source-tag">Speech</span><a href="https://www.npr.org/2010/01/18/122701268/i-have-a-dream-speech-in-its-entirety" target="_blank" rel="noopener">NPR — full transcript, "I Have a Dream" (Martin Luther King Jr., 1963)</a></li>
+      <li><span class="source-tag">March context</span><a href="https://www.archives.gov/milestone-documents/official-program-for-the-march-on-washington" target="_blank" rel="noopener">National Archives — Official Program, March on Washington (1963)</a></li>
+      <li><span class="source-tag">Research</span><a href="https://opportunityinsights.org/paper/the-fading-american-dream/" target="_blank" rel="noopener">Opportunity Insights (Chetty et al.) — "The Fading American Dream" (mobility data)</a></li>
+      <li><span class="source-tag">Polling 2024</span><a href="https://www.pewresearch.org/short-reads/2024/07/02/americans-are-split-over-the-state-of-the-american-dream/" target="_blank" rel="noopener">Pew Research Center — "Americans Are Split Over the State of the American Dream"</a></li>
+      <li><span class="source-tag">Polling 2026</span><a href="https://news.gallup.com/poll/711293/american-dream-endures-approaches-250-years.aspx" target="_blank" rel="noopener">Gallup / MCAAD — "American Dream Endures as U.S. Approaches 250 Years"</a></li>
+      <li><span class="source-tag">Definition</span><a href="https://www.britannica.com/topic/American-Dream" target="_blank" rel="noopener">Britannica — "American Dream" topic overview</a></li>
+      <li><span class="source-tag">Essay</span><a href="https://www.bushcenter.org/catalyst/state-of-the-american-dream/churchwell-history-of-the-american-dream" target="_blank" rel="noopener">George W. Bush Presidential Center — Sarah Churchwell, "A Brief History of the American Dream"</a></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-external-link"></i>Further reading</h2>
+    <ul class="source-list">
+      <li><span class="source-tag">Overview</span><a href="https://en.wikipedia.org/wiki/American_Dream" target="_blank" rel="noopener">Wikipedia — "American Dream"</a></li>
+      <li><span class="source-tag">History</span><a href="https://www.encyclopedia.com/social-sciences/applied-and-social-sciences-magazines/american-dream" target="_blank" rel="noopener">Encyclopedia.com — "American Dream" (origin of the term)</a></li>
+      <li><span class="source-tag">Mobility data</span><a href="https://news.yale.edu/2025/02/20/tracking-decline-social-mobility-us-and-how-reverse-trend" target="_blank" rel="noopener">Yale News — "Tracking the decline of social mobility in the U.S."</a></li>
+      <li><span class="source-tag">2026 survey</span><a href="https://www.archbridgeinstitute.org/american-dream-snapshot/" target="_blank" rel="noopener">Archbridge Institute — "The American Dream at 250: 2026 Snapshot"</a></li>
+      <li><span class="source-tag">Literature</span><a href="https://www.britannica.com/topic/The-American-Dream" target="_blank" rel="noopener">Britannica — Edward Albee's play <em>The American Dream</em> (a critical, absurdist take)</a></li>
+      <li><span class="source-tag">Civil rights</span><a href="https://www.archives.gov/press/exhibits/mlk.html" target="_blank" rel="noopener">National Archives — Martin Luther King Jr. and the "I Have a Dream" speech, exhibit page</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="panel" id="quiz">
+  <div class="card">
+    <span class="quiz-score no-print" id="quizScore">Score: 0/0</span>
+    <h2 class="section-title"><i class="ti ti-help-circle"></i>Test yourself</h2>
+    <p>Questions covering the origins, timeline, perspectives and data. Click an answer to see if it's correct.</p>
+  </div>
+  <div class="card" id="quizContainer"></div>
+</section>
+
+<footer class="stamp">LK E1 Horlacher · Abitur 2028</footer>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/tabler-icons.min.css">
+<script>
+/* ---------- Timeline ---------- */
+const tlData = [
+  {y:"1630", t:"John Winthrop, \u201cA City upon a Hill\u201d", cat:"legislation", catLabel:"Founding idea",
+   body:"Aboard the ship Arbella, Puritan leader John Winthrop described the Massachusetts Bay colony as a model society that \u201cthe eyes of all people are upon.\u201d Long before the phrase existed, this sermon planted the idea of America as a place with a special destiny \u2014 an idea later generations folded into the secular American Dream."},
+  {y:"1776", t:"The Declaration of Independence", cat:"legislation", catLabel:"Founding document",
+   body:"Thomas Jefferson's declaration that all men have an unalienable right to \u201clife, liberty and the pursuit of happiness\u201d replaced philosopher John Locke's \u201cproperty\u201d with \u201chappiness.\u201d This single word choice is often read as the constitutional root of the American Dream: a right to pursue success, not a guarantee of it."},
+  {y:"1782", t:"Cr\u00e8vec\u0153ur, \u201cLetters from an American Farmer\u201d", cat:"court", catLabel:"Culture & ideas",
+   body:"French-American writer J. Hector St. John de Cr\u00e8vec\u0153ur asked, \u201cWhat then is the American, this new man?\u201d and answered that in America, a person could own land and rise through labour, free of Europe's rigid class hierarchies \u2014 an early sketch of the melting-pot promise."},
+  {y:"1862", t:"The Homestead Act", cat:"executive", catLabel:"Policy & law",
+   body:"This law offered 160 acres of land free to any settler who farmed it for five years, turning the promise of upward mobility into literal government policy. The land distributed, however, was taken from Native American nations \u2014 a reminder that the Dream's frontier mythology has a darker side."},
+  {y:"1868\u20131899", t:"Horatio Alger's \u201crags-to-riches\u201d novels", cat:"court", catLabel:"Culture & ideas",
+   body:"Alger's enormously popular boys' novels, such as Ragged Dick, told the story of poor young men rising to respectability through hard work and honesty. They cemented the \u201cself-made man\u201d as a national archetype, even though Alger's heroes usually also needed a wealthy patron's lucky help."},
+  {y:"1886\u20131892", t:"Statue of Liberty & Ellis Island", cat:"turning", catLabel:"Turning point",
+   body:"The Statue of Liberty (1886), inscribed with Emma Lazarus's \u201cGive me your tired, your poor,\u201d and the opening of the Ellis Island immigration station (1892) turned New York Harbor into the physical gateway and symbol of the Dream for over 12 million immigrants over the following decades."},
+  {y:"1893", t:"Frederick Jackson Turner's \u201cFrontier Thesis\u201d", cat:"court", catLabel:"Culture & ideas",
+   body:"Historian Frederick Jackson Turner argued that the (recently declared closed) western frontier had shaped American individualism and democracy. His thesis tied the Dream to a supposedly endless westward opportunity \u2014 just as that frontier was disappearing."},
+  {y:"1925", t:"F. Scott Fitzgerald, \u201cThe Great Gatsby\u201d", cat:"court", catLabel:"Culture & ideas",
+   body:"Fitzgerald's novel became American literature's most famous critique of the Dream: Jay Gatsby reinvents himself and pursues wealth to win back a lost love, but his story ends in tragedy \u2014 a warning against mistaking material success for the Dream's original promise."},
+  {y:"1931", t:"James Truslow Adams coins \u201cthe American Dream\u201d", cat:"legislation", catLabel:"Founding text",
+   body:"Writing during the Great Depression, historian James Truslow Adams gave the idea its name in The Epic of America, defining it as a \u201csocial order in which each man and each woman shall be able to attain to the fullest stature of which they are innately capable\u201d \u2014 explicitly warning against reducing it to \u201cmotor cars and high wages.\u201d"},
+  {y:"1944", t:"The GI Bill", cat:"executive", catLabel:"Policy & law",
+   body:"This law funded college tuition and low-interest home loans for returning WWII veterans, fuelling a massive expansion of the American middle class. Its benefits, however, were administered locally in ways that excluded most Black veterans, especially in the South \u2014 a key example cited by critics of the Dream's promise of equal opportunity."},
+  {y:"1950s", t:"Levittown and the suburban boom", cat:"turning", catLabel:"Turning point",
+   body:"Mass-produced suburbs like Levittown, New York, made the \u201cwhite picket fence\u201d ideal a mid-century reality for millions: a single-family home, a car and a nuclear family. Developers' racially restrictive deeds, however, barred Black families from buying in most of these new suburbs."},
+  {y:"1963", t:"Martin Luther King Jr., \u201cI Have a Dream\u201d", cat:"court", catLabel:"Culture & ideas",
+   body:"At the March on Washington, King reclaimed the language of the Dream for the Civil Rights Movement, insisting that the promise of \u201clife, liberty and the pursuit of happiness\u201d had never been honoured for Black Americans \u2014 reframing the Dream as an unfinished promise rather than a settled fact."},
+  {y:"1980s", t:"Reaganomics", cat:"executive", catLabel:"Policy & law",
+   body:"President Reagan's tax cuts and deregulation were promoted as unleashing opportunity for everyone \u2014 \u201ca rising tide lifts all boats.\u201d Critics argue this \u201ctrickle-down\u201d approach instead widened the gap between rich and poor, a gap later documented in Chetty's mobility research."},
+  {y:"2008", t:"The financial and foreclosure crisis", cat:"turning", catLabel:"Turning point",
+   body:"The collapse of the US subprime mortgage market wiped out home equity and retirement savings for millions of families, shaking the mid-century assumption that owning a home was a guaranteed path to building wealth."},
+  {y:"2010s", t:"The rise of the gig economy", cat:"turning", catLabel:"Turning point",
+   body:"Platforms like Uber and Airbnb popularised flexible, app-based \u201cside hustle\u201d work, reframing the Dream around entrepreneurial independence. Critics counter that gig work often means less job security, no employer benefits and unpredictable income."},
+  {y:"2024\u20132026", t:"The Dream approaches 250", cat:"executive", catLabel:"Current debate",
+   body:"As the US nears the 250th anniversary of the Declaration of Independence, Pew (2024) and Gallup/MCAAD (2026) surveys find a country split: strong personal optimism about achieving the Dream, alongside declining belief that the system offers everyone a fair chance \u2014 with sharp divides by age, income and education."}
+];
+const tlContainer = document.getElementById('timelineList');
+tlData.forEach((item) => {
+  const el = document.createElement('div');
+  el.className = 'tl-item' + (item.cat === 'executive' ? ' exec-highlight' : '');
+  el.innerHTML = `
+    <div class="tl-year-dot cat-${item.cat}">${item.y.replace(/[^0-9]/g,'').slice(-2)}</div>
+    <button class="tl-header" type="button">
+      <span class="tl-year">${item.y}</span>
+      <span class="badge ${item.cat}">${item.catLabel}</span>
+      <span class="tl-name">${item.t}</span>
+      <span class="tl-chevron">&#9656;</span>
+    </button>
+    <div class="tl-body">${item.body}</div>
+  `;
+  el.querySelector('.tl-header').addEventListener('click', () => el.classList.toggle('open'));
+  tlContainer.appendChild(el);
+});
+
+/* ---------- Research Mission stations ---------- */
+const missions = [
+  {n:"Station 1", title:"The Founding Promise", loc:"Founding documents",
+   note:"Research the phrase \u201clife, liberty and the pursuit of happiness.\u201d What did Jefferson likely mean by \u201cpursuit of happiness\u201d in 1776, and why did he change Locke's \u201cproperty\u201d? Find one modern politician or public figure quoting or referencing this phrase today."},
+  {n:"Station 2", title:"Rags to Riches?", loc:"Self-made myth",
+   note:"Research the \u201cself-made man\u201d myth (Horatio Alger). Then find one real, well-known American success story (past or present) and research their actual background. How much of their story is really \u201cself-made,\u201d and how much came from luck, timing or existing advantages?"},
+  {n:"Station 3", title:"The Numbers Behind the Dream", loc:"Social mobility",
+   note:"Research current data on social mobility in the US (search \u201cRaj Chetty American Dream\u201d or \u201cOpportunity Insights\u201d). What percentage of children today earn more than their parents did? How does this compare to the mid-20th century?"},
+  {n:"Station 4", title:"Whose Dream?", loc:"Groups & exclusion",
+   note:"Research how the American Dream has looked different for different groups: immigrants, Black Americans under segregation, Native Americans, or women. Choose one group and find one concrete historical example of the Dream being denied or reclaimed."},
+  {n:"Station 5", title:"The Dream in Pop Culture", loc:"Film, music & literature",
+   note:"Find one film, song or novel (e.g. The Great Gatsby, Hamilton, a hip-hop song, a Hollywood \u201crags to riches\u201d film) that engages with the American Dream. Does it celebrate the Dream, criticise it, or both? Bring one short, specific example to show the class."}
+];
+const missionGrid = document.getElementById('missionGrid');
+missions.forEach(m => {
+  const el = document.createElement('div');
+  el.className = 'incident-card';
+  el.innerHTML = `
+    <div class="incident-year">${m.n}</div>
+    <div class="incident-name">${m.title}</div>
+    <div class="incident-meta">${m.loc}</div>
+    <div class="incident-note">${m.note}</div>
+  `;
+  missionGrid.appendChild(el);
+});
+
+/* ---------- Quiz ---------- */
+const quizData = [
+  {q:"What phrase from the Declaration of Independence (1776) is most often cited as the legal root of the American Dream?", opts:["\u201cAll men are created equal\u201d","\u201cLife, liberty and the pursuit of happiness\u201d","\u201cGovernment of the people, by the people\u201d","\u201cWe hold these truths\u201d"], correct:1},
+  {q:"Who coined the actual term \u201cAmerican Dream,\u201d and when?", opts:["Thomas Jefferson, 1776","John Winthrop, 1630","James Truslow Adams, 1931","Martin Luther King Jr., 1963"], correct:2},
+  {q:"What did James Truslow Adams explicitly warn against in his original 1931 definition?", opts:["Immigration","Reducing the Dream to \u2018motor cars and high wages\u2019","Voting rights","Land ownership"], correct:1},
+  {q:"Which 19th-century author popularised the \u201crags-to-riches\u201d self-made man archetype?", opts:["F. Scott Fitzgerald","Horatio Alger","Mark Twain","Arthur Miller"], correct:1},
+  {q:"What did the 1862 Homestead Act do?", opts:["Banned immigration","Gave settlers free land after five years of farming it","Ended slavery","Created national parks"], correct:1},
+  {q:"According to Raj Chetty's research, roughly what share of children born in 1940 grew up to earn more than their parents?", opts:["About 30%","About 50%","About 90%","About 100%"], correct:2},
+  {q:"And roughly what share of children born in the 1980s earned more than their parents?", opts:["About 10%","About 50%","About 75%","About 95%"], correct:1},
+  {q:"What did the 1944 GI Bill fund for returning war veterans?", opts:["Free healthcare only","College tuition and low-interest home loans","A guaranteed government job","Free land in the West"], correct:1},
+  {q:"Why do historians criticise how the GI Bill was applied?", opts:["It only applied to officers","It was too expensive for the government","Its benefits were often denied to Black veterans through local administration","It required ten years of military service"], correct:2},
+  {q:"In \u201cI Have a Dream\u201d (1963), Martin Luther King Jr. mainly argued that \u2026", opts:["The American Dream should be abolished","The Declaration's promise had not yet been honoured for Black Americans","The Dream was only about economic success","Immigration should be restricted"], correct:1},
+  {q:"What is the central criticism of the Dream in F. Scott Fitzgerald's \u2018The Great Gatsby\u2019 (1925)?", opts:["That immigration ruins the Dream","That pursuing wealth and reinvention can end in tragedy and emptiness","That hard work always succeeds","That the frontier should be closed"], correct:1},
+  {q:"What is \u201credlining\u201d?", opts:["A stock-market trading strategy","A discriminatory practice of denying loans to residents of certain neighbourhoods","A type of tax cut","A voting restriction"], correct:1},
+  {q:"According to Pew Research (2024), what share of US adults said the American Dream is still possible today?", opts:["About 20%","About 53%","About 75%","About 95%"], correct:1},
+  {q:"According to the same 2024 Pew survey, how did adults under 30 compare?", opts:["They were far more optimistic than older adults","Only about 39% said it was still possible","They were not asked","They were unanimously pessimistic"], correct:1},
+  {q:"According to Gallup/MCAAD's 2026 survey, what share of Americans expect to personally achieve the Dream?", opts:["31%","46%","69%","90%"], correct:2},
+  {q:"In the same 2026 survey, what share believe everyone in the country has the opportunity to achieve it?", opts:["46%","69%","78%","99%"], correct:0},
+  {q:"According to Chetty's research, how much of the decline in absolute mobility is attributed to rising income inequality rather than slower economic growth?", opts:["About 10%","About 30%","About 70%","About 100%"], correct:2},
+  {q:"Which group does Gallup's 2026 survey find is most likely to believe in the Dream's promise of upward mobility?", opts:["Retirees","People born outside the US","Government employees","College professors"], correct:1},
+  {q:"What historical event most shook the assumption that homeownership guarantees building wealth?", opts:["The 1929 stock market crash","The 2008 financial and foreclosure crisis","The 1973 oil crisis","The dot-com crash of 2000"], correct:1},
+  {q:"What year does the US mark the 250th anniversary of the Declaration of Independence?", opts:["2024","2025","2026","2030"], correct:2}
+];
+const quizContainer = document.getElementById('quizContainer');
+const scoreEl = document.getElementById('quizScore');
+let score = 0;
+scoreEl.textContent = `Score: 0/${quizData.length}`;
+quizData.forEach((item, qi) => {
+  const wrap = document.createElement('div');
+  wrap.className = 'quiz-q';
+  const optsHtml = item.opts.map((o,oi) => `<button class="quiz-opt" data-qi="${qi}" data-oi="${oi}" type="button">${o}</button>`).join('');
+  wrap.innerHTML = `<div class="quiz-q-title">${qi+1}. ${item.q}</div><div class="quiz-opts">${optsHtml}</div>`;
+  quizContainer.appendChild(wrap);
+});
+quizContainer.addEventListener('click', (e) => {
+  const btn = e.target.closest('.quiz-opt');
+  if(!btn) return;
+  const qi = Number(btn.dataset.qi);
+  const oi = Number(btn.dataset.oi);
+  const group = btn.parentElement;
+  if(group.dataset.answered) return;
+  group.dataset.answered = "1";
+  const correctIdx = quizData[qi].correct;
+  Array.from(group.children).forEach((b, i) => {
+    b.setAttribute('disabled','true');
+    if(i === correctIdx) b.classList.add('correct');
+    else if(i === oi) b.classList.add('incorrect');
+  });
+  scoreEl.textContent = `Score: ${score + (oi === correctIdx ? 1 : 0)}/${quizData.length}`;
+  if(oi === correctIdx){ score++; }
+});
+
+/* ---------- Tabs ---------- */
+const tabSelect = document.getElementById('tabSelect');
+function activateTab(tabId){
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === tabId));
+  if(tabSelect) tabSelect.value = tabId;
+}
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+});
+if(tabSelect){
+  tabSelect.addEventListener('change', (e) => activateTab(e.target.value));
+}
+</script>
+</body>
+</html>

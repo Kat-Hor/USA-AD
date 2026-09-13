@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+  Original author: Horlacher (LK E1, Abitur 2028)
+  This material was created for Horlacher's own English LK course.
+  Not authorized for redistribution under a different author's name.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USA in Focus — Unit Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A3161; --navy-light:#E7EDF4;
+  --red:#B31942; --red-light:#F7E5EA;
+  --gold:#A9843C; --gold-light:#F5EEDD;
+  --slate:#5B6570; --slate-light:#EAE8E2;
+  --ink:#132238; --paper:#F5F3EE; --card:#FFFFFF;
+  --border:#DDD8CB; --border-strong:#C8C2AF;
+}
+*{box-sizing:border-box;}
+body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6; }
+.page{ max-width:880px; margin:0 auto; padding:0 1.5rem 2rem; }
+
+header.masthead{ position:relative; padding:2.2rem 0 0; margin-bottom:2rem; }
+.flag-corner{
+  position:absolute; top:0; left:0; width:64px; height:44px; background:var(--navy);
+  border-radius:4px 0 8px 0; display:grid; grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(3,1fr); padding:6px 7px; gap:2px;
+}
+.flag-corner span{ width:4px; height:4px; background:#fff; border-radius:50%; justify-self:center; align-self:center; }
+.stripes{ height:22px; margin-top:0.6rem; background:repeating-linear-gradient(to bottom, var(--red) 0px, var(--red) 3.14px, #fff 3.14px, #fff 6.28px); border-radius:0 0 4px 4px; }
+.head-text{ text-align:center; padding:0 0 0.2rem; }
+.eyebrow{ font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--red); font-weight:600; margin-bottom:0.35rem; }
+h1.title{ font-family:'Source Serif 4',serif; font-weight:700; font-size:36px; margin:0 0 0.3rem; color:var(--navy); }
+.subtitle{ font-size:15px; color:var(--slate); font-style:italic; }
+
+.intro{ background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1.3rem 1.6rem; margin-bottom:1.8rem; font-size:15px; }
+
+.topic-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.1rem; }
+.topic-card{
+  background:var(--card); border:1px solid var(--border); border-radius:10px;
+  padding:1.4rem 1.5rem; text-decoration:none; color:var(--ink); display:block;
+  border-top:5px solid var(--navy); transition:transform 0.1s, box-shadow 0.1s;
+}
+.topic-card:hover{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(10,49,97,0.1); }
+.topic-card.c2{ border-top-color:var(--red); }
+.topic-card.c3{ border-top-color:var(--gold); }
+.topic-card.c4{ border-top-color:var(--slate); }
+.topic-card .num{ font-family:'Source Serif 4',serif; font-size:12px; color:var(--slate); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.3rem; }
+.topic-card h2{ font-family:'Source Serif 4',serif; font-size:19px; margin:0 0 0.5rem; color:var(--navy); }
+.topic-card.c2 h2{ color:var(--red); }
+.topic-card.c3 h2{ color:#7A5A18; }
+.topic-card.c4 h2{ color:var(--slate); }
+.topic-card p{ font-size:13.5px; color:var(--ink); margin:0 0 0.8rem; }
+.topic-card .cta{ font-size:12.5px; font-weight:600; color:var(--navy); }
+.topic-card.c2 .cta{ color:var(--red); }
+.badge{ display:inline-block; font-size:10.5px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; padding:2px 9px; border-radius:20px; background:var(--gold-light); color:#7A5A18; margin-bottom:0.6rem; }
+
+footer.stamp{ text-align:center; margin:2.4rem 0 0.5rem; font-family:'Source Serif 4',serif; font-style:italic; font-size:13px; color:var(--slate); border-top:1px solid var(--border); padding-top:0.9rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="masthead">
+  <div class="flag-corner">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="head-text">
+    <div class="eyebrow">Unit overview</div>
+    <h1 class="title">USA in Focus</h1>
+    <div class="subtitle">Background material for the English LK · E1 · Abitur 2028</div>
+  </div>
+  <div class="stripes"></div>
+</header>
+
+<div class="intro">
+  Four topics make up this unit on the United States. Click on any of the cards below to open the background material, timeline, research mission and quiz for that topic.
+</div>
+
+<div class="topic-grid">
+  <a class="topic-card" href="american-dream.html">
+    <div class="num">Topic 01</div>
+    <h2>The American Dream</h2>
+    <p>Origins, timeline and the myth-vs-reality debate — from "the pursuit of happiness" to today's social mobility data.</p>
+    <div class="cta">Open background material &rarr;</div>
+  </a>
+
+  <a class="topic-card c2" href="gun-control.html">
+    <div class="num">Topic 02</div>
+    <h2>Guns in America</h2>
+    <p>The Second Amendment, key court cases, major incidents, and the current gun-policy debate.</p>
+    <div class="cta">Open background material &rarr;</div>
+  </a>
+
+  <a class="topic-card c3" href="a-country-of-differences.html">
+    <div class="num">Topic 03</div>
+    <h2>A Country of Differences</h2>
+    <p>Regional, cultural and social diversity across the United States.</p>
+    <span class="badge">Coming soon</span>
+    <div class="cta">Open background material &rarr;</div>
+  </a>
+
+  <a class="topic-card c4" href="the-hate-u-give.html">
+    <div class="num">Topic 04</div>
+    <h2>The Hate U Give</h2>
+    <p>Novel study: Angie Thomas's novel on race, police violence and finding one's voice.</p>
+    <span class="badge">Coming soon</span>
+    <div class="cta">Open background material &rarr;</div>
+  </a>
+</div>
+
+<footer class="stamp">LK E1 Horlacher · Abitur 2028</footer>
+</div>
+</body>
+</html>

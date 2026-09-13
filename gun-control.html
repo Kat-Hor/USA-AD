@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<!--
+  Original author: Horlacher (LK E1, Abitur 2028)
+  This material was created for Horlacher's own English LK course.
+  Not authorized for redistribution under a different author's name.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guns in America — Background Material</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A3161;
+  --navy-light:#E7EDF4;
+  --red:#B31942;
+  --red-light:#F7E5EA;
+  --gold:#A9843C;
+  --gold-light:#F5EEDD;
+  --slate:#5B6570;
+  --slate-light:#EAE8E2;
+  --ink:#132238;
+  --paper:#F8F1F1;
+  --card:#FFFFFF;
+  --border:#DDD8CB;
+  --border-strong:#C8C2AF;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  line-height:1.6;
+}
+.page{ max-width:880px; margin:0 auto; padding:0 1.5rem 1.5rem; }
+
+/* header with flag motif */
+header.masthead{ position:relative; padding:2.2rem 0 0; margin-bottom:1.6rem; }
+.flag-corner{
+  position:absolute; top:0; left:0;
+  width:64px; height:44px;
+  background:var(--navy);
+  border-radius:4px 0 8px 0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(3,1fr);
+  padding:6px 7px;
+  gap:2px;
+}
+.flag-corner span{
+  width:4px; height:4px; background:#fff; border-radius:50%;
+  justify-self:center; align-self:center;
+}
+.stripes{
+  height:22px;
+  margin-top:0.6rem;
+  background:repeating-linear-gradient(
+    to bottom,
+    var(--red) 0px, var(--red) 3.14px,
+    #fff 3.14px, #fff 6.28px
+  );
+  border-radius:0 0 4px 4px;
+}
+.head-text{ text-align:center; padding:0 0 0.2rem; }
+.eyebrow{
+  font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--red); font-weight:600; margin-bottom:0.35rem;
+}
+h1.title{
+  font-family:'Source Serif 4',serif; font-weight:700; font-size:34px;
+  margin:0 0 0.3rem; color:var(--navy);
+}
+.subtitle{ font-size:14px; color:var(--slate); font-style:italic; }
+
+/* tabs */
+nav.tabs{
+  display:flex; flex-wrap:nowrap; overflow-x:auto; gap:2px;
+  margin-bottom:1.5rem;
+  border-bottom:2px solid var(--navy);
+  scrollbar-width:thin;
+}
+.tab-btn{
+  font-family:'Inter',sans-serif; font-size:12.5px; font-weight:500;
+  color:var(--slate); background:#EDEAE1;
+  border:1px solid var(--border-strong); border-bottom:none;
+  padding:0.55rem 0.75rem; border-radius:6px 6px 0 0;
+  cursor:pointer; position:relative; top:2px;
+  display:flex; align-items:center; gap:5px;
+  flex:0 0 auto; white-space:nowrap;
+}
+.tab-btn i{ font-size:15px; }
+.tab-btn:hover{ background:#F2F0E7; color:var(--ink); }
+.tab-btn.active{
+  background:var(--card); color:var(--navy);
+  border:1px solid var(--navy); border-bottom:2px solid var(--card);
+  font-weight:600;
+}
+.tab-select-mobile{ display:none; }
+@media (max-width:720px){
+  nav.tabs{ display:none; }
+  .tab-select-mobile{
+    display:block; width:100%; margin-bottom:1.5rem;
+    font-family:'Inter',sans-serif; font-size:14px; padding:0.6rem 0.7rem;
+    border:2px solid var(--navy); border-radius:6px; background:var(--card); color:var(--ink);
+  }
+}
+.panel{ display:none; }
+.panel.active{ display:block; animation:fade 0.15s ease; }
+@keyframes fade{ from{opacity:0.4;} to{opacity:1;} }
+
+.card{
+  background:var(--card); border:1px solid var(--border);
+  border-radius:8px; padding:1.4rem 1.6rem; margin-bottom:1rem;
+}
+h2.section-title{
+  font-family:'Source Serif 4',serif; font-size:22px; font-weight:600;
+  margin:0 0 0.8rem; color:var(--navy);
+  display:flex; align-items:center; gap:0.5rem;
+}
+h2.section-title i{ font-size:20px; color:var(--red); }
+p{ margin:0 0 0.9rem; font-size:15px; }
+.lede{ font-size:16px; color:var(--slate); }
+
+.badge{
+  display:inline-block; font-size:11px; font-weight:600; letter-spacing:0.03em;
+  text-transform:uppercase; padding:2px 8px; border-radius:20px; margin-right:0.4rem;
+  white-space:nowrap;
+}
+.badge.legislation{ background:var(--navy-light); color:var(--navy); }
+.badge.court{ background:var(--red-light); color:var(--red); }
+.badge.turning{ background:var(--slate-light); color:var(--slate); }
+.badge.executive{ background:var(--gold-light); color:#7A5A18; }
+
+/* timeline */
+.timeline{ position:relative; padding-left:2rem; }
+.timeline::before{
+  content:""; position:absolute; left:11px; top:6px; bottom:6px;
+  width:2px; background:var(--border-strong);
+}
+.tl-item{ position:relative; margin-bottom:0.6rem; }
+.tl-year-dot{
+  position:absolute; left:-2rem; top:0.55rem;
+  width:24px; height:24px; border-radius:50%;
+  background:var(--navy); color:#fff; font-size:10px; font-weight:600;
+  display:flex; align-items:center; justify-content:center;
+}
+.tl-year-dot.cat-court{ background:var(--red); }
+.tl-year-dot.cat-turning{ background:var(--slate); }
+.tl-year-dot.cat-executive{ background:#8A6A22; }
+.tl-item.exec-highlight .tl-header{ background:var(--gold-light); border-color:var(--gold); }
+.spotlight-card{
+  background:var(--gold-light); border:1px solid var(--gold); border-left:5px solid var(--gold);
+  border-radius:8px; padding:1.1rem 1.3rem; margin-top:1rem;
+}
+.spotlight-card h3{
+  font-family:'Source Serif 4',serif; font-size:16px; margin:0 0 0.5rem; color:#7A5A18;
+  display:flex; align-items:center; gap:6px;
+}
+.nra-card{
+  background:var(--navy-light); border:1px solid #C7D5E6; border-left:5px solid var(--navy);
+  border-radius:8px; padding:1.1rem 1.3rem; margin-top:1rem;
+}
+.nra-card h3{
+  font-family:'Source Serif 4',serif; font-size:16px; margin:0 0 0.5rem; color:var(--navy);
+  display:flex; align-items:center; gap:6px;
+}
+.tl-header{
+  width:100%; text-align:left; background:var(--card);
+  border:1px solid var(--border); border-radius:6px; padding:0.7rem 1rem;
+  cursor:pointer; font-family:'Inter',sans-serif;
+  display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;
+}
+.tl-header:hover{ border-color:var(--border-strong); }
+.tl-year{ font-family:'Source Serif 4',serif; font-weight:700; font-size:17px; color:var(--navy); min-width:78px; }
+.tl-name{ font-size:14.5px; font-weight:500; flex:1; min-width:180px; }
+.tl-chevron{ margin-left:auto; color:var(--slate); font-size:13px; transition:transform 0.15s; }
+.tl-item.open .tl-chevron{ transform:rotate(90deg); }
+.tl-body{ display:none; padding:0.9rem 1.1rem 0.3rem 1.1rem; font-size:14.5px; }
+.tl-item.open .tl-body{ display:block; }
+
+/* incidents cards */
+.incident-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:0.9rem; }
+.incident-card{
+  background:var(--card); border:1px solid var(--border); border-left:4px solid var(--red);
+  border-radius:6px; padding:0.9rem 1.1rem;
+}
+.incident-year{ font-family:'Source Serif 4',serif; font-weight:700; color:var(--red); font-size:15px; }
+.incident-name{ font-weight:600; font-size:14.5px; margin:0.15rem 0 0.35rem; }
+.incident-meta{ font-size:12.5px; color:var(--slate); margin-bottom:0.4rem; }
+.incident-note{ font-size:13.5px; }
+
+/* two column debate */
+.debate-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+@media (max-width:640px){ .debate-grid{ grid-template-columns:1fr; } }
+.debate-col{ border-radius:8px; padding:1.1rem 1.2rem; }
+.debate-col.rights{ background:var(--navy-light); border:1px solid #C7D5E6; }
+.debate-col.control{ background:var(--red-light); border:1px solid #EAC7D2; }
+.debate-col h3{ font-family:'Source Serif 4',serif; font-size:16px; margin:0 0 0.6rem; display:flex; align-items:center; gap:6px;}
+.debate-col.rights h3{ color:var(--navy); }
+.debate-col.control h3{ color:var(--red); }
+.debate-col ul{ margin:0; padding-left:1.1rem; font-size:14px; }
+.debate-col li{ margin-bottom:0.55rem; }
+
+/* stats */
+.stat-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:0.8rem; margin-bottom:1rem; }
+.stat-card{ background:var(--slate-light); border-radius:8px; padding:0.9rem 1rem; }
+.stat-num{ font-family:'Source Serif 4',serif; font-size:24px; font-weight:700; color:var(--navy); }
+.stat-label{ font-size:12px; color:var(--slate); margin-top:0.2rem; }
+.stat-card.c-navy{ background:var(--navy-light); }
+.stat-card.c-navy .stat-num{ color:var(--navy); }
+.stat-card.c-red{ background:var(--red-light); }
+.stat-card.c-red .stat-num{ color:var(--red); }
+.stat-card.c-gold{ background:var(--gold-light); }
+.stat-card.c-gold .stat-num{ color:#7A5A18; }
+
+/* vocab */
+.vocab-toolbar{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem; }
+.print-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--navy); color:#fff; border:none; border-radius:6px;
+  padding:0.5rem 0.9rem; font-size:13px; font-weight:600; cursor:pointer;
+  font-family:'Inter',sans-serif;
+}
+.print-btn:hover{ background:#082448; }
+.vocab-sub{
+  font-family:'Source Serif 4',serif; font-size:16px; font-weight:600;
+  color:var(--navy); margin:1.3rem 0 0.5rem;
+}
+table.vocab-table{ width:100%; border-collapse:collapse; font-size:13.5px; table-layout:fixed; }
+table.vocab-table th{
+  text-align:left; font-size:11.5px; text-transform:uppercase; letter-spacing:0.03em;
+  color:var(--slate); border-bottom:2px solid var(--border-strong); padding:0.4rem 0.5rem;
+}
+table.vocab-table td{ padding:0.5rem; border-bottom:1px solid var(--border); vertical-align:top; word-wrap:break-word; }
+table.vocab-table th:nth-child(1), table.vocab-table td.term{ width:19%; font-weight:600; }
+table.vocab-table th:nth-child(2), table.vocab-table td.de{
+  width:17%; color:var(--red); font-style:italic;
+  hyphens:auto; -webkit-hyphens:auto; -ms-hyphens:auto; overflow-wrap:break-word;
+}
+table.vocab-table th:nth-child(3), table.vocab-table td:nth-child(3){ width:64%; }
+
+/* quiz */
+.quiz-q{ margin-bottom:1.2rem; }
+.quiz-q-title{ font-weight:600; font-size:14.5px; margin-bottom:0.5rem; }
+.quiz-opts{ display:grid; gap:6px; }
+.quiz-opt{
+  text-align:left; background:var(--card); border:1px solid var(--border);
+  border-radius:6px; padding:0.55rem 0.8rem; font-size:14px; cursor:pointer;
+  font-family:'Inter',sans-serif; color:var(--ink);
+}
+.quiz-opt:hover{ border-color:var(--border-strong); }
+.quiz-opt.correct{ background:#E9F2E9; border-color:#5C8A5C; color:#2C4A2C; font-weight:600; }
+.quiz-opt.incorrect{ background:var(--red-light); border-color:var(--red); color:var(--red); }
+.quiz-opt[disabled]{ cursor:default; }
+.quiz-score{
+  position:sticky; top:0.5rem; float:right;
+  background:var(--navy); color:#fff; font-size:13px; font-weight:600;
+  padding:0.4rem 0.9rem; border-radius:20px;
+}
+
+/* further reading */
+.source-list{ list-style:none; padding:0; margin:0; }
+.source-list li{ font-size:13.5px; padding:0.5rem 0; border-bottom:1px solid var(--border); }
+.source-list li:last-child{ border-bottom:none; }
+.source-list a{ color:var(--red); text-decoration:none; }
+.source-list a:hover{ text-decoration:underline; }
+.source-tag{ font-size:11px; color:var(--slate); text-transform:uppercase; letter-spacing:0.03em; margin-right:0.5rem; }
+
+footer.stamp{
+  text-align:center; margin:2rem 0 0.5rem;
+  font-family:'Source Serif 4',serif; font-style:italic; font-size:13px;
+  color:var(--slate); border-top:1px solid var(--border); padding-top:0.9rem;
+}
+
+@media print{
+  body.print-vocab-mode header,
+  body.print-vocab-mode nav,
+  body.print-vocab-mode footer,
+  body.print-vocab-mode .panel{ display:none !important; }
+  body.print-vocab-mode #vocab{ display:block !important; }
+  body.print-vocab-mode .no-print{ display:none !important; }
+  body.print-vocab-mode .card{ border:none; padding:0; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="masthead">
+  <div class="flag-corner">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="head-text">
+    <div class="eyebrow">Background material · USA in focus</div>
+    <h1 class="title">Guns in America</h1>
+    <div class="subtitle">History, law and debate around the Second Amendment</div>
+  </div>
+  <div class="stripes"></div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab-btn active" data-tab="overview"><i class="ti ti-flag"></i>Overview</button>
+  <button class="tab-btn" data-tab="timeline"><i class="ti ti-timeline"></i>Timeline</button>
+  <button class="tab-btn" data-tab="cases"><i class="ti ti-gavel"></i>Court cases</button>
+  <button class="tab-btn" data-tab="incidents"><i class="ti ti-alert-triangle"></i>Incidents</button>
+  <button class="tab-btn" data-tab="debate"><i class="ti ti-message-circle-2"></i>Arguments</button>
+  <button class="tab-btn" data-tab="stats"><i class="ti ti-chart-bar"></i>Data</button>
+  <button class="tab-btn" data-tab="vocab"><i class="ti ti-book-2"></i>Vocabulary</button>
+  <button class="tab-btn" data-tab="quiz"><i class="ti ti-help-circle"></i>Quiz</button>
+  <button class="tab-btn" data-tab="sources"><i class="ti ti-certificate"></i>Sources</button>
+  <button class="tab-btn" data-tab="reading"><i class="ti ti-external-link"></i>Further reading</button>
+</nav>
+<select class="tab-select-mobile" id="tabSelect" aria-label="Choose a section">
+  <option value="overview">Overview</option>
+  <option value="timeline">Timeline</option>
+  <option value="cases">Court cases</option>
+  <option value="incidents">Incidents</option>
+  <option value="debate">Arguments</option>
+  <option value="stats">Data</option>
+  <option value="vocab">Vocabulary</option>
+  <option value="quiz">Quiz</option>
+  <option value="sources">Sources</option>
+  <option value="reading">Further reading</option>
+</select>
+
+<!-- OVERVIEW -->
+<section class="panel active" id="overview">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-flag"></i>Why this topic matters</h2>
+    <p class="lede">Few issues reveal as much about American identity, law and political culture as the right to own a gun.</p>
+    <p>The Second Amendment to the US Constitution, ratified in 1791, protects "the right of the people to keep and bear arms." In the United States, gun ownership is treated as a constitutional right rather than a licensed privilege — a right roughly a third of American adults personally exercise. This single difference shapes everything from policing and schools to elections and popular culture.</p>
+    <p>The debate is not simply "for" or "against" guns. It is a conflict between two values that both sides claim: individual liberty and self-defence on one side, and collective safety and the right to life on the other. Courts, Congress and the public disagree sharply about where the balance should lie — and that disagreement has only sharpened in the 2020s as the Supreme Court has taken a more expansive view of Second Amendment rights.</p>
+    <p>Use the tabs above to explore the topic: a chronological <strong>Timeline</strong> of key laws and events, short profiles of the <strong>Court cases</strong> that defined the Second Amendment, a factual overview of major <strong>Incidents</strong>, the strongest <strong>Arguments</strong> on each side, current <strong>Data</strong>, exam-relevant <strong>Vocabulary</strong> with a printable list, a self-test <strong>Quiz</strong>, and lists of <strong>Sources</strong> for further reading.</p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="panel" id="timeline">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-timeline"></i>Timeline of gun control in the USA</h2>
+    <p>The story of American gun law is not a straight line toward either more or less regulation. Instead it moves in cycles: a law or Supreme Court ruling shifts the balance, a crisis provokes public pressure, and the pendulum swings back. The timeline below begins with the ratification of the Second Amendment in 1791 and runs up to the present day. Click on any year to expand it.</p>
+  </div>
+  <div class="timeline" id="timelineList"></div>
+  <div class="spotlight-card">
+    <h3><i class="ti ti-alert-circle"></i>Policy shift under the second Trump administration (2025–2026)</h3>
+    <p style="margin:0;">Since February 2025, federal policy has moved to loosen rather than tighten gun rules. Executive Order 14206 ordered a review of Biden-era firearms regulations, and in April 2026 the Department of Justice rolled back 34 ATF regulations — one of the broadest rewrites of federal gun rules in the agency's history. This marks a clear reversal from the direction set by the Bipartisan Safer Communities Act (2022), even though gun-death and mass-shooting numbers have continued a multi-year decline that began independently of this policy shift.</p>
+  </div>
+</section>
+
+<!-- COURT CASES -->
+<section class="panel" id="cases">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-gavel"></i>Landmark Supreme Court cases</h2>
+    <p>Six decisions define how courts read the Second Amendment today. Read top to bottom for the legal arc: from a narrow "militia" reading to a broad individual right, and now a stricter historical test that continues to be tested case by case.</p>
+  </div>
+  <div class="card">
+    <span class="badge court">1939</span><strong>United States v. Miller</strong>
+    <p style="margin-top:0.5rem;">The Court unanimously upheld the National Firearms Act, reasoning that the Second Amendment protects weapons with a reasonable relationship to militia service — not any weapon a private citizen might want. This "collective rights" reading shaped gun law for almost 70 years.</p>
+  </div>
+  <div class="card">
+    <span class="badge court">2008</span><strong>District of Columbia v. Heller</strong>
+    <p style="margin-top:0.5rem;">For the first time, the Court ruled that the Second Amendment protects an individual's right to own a firearm for self-defence in the home, independent of militia service, striking down Washington D.C.'s handgun ban. The opinion explicitly preserved bans on gun ownership by felons and the mentally ill, and restrictions in "sensitive places" such as schools.</p>
+  </div>
+  <div class="card">
+    <span class="badge court">2010</span><strong>McDonald v. City of Chicago</strong>
+    <p style="margin-top:0.5rem;">The Court extended <em>Heller</em> to state and local governments via the Fourteenth Amendment, meaning cities and states — not only the federal government — must respect the individual right to bear arms.</p>
+  </div>
+  <div class="card">
+    <span class="badge court">2022</span><strong>NY State Rifle & Pistol Assn. v. Bruen</strong>
+    <p style="margin-top:0.5rem;">The Court struck down New York's discretionary concealed-carry permit system and introduced a new "text, history and tradition" test: a modern gun law is only constitutional if it has a comparable historical analogue from the founding era. This raised the bar for defending existing gun laws in court.</p>
+  </div>
+  <div class="card">
+    <span class="badge court">2024</span><strong>United States v. Rahimi</strong>
+    <p style="margin-top:0.5rem;">In an 8–1 ruling, the Court upheld a federal law disarming people subject to domestic-violence restraining orders, clarifying that <em>Bruen</em> requires a similar historical principle, not an identical historical law.</p>
+  </div>
+  <div class="card">
+    <span class="badge court">2024</span><strong>Garland v. Cargill</strong>
+    <p style="margin-top:0.5rem;">Decided the same month as <em>Rahimi</em>, the Court struck down a federal ban on bump stocks — attachments that let semi-automatic rifles fire at rates close to automatic weapons — ruling that the ATF had exceeded its authority in classifying them as machine guns.</p>
+  </div>
+</section>
+
+<!-- INCIDENTS -->
+<section class="panel" id="incidents">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-alert-triangle"></i>Incidents with weapons</h2>
+    <p>Mass shootings are statistically a small share of overall US gun deaths — researchers estimate around 1% — but they are the events that most shape public debate and policy. This is a factual overview of some of the incidents most often referenced in US media and politics, listed by date, without graphic detail.</p>
+  </div>
+  <div class="incident-grid" id="incidentGrid"></div>
+</section>
+
+<!-- DEBATE -->
+<section class="panel" id="debate">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-message-circle-2"></i>Key arguments in the debate</h2>
+    <p>Both sides of the American gun debate argue from real values and real evidence. For classroom debate and essay writing, it helps to know the strongest version of each case — not a caricature of it.</p>
+  </div>
+  <div class="debate-grid">
+    <div class="debate-col rights">
+      <h3><i class="ti ti-shield"></i>Gun rights perspective</h3>
+      <ul>
+        <li>The Second Amendment protects an individual, fundamental right — confirmed by the Supreme Court in <em>Heller</em> (2008) and <em>McDonald</em> (2010) — that should not depend on where a citizen lives.</li>
+        <li>Firearms enable self-defence, especially for people in rural areas far from police, or in communities that feel under-protected.</li>
+        <li>Most gun owners are law-abiding; restricting them does not stop criminals, who by definition already break laws.</li>
+        <li>An armed citizenry is framed by many gun-rights advocates as a check on potential government overreach, in the tradition of the Founders' distrust of standing armies.</li>
+        <li>Gun ownership is also cultural: hunting, sport shooting and collecting are longstanding traditions in many American families and regions.</li>
+        <li>Stricter laws in one state are easily undermined by looser laws next door, since guns cross state lines — a point used to argue that local bans mainly burden law-abiding owners.</li>
+        <li>Some argue that armed staff or trained citizens can shorten the time before a threat is stopped, making total disarmament a false sense of safety.</li>
+      </ul>
+    </div>
+    <div class="debate-col control">
+      <h3><i class="ti ti-heart-handshake"></i>Gun control perspective</h3>
+      <ul>
+        <li>The United States has a far higher rate of gun death than almost any other wealthy democracy, which gun-control advocates link directly to the sheer number of firearms in circulation.</li>
+        <li>Background checks, waiting periods and safe-storage rules are supported by large majorities of Americans, including many gun owners, even when broader "gun control" is not.</li>
+        <li>Mass shootings at schools (Sandy Hook, Parkland, Uvalde) and other public places have made gun violence a leading cause of death for American children and teenagers.</li>
+        <li>The "text, history and tradition" test set out in <em>Bruen</em> (2022) is criticised as an unworkable standard that ties 21st-century safety policy to 18th-century circumstances.</li>
+        <li>Comparisons with countries such as the UK, Australia and Germany, which tightened gun laws after mass shootings and saw firearm deaths fall, are cited as evidence that regulation works.</li>
+        <li>Easy access to firearms is strongly linked to a higher risk of suicide, since guns make impulsive attempts far more likely to be fatal than other methods.</li>
+        <li>Advocates argue that the gun lobby's political influence, not public opinion, is what blocks popular measures such as universal background checks from becoming federal law.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <p style="margin:0;">Public opinion sits between these poles and shifts with events: a June 2023 Pew Research Center survey found 58% of US adults wanted stricter gun laws, 26% thought current laws were about right, and 15% wanted them loosened — but the same research shows deep partisan division, with roughly 80–90% of Democrats and only around a quarter to a third of Republicans favouring stricter laws.</p>
+  </div>
+  <div class="nra-card">
+    <h3><i class="ti ti-building-bank"></i>Spotlight: the NRA</h3>
+    <p style="margin:0;">Founded in 1871 as a marksmanship organisation, the National Rifle Association (NRA) became the country's most influential gun-rights lobbying group from the 1970s onward, funding political campaigns and helping block measures such as the renewal of the 1994 assault weapons ban — a key reason gun-control advocates cite the gun lobby's influence, not public opinion, as the main obstacle to reform. Its influence has weakened recently: a New York fraud trial found long-time leader Wayne LaPierre liable for misusing millions of dollars in NRA funds, he resigned in 2024, and membership-dues revenue fell from about $83 million in 2022 to $51.7 million in 2024. Even so, the NRA endorsed Donald Trump in 2024, and gun-rights groups remain a powerful voice in shaping federal policy.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="panel" id="stats">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-chart-bar"></i>Gun violence and gun ownership in numbers</h2>
+    <p>Figures below combine the Gun Violence Archive, Pew Research Center and The Trace's 2025/2026 reporting. Gun deaths have fallen for four consecutive years since a pandemic-era peak, though the US firearm death rate remains among the highest of any wealthy democracy.</p>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-card c-red"><div class="stat-num">~38,800</div><div class="stat-label">estimated US gun deaths in 2025 (Gun Violence Archive)</div></div>
+    <div class="stat-card c-gold"><div class="stat-num">62%</div><div class="stat-label">of firearm deaths were suicides in 2024 (Pew Research)</div></div>
+    <div class="stat-card c-red"><div class="stat-num">14,651</div><div class="stat-label">shooting deaths in 2025, the lowest since 2015 (The Trace)</div></div>
+    <div class="stat-card c-gold"><div class="stat-num">407</div><div class="stat-label">mass shootings in 2025, down 19% year on year (Gun Violence Archive)</div></div>
+    <div class="stat-card c-navy"><div class="stat-num">~1 in 3</div><div class="stat-label">US adults personally own a gun (Pew Research)</div></div>
+    <div class="stat-card c-navy"><div class="stat-num">58%</div><div class="stat-label">of Americans wanted stricter gun laws in a 2023 Pew survey</div></div>
+  </div>
+  <div class="card">
+    <p style="margin:0;">In global comparison, the US firearm death rate is far below a small number of Latin American countries but remains many times higher than that of other high-income nations such as Germany, the UK or Japan — a gap researchers link chiefly to the size of the US civilian gun stock.</p>
+  </div>
+</section>
+
+<!-- VOCAB -->
+<section class="panel" id="vocab">
+  <div class="card">
+    <div class="vocab-toolbar">
+      <h2 class="section-title" style="margin:0;"><i class="ti ti-book-2"></i>Vocabulary</h2>
+      <button class="print-btn no-print" onclick="printVocab()"><i class="ti ti-printer"></i>Print vocabulary list</button>
+    </div>
+    <p>Key terms and useful phrases for essays, presentations and classroom debate on this topic. German translations are given for quick reference only — English definitions are the ones to learn.</p>
+
+    <div class="vocab-sub">Key terms</div>
+    <table class="vocab-table" id="vocabTable">
+      <thead><tr><th>Term</th><th>German</th><th>Definition</th></tr></thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="vocab-sub">Useful phrases for discussion &amp; essays</div>
+    <table class="vocab-table" id="phraseTable">
+      <thead><tr><th>Phrase</th><th>German</th><th>Use</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="panel" id="quiz">
+  <div class="card">
+    <span class="quiz-score no-print" id="quizScore">Score: 0/0</span>
+    <h2 class="section-title"><i class="ti ti-help-circle"></i>Test yourself</h2>
+    <p>Twenty questions covering the timeline, court cases, incidents and data. Click an answer to see if it's correct.</p>
+  </div>
+  <div class="card" id="quizContainer"></div>
+</section>
+
+<!-- SOURCES -->
+<section class="panel" id="sources">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-certificate"></i>Key primary sources</h2>
+    <p>The official documents and core data hubs behind this material — useful if you want to check or cite the original wording rather than a secondary summary.</p>
+    <ul class="source-list">
+      <li><span class="source-tag">Constitution</span><a href="https://constitution.congress.gov/browse/essay/amdt2-5/ALDE_00013265/" target="_blank" rel="noopener">Congress.gov — Constitution Annotated, Second Amendment essay</a></li>
+      <li><span class="source-tag">Court opinion</span><a href="https://supreme.justia.com/cases/federal/us/561/742/" target="_blank" rel="noopener">Justia — full opinion, McDonald v. City of Chicago (2010)</a></li>
+      <li><span class="source-tag">Court opinion</span><a href="https://supreme.justia.com/cases/federal/us/602/22-915/" target="_blank" rel="noopener">Justia — full opinion, United States v. Rahimi (2024)</a></li>
+      <li><span class="source-tag">Official text</span><a href="https://govinfo.gov/content/pkg/DCPD-202500241/pdf/DCPD-202500241.pdf" target="_blank" rel="noopener">govinfo.gov — Executive Order 14206, "Protecting Second Amendment Rights" (2025)</a></li>
+      <li><span class="source-tag">Policy timeline</span><a href="https://ballotpedia.org/Executive_Order:_Protecting_Second_Amendment_Rights_(Donald_Trump,_2025)" target="_blank" rel="noopener">Ballotpedia — Executive Order 14206 summary and timeline</a></li>
+      <li><span class="source-tag">Gun-rights view</span><a href="https://www.nraila.org/what-is-the-second-amendment-and-how-is-it-defined/" target="_blank" rel="noopener">NRA-ILA — the gun-rights lobby's own explanation of the Second Amendment</a></li>
+      <li><span class="source-tag">NRA funding</span><a href="https://www.opensecrets.org/orgs/national-rifle-assn/summary?id=d000000082" target="_blank" rel="noopener">OpenSecrets — NRA campaign finance and lobbying profile</a></li>
+      <li><span class="source-tag">Polling data</span><a href="https://www.pewresearch.org/topic/politics-policy/political-issues/gun-policy/" target="_blank" rel="noopener">Pew Research Center — "Gun Policy" topic page</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FURTHER READING -->
+<section class="panel" id="reading">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-external-link"></i>Further reading</h2>
+    <ul class="source-list">
+      <li><span class="source-tag">Timeline</span><a href="https://time.com/5169210/us-gun-control-laws-history-timeline/" target="_blank" rel="noopener">TIME — "Here's a Timeline of the Major Gun Control Laws in America"</a></li>
+      <li><span class="source-tag">Timeline</span><a href="https://www.history.com/articles/2nd-amendment" target="_blank" rel="noopener">HISTORY.com — "The Second Amendment"</a></li>
+      <li><span class="source-tag">Legislation</span><a href="https://en.wikipedia.org/wiki/Gun_Control_Act_of_1968" target="_blank" rel="noopener">Wikipedia — "Gun Control Act of 1968"</a></li>
+      <li><span class="source-tag">Court cases</span><a href="https://www.everytown.org/rahimi-scotus/" target="_blank" rel="noopener">Everytown Research & Policy — "United States v. Rahimi"</a></li>
+      <li><span class="source-tag">Court cases</span><a href="https://nysba.org/the-supreme-courts-bruen-decision-and-its-impact-what-comes-next/" target="_blank" rel="noopener">New York State Bar Association — "The Supreme Court's Bruen Decision and Its Impact"</a></li>
+      <li><span class="source-tag">Data</span><a href="https://www.pewresearch.org/short-reads/2026/04/28/what-the-data-says-about-gun-deaths-in-the-us/" target="_blank" rel="noopener">Pew Research Center — "What the data says about gun deaths in the US" (2026)</a></li>
+      <li><span class="source-tag">Data</span><a href="https://www.thetrace.org/2025/12/data-shooting-stats-gun-violence-america/" target="_blank" rel="noopener">The Trace — "Gun Violence By The Numbers in 2025"</a></li>
+      <li><span class="source-tag">Arguments</span><a href="https://www.britannica.com/procon/gun-control-debate" target="_blank" rel="noopener">Britannica ProCon — "Gun Control: Pros, Cons, Debate, Arguments"</a></li>
+      <li><span class="source-tag">Policy 2025/26</span><a href="https://legalclarity.org/trump-gun-laws-policies-rollbacks-and-executive-orders/" target="_blank" rel="noopener">LegalClarity — "Trump Gun Laws: Policies, Rollbacks, and Executive Orders"</a></li>
+      <li><span class="source-tag">Incidents</span><a href="https://www.axios.com/2017/12/15/deadliest-mass-shootings-modern-us-history" target="_blank" rel="noopener">Axios — "A list of America's deadliest modern mass shootings"</a></li>
+      <li><span class="source-tag">Incidents</span><a href="https://en.wikipedia.org/wiki/List_of_mass_shootings_in_the_United_States" target="_blank" rel="noopener">Wikipedia — "List of mass shootings in the United States"</a></li>
+      <li><span class="source-tag">Opinion polling</span><a href="https://www.pewresearch.org/topic/politics-policy/political-issues/gun-policy/" target="_blank" rel="noopener">Pew Research Center — "Gun Policy" topic page</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="stamp">LK E1 Horlacher · Abitur 2028</footer>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/tabler-icons.min.css">
+<script>
+/* ---------- Timeline ---------- */
+const tlData = [
+  {y:"1791", t:"The Second Amendment", cat:"legislation", catLabel:"Constitution",
+   body:"On 15 December 1791 the Bill of Rights was ratified, including the Second Amendment: \u201cA well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.\u201d Historians still disagree on whether the Founders meant to protect an individual right or a right tied to militia service \u2014 an ambiguity that remains at the heart of today's legal debate."},
+  {y:"1934", t:"National Firearms Act", cat:"legislation", catLabel:"Legislation",
+   body:"Passed in response to Prohibition-era gangster violence such as the St Valentine's Day Massacre, this was the first federal gun control law. It imposed a tax and registration requirement on machine guns, sawed-off shotguns and silencers."},
+  {y:"1938", t:"Federal Firearms Act", cat:"legislation", catLabel:"Legislation",
+   body:"This law required gun dealers and manufacturers to hold a federal licence and keep sales records, and barred convicted felons from buying firearms. Most of its provisions were folded into the Gun Control Act thirty years later."},
+  {y:"1939", t:"United States v. Miller", cat:"court", catLabel:"Supreme Court",
+   body:"The Supreme Court unanimously upheld the National Firearms Act, ruling that the Second Amendment protects weapons with a reasonable link to a \u201cwell regulated militia\u201d, not any weapon a private citizen might own. This narrow reading shaped US gun law for almost 70 years."},
+  {y:"1968", t:"Gun Control Act", cat:"legislation", catLabel:"Legislation",
+   body:"After the assassinations of President John F. Kennedy, Senator Robert F. Kennedy and Dr Martin Luther King Jr., Congress passed sweeping reform: a ban on mail-order gun sales, a minimum age of 21 for handgun purchases, and a bar on sales to felons and the mentally ill."},
+  {y:"1986", t:"Firearm Owners Protection Act", cat:"legislation", catLabel:"Legislation",
+   body:"This law loosened several 1968 restrictions \u2014 for instance on interstate sales and gun shows \u2014 while also banning civilian ownership of any machine gun manufactured after 19 May 1986."},
+  {y:"1993", t:"Brady Handgun Violence Prevention Act", cat:"legislation", catLabel:"Legislation",
+   body:"Named after James Brady, press secretary to President Reagan and shot in a 1981 assassination attempt on the president, the Brady Act introduced mandatory background checks through a new National Instant Criminal Background Check System (NICS)."},
+  {y:"1994", t:"Federal Assault Weapons Ban", cat:"legislation", catLabel:"Legislation",
+   body:"Part of a broader crime bill, this law banned the manufacture of 19 named semi-automatic weapons and magazines holding more than ten rounds. Written with a ten-year expiry date, it lapsed in 2004 and has never been renewed."},
+  {y:"2005", t:"Protection of Lawful Commerce in Arms Act", cat:"legislation", catLabel:"Legislation",
+   body:"This act shields gun manufacturers and dealers from civil lawsuits when their legally sold products are later misused in a crime \u2014 a liability protection almost unique among consumer industries."},
+  {y:"2008", t:"District of Columbia v. Heller", cat:"court", catLabel:"Supreme Court",
+   body:"For the first time, the Court ruled that the Second Amendment protects an individual's right to own a firearm for self-defence, independent of militia service, striking down Washington D.C.'s handgun ban. The ruling explicitly preserved bans on gun ownership by felons and the mentally ill."},
+  {y:"2010", t:"McDonald v. City of Chicago", cat:"court", catLabel:"Supreme Court",
+   body:"The Court extended the Heller ruling to state and local governments through the Fourteenth Amendment, meaning the individual right to bear arms now applied nationwide, not only to federal law."},
+  {y:"2012", t:"Sandy Hook Elementary School shooting", cat:"turning", catLabel:"Turning point",
+   body:"The murder of 20 children and 6 educators in Newtown, Connecticut, shocked the country and triggered intense \u2014 but ultimately unsuccessful \u2014 efforts in Congress to expand background checks. It remains a defining reference point in the gun debate."},
+  {y:"2018", t:"Parkland shooting and March for Our Lives", cat:"turning", catLabel:"Turning point",
+   body:"After a gunman killed 17 people at Marjory Stoneman Douglas High School in Parkland, Florida, student survivors organised nationwide protests demanding stricter gun laws, giving the gun-control movement new, youth-led momentum."},
+  {y:"2022", t:"NYSRPA v. Bruen & Bipartisan Safer Communities Act", cat:"court", catLabel:"Supreme Court / Legislation",
+   body:"In June 2022 the Supreme Court struck down New York's discretionary concealed-carry permit system and introduced a new test: modern gun laws must have a comparable historical analogue from the founding era. Two days later, President Biden signed the Bipartisan Safer Communities Act, the first major federal gun law in almost 30 years, expanding background checks for young buyers and funding school safety and mental-health programmes."},
+  {y:"2024", t:"United States v. Rahimi & Garland v. Cargill", cat:"court", catLabel:"Supreme Court",
+   body:"In Rahimi, the Court ruled 8\u20131 that people under domestic-violence restraining orders can be barred from owning guns, refining the Bruen test. In Cargill, decided the same month, the Court struck down a federal ban on bump stocks, devices that let semi-automatic rifles fire almost like automatic weapons."},
+  {y:"2025", t:"Executive Order 14206, \u201cProtecting Second Amendment Rights\u201d", cat:"executive", catLabel:"Executive action",
+   body:"In February 2025, President Trump signed an executive order directing the Attorney General to review Biden-era firearms regulations for possible infringements of Second Amendment rights."},
+  {y:"2026", t:"Rollback of 34 federal firearms regulations", cat:"executive", catLabel:"Executive action",
+   body:"In April 2026 the Department of Justice announced the rollback of 34 ATF regulations \u2014 one of the broadest rewrites of federal gun rules in the agency's history \u2014 even as gun-death and mass-shooting numbers continued a multi-year decline that began after the pandemic."}
+];
+const tlContainer = document.getElementById('timelineList');
+tlData.forEach((item) => {
+  const el = document.createElement('div');
+  el.className = 'tl-item' + (item.cat === 'executive' ? ' exec-highlight' : '');
+  el.innerHTML = `
+    <div class="tl-year-dot cat-${item.cat}">${item.y.slice(2)}</div>
+    <button class="tl-header" type="button">
+      <span class="tl-year">${item.y}</span>
+      <span class="badge ${item.cat}">${item.catLabel}</span>
+      <span class="tl-name">${item.t}</span>
+      <span class="tl-chevron">&#9656;</span>
+    </button>
+    <div class="tl-body">${item.body}</div>
+  `;
+  el.querySelector('.tl-header').addEventListener('click', () => el.classList.toggle('open'));
+  tlContainer.appendChild(el);
+});
+
+/* ---------- Incidents ---------- */
+const incidents = [
+  {y:"1999", n:"Columbine High School", loc:"Littleton, Colorado", toll:"13 killed", note:"Two student gunmen carried out the attack before killing themselves. It became a widely cited reference point for later school shootings and school-safety policy."},
+  {y:"2007", n:"Virginia Tech", loc:"Blacksburg, Virginia", toll:"32 killed", note:"The deadliest school shooting in US history at the time, carried out by a student on campus."},
+  {y:"2012", n:"Sandy Hook Elementary School", loc:"Newtown, Connecticut", toll:"26 killed", note:"20 first-graders and 6 educators were killed, prompting the strongest — though ultimately unsuccessful — push for federal gun reform of the decade."},
+  {y:"2016", n:"Pulse nightclub", loc:"Orlando, Florida", toll:"49 killed", note:"An attack on a gay nightclub, one of the deadliest incidents targeting the LGBTQ+ community in US history."},
+  {y:"2017", n:"Route 91 Harvest festival", loc:"Las Vegas, Nevada", toll:"60 killed", note:"A gunman fired from a hotel room onto a crowd at an outdoor concert — the deadliest mass shooting in modern US history."},
+  {y:"2017", n:"First Baptist Church", loc:"Sutherland Springs, Texas", toll:"26 killed", note:"An attack on a Sunday service in a small rural community, later linked to a domestic-violence background that should have barred the shooter from buying guns."},
+  {y:"2018", n:"Marjory Stoneman Douglas High School", loc:"Parkland, Florida", toll:"17 killed", note:"Student survivors founded the March for Our Lives movement, giving new momentum to youth-led gun-control activism nationwide."},
+  {y:"2019", n:"Walmart shooting", loc:"El Paso, Texas", toll:"23 killed", note:"A racially motivated attack targeting Hispanic shoppers, widely discussed alongside domestic extremism and gun access."},
+  {y:"2022", n:"Tops supermarket", loc:"Buffalo, New York", toll:"10 killed", note:"A racially motivated attack on a Black community, cited in debates over both gun access and online radicalisation."},
+  {y:"2022", n:"Robb Elementary School", loc:"Uvalde, Texas", toll:"21 killed", note:"19 children and 2 teachers were killed; the response by police was later widely criticised, and the tragedy directly contributed to the Bipartisan Safer Communities Act."},
+  {y:"2023", n:"The Covenant School", loc:"Nashville, Tennessee", toll:"6 killed", note:"An attack on a private Christian elementary school, reigniting debate over red flag laws and firearm access for people in mental-health crisis."},
+  {y:"2023", n:"Bowling alley and bar", loc:"Lewiston, Maine", toll:"18 killed", note:"Carried out by an Army reservist with a known history of mental-health warnings, raising questions about red flag laws in states that had not widely used them."}
+];
+const incGrid = document.getElementById('incidentGrid');
+incidents.forEach(i => {
+  const el = document.createElement('div');
+  el.className = 'incident-card';
+  el.innerHTML = `
+    <div class="incident-year">${i.y}</div>
+    <div class="incident-name">${i.n}</div>
+    <div class="incident-meta">${i.loc} · ${i.toll}</div>
+    <div class="incident-note">${i.note}</div>
+  `;
+  incGrid.appendChild(el);
+});
+
+/* ---------- Vocabulary ---------- */
+const vocab = [
+  ["Second Amendment","der Zweite Verfassungszusatz","the constitutional amendment protecting the right to keep and bear arms"],
+  ["Bill of Rights","der Grundrechtekatalog","the first ten amendments to the US Constitution"],
+  ["militia","die Miliz","a body of citizen soldiers, as opposed to a professional army"],
+  ["to bear arms","Waffen tragen/besitzen","to carry or own a weapon"],
+  ["background check","die Sicherheits\u00fcberpr\u00fcfung","a screening of a buyer's criminal and mental-health record before a gun sale"],
+  ["concealed carry","das verdeckte Tragen (einer Waffe)","carrying a hidden firearm in public"],
+  ["open carry","das offene Tragen (einer Waffe)","carrying a visible firearm in public"],
+  ["assault weapon","die Sturmgewehr-artige Waffe","a loosely defined political and legal term for military-style semi-automatic rifles"],
+  ["semi-automatic","halbautomatisch","firing one round per trigger pull, then reloading automatically"],
+  ["magazine","das Magazin","the container that holds ammunition for a firearm"],
+  ["gun lobby","die Waffenlobby","interest groups that campaign against stricter gun laws"],
+  ["NRA (National Rifle Association)","die NRA","the most influential US gun-rights organisation"],
+  ["mass shooting","der Amoklauf / die Massenerschie\u00dfung","an incident in which four or more people are shot in one location"],
+  ["gun control","die Waffenkontrolle","laws restricting the sale, possession or use of firearms"],
+  ["incorporation (legal term)","die Inkorporation (Rechtsbegriff)","applying Bill of Rights protections to state and local governments"],
+  ["originalism","der Originalismus","a legal philosophy that interprets the Constitution by its meaning at the time it was written"],
+  ["precedent","der Pr\u00e4zedenzfall","a past court ruling used to decide later, similar cases"],
+  ["bipartisan","\u00fcberparteilich","supported by members of both major political parties"],
+  ["federal vs. state law","Bundesrecht vs. Recht der Bundesstaaten","laws made at the national level versus the state level"],
+  ["ATF","Bundesbeh\u00f6rde f\u00fcr Alkohol, Tabak, Schusswaffen und Sprengstoffe","the federal agency that regulates firearms"],
+  ["executive order","der Pr\u00e4sidialerlass","a directive issued by the President that does not require a vote in Congress"],
+  ["Supreme Court ruling","das Urteil des Obersten Gerichtshofs","a binding legal decision made by the highest US court"],
+  ["self-defence","die Notwehr / Selbstverteidigung","protecting oneself from harm"],
+  ["gun violence","die Waffengewalt","injury or death caused by firearms"],
+  ["school shooting","der Amoklauf an einer Schule","a shooting that takes place on school or campus grounds"],
+  ["red flag law","das Gef\u00e4hrdergesetz","a law allowing courts to temporarily remove guns from people deemed a danger"],
+  ["ghost gun","die Geisterwaffe","a firearm assembled from parts without a serial number"],
+  ["stand-your-ground law","das Stand-your-ground-Gesetz","a law removing the duty to retreat before using force in self-defence"],
+  ["gun show loophole","die Waffenmessen-L\u00fccke","the gap that allows some private sales at gun shows without a background check"],
+  ["polarised / polarized","polarisiert","sharply and increasingly divided into opposing camps"]
+];
+const phrases = [
+  ["Proponents argue that \u2026","Bef\u00fcrworter argumentieren, dass \u2026","introducing one side's position"],
+  ["Critics contend that \u2026","Kritiker wenden ein, dass \u2026","introducing an opposing position"],
+  ["It could be argued that \u2026","Man k\u00f6nnte argumentieren, dass \u2026","presenting a claim cautiously"],
+  ["There is broad consensus that \u2026","Es besteht weitgehende Einigkeit, dass \u2026","noting shared agreement"],
+  ["Public opinion remains deeply divided on \u2026","Die \u00f6ffentliche Meinung ist in Bezug auf \u2026 tief gespalten.","describing polarisation"],
+  ["This raises the question of whether \u2026","Dies wirft die Frage auf, ob \u2026","moving into analysis"],
+  ["Opponents warn that \u2026","Gegner warnen davor, dass \u2026","introducing a warning or risk"],
+  ["On balance, the evidence suggests that \u2026","Alles in allem legt die Beweislage nahe, dass \u2026","summarising a balanced conclusion"]
+];
+const vocabBody = document.querySelector('#vocabTable tbody');
+vocab.forEach(([term,de,def]) => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td class="term">${term}</td><td class="de" lang="de">${de}</td><td>${def}</td>`;
+  vocabBody.appendChild(tr);
+});
+const phraseBody = document.querySelector('#phraseTable tbody');
+phrases.forEach(([term,de,def]) => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td class="term">${term}</td><td class="de" lang="de">${de}</td><td>${def}</td>`;
+  phraseBody.appendChild(tr);
+});
+
+function printVocab(){
+  document.body.classList.add('print-vocab-mode');
+  window.print();
+}
+window.onafterprint = function(){ document.body.classList.remove('print-vocab-mode'); };
+
+/* ---------- Quiz ---------- */
+const quizData = [
+  {q:"When was the Second Amendment ratified?", opts:["1776","1791","1868","1901"], correct:1},
+  {q:"Which case first established an individual right to own a gun for self-defence?", opts:["United States v. Miller (1939)","District of Columbia v. Heller (2008)","McDonald v. Chicago (2010)","NYSRPA v. Bruen (2022)"], correct:1},
+  {q:"What did McDonald v. City of Chicago (2010) establish?", opts:["A nationwide ban on assault weapons","That the individual right to bear arms applies to states, via the 14th Amendment","That background checks are unconstitutional","That silencers are legal nationwide"], correct:1},
+  {q:"The Brady Act (1993) introduced \u2026", opts:["a national gun registry","mandatory background checks for licensed gun sales","a total handgun ban","a minimum purchase age of 25"], correct:1},
+  {q:"What legal test did the Supreme Court introduce in NYSRPA v. Bruen (2022)?", opts:["A general balancing test","A rational basis test","A \u201ctext, history and tradition\u201d test","Strict scrutiny only"], correct:2},
+  {q:"Roughly what share of US gun deaths in recent years were suicides?", opts:["About 10%","About 35%","About 62%","About 90%"], correct:2},
+  {q:"Which federal law expired in 2004 and has never been renewed?", opts:["The Brady Act","The Federal Assault Weapons Ban","The Gun Control Act","The National Firearms Act"], correct:1},
+  {q:"The Bipartisan Safer Communities Act was signed into law in \u2026", opts:["2018","2020","2022","2024"], correct:2},
+  {q:"In United States v. Rahimi (2024), the Court ruled that \u2026", opts:["Bump stocks are legal nationwide","People under domestic-violence restraining orders can be disarmed","States cannot regulate concealed carry","Assault weapons bans are unconstitutional"], correct:1},
+  {q:"Approximately what share of US adults personally own a gun?", opts:["About 1 in 10","About 1 in 3","About 1 in 2","About 9 in 10"], correct:1},
+  {q:"In which year did the Columbine High School shooting take place?", opts:["1996","1999","2001","2005"], correct:1},
+  {q:"Which incident is considered the deadliest mass shooting in modern US history by death toll?", opts:["Pulse nightclub, Orlando","Route 91 Harvest festival, Las Vegas","Sandy Hook Elementary School","Marjory Stoneman Douglas High School"], correct:1},
+  {q:"What is a “red flag law”?", opts:["A law banning red-coloured firearms","A law allowing courts to temporarily remove guns from people deemed dangerous","A federal registry of all gun owners","A tax on ammunition sales"], correct:1},
+  {q:"Which organisation is historically the most influential gun-rights lobbying group in the US?", opts:["The ACLU","The NRA","The Sierra Club","The AARP"], correct:1},
+  {q:"What happened to the NRA's longtime leadership in 2024?", opts:["It merged with the ATF","Its longtime CEO resigned amid a New York fraud trial","It was renamed by Congress","It formally endorsed a federal gun ban"], correct:1},
+  {q:"What did Executive Order 14206 (2025) direct?", opts:["A nationwide ban on assault weapons","A review of Biden-era gun regulations for possible Second Amendment infringements","Mandatory federal gun buybacks","A new federal ammunition tax"], correct:1},
+  {q:"Approximately how many federal firearms regulations did the DOJ roll back in April 2026?", opts:["3","12","34","100"], correct:2},
+  {q:"Roughly what share of US gun deaths do mass shootings specifically account for?", opts:["About 1%","About 25%","About 50%","About 75%"], correct:0},
+  {q:"Which US president signed the Bipartisan Safer Communities Act?", opts:["Barack Obama","Donald Trump","Joe Biden","George W. Bush"], correct:2},
+  {q:"What does “concealed carry” mean?", opts:["Carrying a visible firearm in public","Carrying a hidden firearm in public","Storing a firearm at home","Transporting firearms across state lines"], correct:1}
+];
+const quizContainer = document.getElementById('quizContainer');
+const scoreEl = document.getElementById('quizScore');
+let score = 0;
+scoreEl.textContent = `Score: 0/${quizData.length}`;
+quizData.forEach((item, qi) => {
+  const wrap = document.createElement('div');
+  wrap.className = 'quiz-q';
+  const optsHtml = item.opts.map((o,oi) => `<button class="quiz-opt" data-qi="${qi}" data-oi="${oi}" type="button">${o}</button>`).join('');
+  wrap.innerHTML = `<div class="quiz-q-title">${qi+1}. ${item.q}</div><div class="quiz-opts">${optsHtml}</div>`;
+  quizContainer.appendChild(wrap);
+});
+quizContainer.addEventListener('click', (e) => {
+  const btn = e.target.closest('.quiz-opt');
+  if(!btn) return;
+  const qi = Number(btn.dataset.qi);
+  const oi = Number(btn.dataset.oi);
+  const group = btn.parentElement;
+  if(group.dataset.answered) return;
+  group.dataset.answered = "1";
+  const correctIdx = quizData[qi].correct;
+  Array.from(group.children).forEach((b, i) => {
+    b.setAttribute('disabled','true');
+    if(i === correctIdx) b.classList.add('correct');
+    else if(i === oi) b.classList.add('incorrect');
+  });
+  scoreEl.textContent = `Score: ${score + (oi === correctIdx ? 1 : 0)}/${quizData.length}`;
+  if(oi === correctIdx){ score++; }
+});
+
+/* ---------- Tabs ---------- */
+const tabSelect = document.getElementById('tabSelect');
+function activateTab(tabId){
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === tabId));
+  if(tabSelect) tabSelect.value = tabId;
+}
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+});
+if(tabSelect){
+  tabSelect.addEventListener('change', (e) => activateTab(e.target.value));
+}
+</script>
+</body>
+</html>
