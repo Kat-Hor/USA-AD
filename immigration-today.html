@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<!--
+  Original author: Horlacher (LK E1, Abitur 2028)
+  This material was created for Horlacher's own English LK course.
+  Not authorized for redistribution under a different author's name.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immigration Today — Background Material</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A3161; --navy-light:#E7EDF4;
+  --red:#B31942; --red-light:#F7E5EA;
+  --gold:#A9843C; --gold-light:#F5EEDD;
+  --teal:#1E6E64; --teal-light:#E3EEEC;
+  --slate:#5B6570; --slate-light:#EAE8E2;
+  --ink:#132238; --paper:#EDF3F2; --card:#FFFFFF;
+  --border:#DDD8CB; --border-strong:#C8C2AF;
+}
+*{box-sizing:border-box;}
+body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6; }
+.page{ max-width:880px; margin:0 auto; padding:0 1.5rem 1.5rem; }
+
+header.masthead{ position:relative; padding:2.2rem 0 0; margin-bottom:1.6rem; }
+.flag-corner{ position:absolute; top:0; left:0; width:64px; height:44px; background:var(--teal); border-radius:4px 0 8px 0; display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(3,1fr); padding:6px 7px; gap:2px; }
+.flag-corner span{ width:4px; height:4px; background:#fff; border-radius:50%; justify-self:center; align-self:center; }
+.stripes{ height:22px; margin-top:0.6rem; background:repeating-linear-gradient(to bottom, var(--teal) 0px, var(--teal) 3.14px, #fff 3.14px, #fff 6.28px); border-radius:0 0 4px 4px; }
+.head-text{ text-align:center; padding:0 0 0.2rem; }
+.eyebrow{ font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal); font-weight:600; margin-bottom:0.35rem; }
+h1.title{ font-family:'Source Serif 4',serif; font-weight:700; font-size:34px; margin:0 0 0.3rem; color:var(--navy); }
+.subtitle{ font-size:14px; color:var(--slate); font-style:italic; }
+
+nav.tabs{ display:flex; flex-wrap:nowrap; overflow-x:auto; gap:2px; margin-bottom:1.5rem; border-bottom:2px solid var(--teal); scrollbar-width:thin; }
+.tab-btn{ font-family:'Inter',sans-serif; font-size:12px; font-weight:500; color:var(--slate); background:#E4EBEA; border:1px solid var(--border-strong); border-bottom:none; padding:0.55rem 0.7rem; border-radius:6px 6px 0 0; cursor:pointer; position:relative; top:2px; display:flex; align-items:center; gap:5px; flex:0 0 auto; white-space:nowrap; }
+.tab-btn i{ font-size:15px; }
+.tab-btn:hover{ background:#EAF0EF; color:var(--ink); }
+.tab-btn.active{ background:var(--card); color:var(--teal); border:1px solid var(--teal); border-bottom:2px solid var(--card); font-weight:600; }
+.tab-select-mobile{ display:none; }
+@media (max-width:720px){
+  nav.tabs{ display:none; }
+  .tab-select-mobile{ display:block; width:100%; margin-bottom:1.5rem; font-family:'Inter',sans-serif; font-size:14px; padding:0.6rem 0.7rem; border:2px solid var(--teal); border-radius:6px; background:var(--card); color:var(--ink); }
+}
+.panel{ display:none; }
+.panel.active{ display:block; animation:fade 0.15s ease; }
+@keyframes fade{ from{opacity:0.4;} to{opacity:1;} }
+
+.card{ background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1.4rem 1.6rem; margin-bottom:1rem; }
+h2.section-title{ font-family:'Source Serif 4',serif; font-size:22px; font-weight:600; margin:0 0 0.8rem; color:var(--navy); display:flex; align-items:center; gap:0.5rem; }
+h2.section-title i{ font-size:20px; color:var(--teal); }
+p{ margin:0 0 0.9rem; font-size:15px; }
+.lede{ font-size:16px; color:var(--slate); }
+
+.badge{ display:inline-block; font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; padding:2px 8px; border-radius:20px; margin-right:0.4rem; white-space:nowrap; }
+.badge.legislation{ background:var(--navy-light); color:var(--navy); }
+.badge.court{ background:var(--red-light); color:var(--red); }
+.badge.turning{ background:var(--slate-light); color:var(--slate); }
+.badge.executive{ background:var(--gold-light); color:#7A5A18; }
+
+/* poem */
+.poem-card{ background:var(--card); border:1px solid var(--border); border-radius:10px; padding:2.2rem 2.4rem; }
+.poem{ font-family:'Source Serif 4',serif; font-size:17px; line-height:1.9; color:var(--ink); white-space:pre-line; }
+.poem .stanza-break{ display:block; height:0.9rem; }
+.facts{ margin-top:1.4rem; font-size:12.5px; color:var(--slate); border-top:1px solid var(--border); padding-top:0.9rem; }
+
+/* stats */
+.stat-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:0.8rem; margin-bottom:1rem; }
+.stat-card{ background:var(--teal-light); border-radius:8px; padding:0.9rem 1rem; }
+.stat-card.c-navy{ background:var(--navy-light); }
+.stat-card.c-red{ background:var(--red-light); }
+.stat-card.c-gold{ background:var(--gold-light); }
+.stat-num{ font-family:'Source Serif 4',serif; font-size:22px; font-weight:700; color:var(--teal); }
+.stat-card.c-navy .stat-num{ color:var(--navy); }
+.stat-card.c-red .stat-num{ color:var(--red); }
+.stat-card.c-gold .stat-num{ color:#7A5A18; }
+.stat-label{ font-size:11.5px; color:var(--slate); margin-top:0.2rem; }
+
+table{ width:100%; border-collapse:collapse; font-size:13.5px; margin-bottom:0.6rem; }
+th{ text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.03em; color:var(--slate); border-bottom:2px solid var(--border-strong); padding:0.4rem 0.5rem; }
+td{ padding:0.45rem 0.5rem; border-bottom:1px solid var(--border); }
+.note{ font-size:12.5px; color:var(--slate); }
+.source-note{ font-size:11.5px; color:var(--slate); border-top:1px solid var(--border); padding-top:0.7rem; margin-top:0.3rem; }
+
+/* pull factors */
+.factor-row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:0.9rem; align-items:start; }
+@media (max-width:600px){ .factor-row{ grid-template-columns:1fr; } }
+.factor-box{ border-radius:6px; padding:0.7rem 0.9rem; font-size:13px; }
+.factor-box.old{ background:#FBF7EC; border-left:3px solid var(--gold); }
+.factor-box.new{ background:#EEF6F4; border-left:3px solid var(--teal); }
+.factor-title{ font-weight:600; font-size:12.5px; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:0.2rem; }
+.factor-box.old .factor-title{ color:#7A5A18; }
+.factor-box.new .factor-title{ color:var(--teal); }
+
+/* accordion timeline (policy tabs) */
+.timeline{ position:relative; padding-left:2rem; }
+.timeline::before{ content:""; position:absolute; left:11px; top:6px; bottom:6px; width:2px; background:var(--border-strong); }
+.tl-item{ position:relative; margin-bottom:0.6rem; }
+.tl-year-dot{ position:absolute; left:-2rem; top:0.55rem; width:24px; height:24px; border-radius:50%; background:var(--navy); color:#fff; font-size:9px; font-weight:600; display:flex; align-items:center; justify-content:center; }
+.tl-year-dot.cat-court{ background:var(--red); }
+.tl-year-dot.cat-turning{ background:var(--slate); }
+.tl-year-dot.cat-executive{ background:#8A6A22; }
+.tl-header{ width:100%; text-align:left; background:var(--card); border:1px solid var(--border); border-radius:6px; padding:0.7rem 1rem; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; }
+.tl-header:hover{ border-color:var(--border-strong); }
+.tl-year{ font-family:'Source Serif 4',serif; font-weight:700; font-size:16px; color:var(--navy); min-width:78px; }
+.tl-name{ font-size:14px; font-weight:500; flex:1; min-width:180px; }
+.tl-chevron{ margin-left:auto; color:var(--slate); font-size:13px; transition:transform 0.15s; }
+.tl-item.open .tl-chevron{ transform:rotate(90deg); }
+.tl-body{ display:none; padding:0.9rem 1.1rem 0.3rem 1.1rem; font-size:14px; }
+.tl-item.open .tl-body{ display:block; }
+
+/* flip cards */
+.flip-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-bottom:0.4rem; }
+@media (max-width:600px){ .flip-grid{ grid-template-columns:1fr; } }
+.flip-card{ perspective:1200px; height:230px; cursor:pointer; }
+.flip-card-inner{ position:relative; width:100%; height:100%; transition:transform 0.55s cubic-bezier(.4,.2,.2,1); transform-style:preserve-3d; }
+.flip-card.flipped .flip-card-inner{ transform:rotateY(180deg); }
+.flip-card-front, .flip-card-back{ position:absolute; inset:0; backface-visibility:hidden; border-radius:12px; padding:1.4rem 1.5rem; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+.flip-card-front{ background:var(--navy); color:#fff; }
+.flip-card-front.c-red{ background:var(--red); }
+.flip-card-front .fc-icon{ font-size:34px; margin-bottom:0.5rem; }
+.flip-card-front .fc-term{ font-family:'Source Serif 4',serif; font-size:26px; font-weight:700; margin-bottom:0.3rem; }
+.flip-card-front .fc-sub{ font-size:12.5px; opacity:0.85; }
+.flip-card-front .fc-hint{ font-size:11px; margin-top:0.9rem; opacity:0.7; text-transform:uppercase; letter-spacing:0.04em; }
+.flip-card-back{ background:var(--card); border:2px solid var(--navy); transform:rotateY(180deg); font-size:13px; overflow-y:auto; }
+.flip-card-back.c-red{ border-color:var(--red); }
+.flip-card-back strong{ display:block; margin-bottom:0.4rem; font-family:'Source Serif 4',serif; font-size:16px; color:var(--navy); }
+.flip-card-back.c-red strong{ color:var(--red); }
+
+/* link cards (research links) */
+.link-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:0.9rem; }
+.link-card{ background:var(--card); border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:8px; padding:1rem 1.1rem; text-decoration:none; color:var(--ink); display:block; }
+.link-card:hover{ border-color:var(--border-strong); box-shadow:0 3px 10px rgba(30,110,100,0.1); }
+.link-tag{ font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:var(--teal); margin-bottom:0.35rem; display:block; }
+.link-title{ font-family:'Source Serif 4',serif; font-size:15.5px; color:var(--navy); margin-bottom:0.3rem; font-weight:600; }
+.link-desc{ font-size:12.5px; color:var(--slate); margin-bottom:0.5rem; }
+.link-url{ font-size:11.5px; color:var(--teal); word-break:break-all; }
+
+/* debate */
+.debate-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.4rem; }
+@media (max-width:640px){ .debate-grid{ grid-template-columns:1fr; } }
+.debate-col{ border-radius:8px; padding:1.1rem 1.2rem; }
+.debate-col.support{ background:var(--navy-light); border:1px solid #C7D5E6; }
+.debate-col.critic{ background:var(--red-light); border:1px solid #EAC7D2; }
+.debate-col h3{ font-family:'Source Serif 4',serif; font-size:15px; margin:0 0 0.5rem; }
+.debate-col.support h3{ color:var(--navy); }
+.debate-col.critic h3{ color:var(--red); }
+.debate-col ul{ font-size:13px; margin:0; padding-left:1.1rem; }
+.debate-col li{ margin-bottom:0.5rem; }
+
+.note-box{ background:var(--teal-light); border:1px solid #C3DAD6; border-left:4px solid var(--teal); border-radius:6px; padding:0.9rem 1.1rem; font-size:13px; margin-top:0.8rem; }
+.question-box{ background:var(--gold-light); border:1px solid #E4D6AE; border-left:4px solid var(--gold); border-radius:8px; padding:1.2rem 1.4rem; margin-top:1.2rem; }
+.question-box .qb-label{ font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:#7A5A18; margin-bottom:0.4rem; }
+.question-box .qb-text{ font-family:'Source Serif 4',serif; font-size:16.5px; color:var(--navy); font-style:italic; line-height:1.5; }
+
+/* discussion */
+.question-card{ background:var(--card); border:1px solid var(--border); border-top:5px solid var(--teal); border-radius:10px; padding:2.2rem 2rem; }
+.question{ font-family:'Source Serif 4',serif; font-size:21px; color:var(--navy); font-style:italic; line-height:1.5; margin:0 0 1.2rem; text-align:center; }
+.prompts{ font-size:14px; }
+.prompts ul{ margin:0; padding-left:1.2rem; }
+.prompts li{ margin-bottom:0.5rem; }
+
+footer.stamp{ text-align:center; margin:2rem 0 0.5rem; font-family:'Source Serif 4',serif; font-style:italic; font-size:13px; color:var(--slate); border-top:1px solid var(--border); padding-top:0.9rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="masthead">
+  <div class="flag-corner">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="head-text">
+    <div class="eyebrow">Background material · USA in focus</div>
+    <h1 class="title">Immigration Today</h1>
+    <div class="subtitle">From "the golden door" to the current policy debate</div>
+  </div>
+  <div class="stripes"></div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab-btn active" data-tab="poem"><i class="ti ti-feather"></i>The New Colossus</button>
+  <button class="tab-btn" data-tab="stats"><i class="ti ti-chart-bar"></i>Statistics</button>
+  <button class="tab-btn" data-tab="pull"><i class="ti ti-arrows-right-left"></i>Pull Factors</button>
+  <button class="tab-btn" data-tab="policy1"><i class="ti ti-scale"></i>Policy: 1950s–2016</button>
+  <button class="tab-btn" data-tab="policy2"><i class="ti ti-gavel"></i>Policy: 2017–Today</button>
+  <button class="tab-btn" data-tab="icedreamers"><i class="ti ti-shield"></i>ICE &amp; Dreamers</button>
+  <button class="tab-btn" data-tab="links"><i class="ti ti-link"></i>Research Links</button>
+  <button class="tab-btn" data-tab="discussion"><i class="ti ti-message-circle-2"></i>Discussion</button>
+</nav>
+<select class="tab-select-mobile" id="tabSelect" aria-label="Choose a section">
+  <option value="poem">The New Colossus</option>
+  <option value="stats">Statistics</option>
+  <option value="pull">Pull Factors</option>
+  <option value="policy1">Policy: 1950s–2016</option>
+  <option value="policy2">Policy: 2017–Today</option>
+  <option value="icedreamers">ICE & Dreamers</option>
+  <option value="links">Research Links</option>
+  <option value="discussion">Discussion</option>
+</select>
+
+<!-- POEM -->
+<section class="panel active" id="poem">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-feather"></i>"The New Colossus"</h2>
+    <p class="lede">Emma Lazarus, 1883</p>
+  </div>
+  <div class="poem-card">
+    <div class="poem">Not like the brazen giant of Greek fame,
+With conquering limbs astride from land to land;
+Here at our sea-washed, sunset gates shall stand
+A mighty woman with a torch, whose flame
+Is the imprisoned lightning, and her name
+Mother of Exiles. From her beacon-hand
+Glows world-wide welcome; her mild eyes command
+The air-bridged harbor that twin cities frame.
+<span class="stanza-break"></span>"Keep, ancient lands, your storied pomp!" cries she
+With silent lips. "Give me your tired, your poor,
+Your huddled masses yearning to breathe free,
+The wretched refuse of your teeming shore.
+Send these, the homeless, tempest-tost to me,
+I lift my lamp beside the golden door!"</div>
+    <div class="facts">Written in 1883 to help raise funds for the pedestal of the Statue of Liberty. Cast onto a bronze plaque and mounted inside the pedestal in 1903.</div>
+  </div>
+  <div class="question-box">
+    <div class="qb-label">Discussion</div>
+    <div class="qb-text">Discuss if the way the USA are presented in the poem by Emma Lazarus is still valid today.</div>
+  </div>
+</section>
+
+<!-- STATISTICS -->
+<section class="panel" id="stats">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-chart-bar"></i>The US population today</h2>
+    <div class="stat-grid">
+      <div class="stat-card c-navy"><div class="stat-num">341.8M</div><div class="stat-label">total US population (2025 official estimate)</div></div>
+      <div class="stat-card"><div class="stat-num">51.9M</div><div class="stat-label">immigrants living in the US as of June 2025 (15.4% of the population)</div></div>
+      <div class="stat-card c-gold"><div class="stat-num">15.4%</div><div class="stat-label">immigrant share of the population — now the highest ever recorded, just above the previous record of 14.8% set in 1890</div></div>
+      <div class="stat-card c-red"><div class="stat-num">4.7%</div><div class="stat-label">the lowest point in US history, reached in 1970, after restrictive 1920s quota laws</div></div>
+      <div class="stat-card"><div class="stat-num">73% / 27%</div><div class="stat-label">share of immigrants living in the US legally vs. without legal status (2023)</div></div>
+      <div class="stat-card c-gold"><div class="stat-num">~28%</div><div class="stat-label">of the population are immigrants or their US-born children (Pew, 2024)</div></div>
+    </div>
+    <p>The foreign-born population reached an all-time record of 53.3 million (15.8%) in January 2025. By June 2025 it had fallen to 51.9 million (15.4%) — the first decline in the US immigrant population since the 1960s — yet this is still a higher share than at any point in US history except the single year of 1890.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-users"></i>Population by race &amp; ethnicity (2025)</h2>
+    <table>
+      <tr><th>Group</th><th>Share of total population</th></tr>
+      <tr><td>White, non-Hispanic</td><td>56.1%</td></tr>
+      <tr><td>Hispanic or Latino (any race)</td><td>20.5%</td></tr>
+      <tr><td>Black or African American</td><td>13.5%</td></tr>
+      <tr><td>Asian</td><td>6.9%</td></tr>
+      <tr><td>Two or more races</td><td>4.9%</td></tr>
+      <tr><td>American Indian / Alaska Native</td><td>2.1%</td></tr>
+    </table>
+    <p class="note">Source: US Census Bureau, Vintage 2025 Population Estimates. Categories overlap slightly because Hispanic/Latino is counted as an ethnicity, not a race, in US data.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-world"></i>Where immigrants come from — and how they get here</h2>
+    <table>
+      <tr><th>Country of origin</th><th>Detail</th></tr>
+      <tr><td>Mexico</td><td>The single largest source country — almost a quarter of all US immigrants; about 18 million admitted since 1965</td></tr>
+      <tr><td>China</td><td>Over 700,000 China-born lawful permanent residents</td></tr>
+      <tr><td>India</td><td>Over 630,000 India-born lawful permanent residents</td></tr>
+    </table>
+    <p class="note">California is home to the most immigrants overall (10+ million, ~27% of the state's population), followed by Texas, Florida and New York.</p>
+    <p style="margin-top:0.8rem;"><strong>Legal immigration pathways:</strong> the Immigration and Nationality Act (INA) allows up to 675,000 permanent immigrant visas per year across all categories — plus an <em>unlimited</em> number for immediate relatives (spouses, parents, minor children) of US citizens. Family-based immigration remains the largest single pathway into the US, ahead of employment-based visas, refugee/asylum admissions, and the Diversity Visa Lottery.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-shield-lock"></i>Enforcement numbers (2025–2026)</h2>
+    <div class="stat-grid">
+      <div class="stat-card c-red"><div class="stat-num">442,637</div><div class="stat-label">ICE removals/deportations in FY2025 — a new record</div></div>
+      <div class="stat-card"><div class="stat-num">73,400</div><div class="stat-label">people in ICE detention on a single day in mid-January 2026 — a record</div></div>
+      <div class="stat-card c-navy"><div class="stat-num">~13.5M</div><div class="stat-label">estimated undocumented population, July 2026 — down from ~15.8M in January 2025</div></div>
+      <div class="stat-card c-gold"><div class="stat-num">3.29M</div><div class="stat-label">immigration court cases still pending as of March 2026</div></div>
+    </div>
+    <p class="note">See the "Policy: 2017–Today" tab for how these numbers developed over time.</p>
+  </div>
+
+  <div class="source-note">Sources: US Census Bureau (Vintage 2025 Population Estimates; foreign-born 250-year history, 2026); Pew Research Center ("What the Data Says About Immigrants in the U.S.," Aug 2025); American Immigration Council; DHS Office of Homeland Security Statistics; TRAC (Syracuse University). Figures compiled September 2026 — this is a fast-changing topic, so check current sources for updates.</div>
+</section>
+
+<!-- PULL FACTORS -->
+<section class="panel" id="pull">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-arrows-right-left"></i>Pull Factors: Then &amp; Now</h2>
+    <p>"Pull factors" are the reasons that attract people to a country, as opposed to "push factors," which drive people away from their home country. Many of the pull factors that brought immigrants to the US through Ellis Island in the 19th and early 20th century are still present today — but the picture has also changed considerably.</p>
+  </div>
+  <div class="card">
+    <div class="factor-row">
+      <div class="factor-box old"><div class="factor-title">Then (c. 1880–1920)</div>Free or cheap farmland available through policies like the Homestead Act, attracting settlers to the Midwest and West.</div>
+      <div class="factor-box new"><div class="factor-title">Now</div>High-skilled and service-sector jobs in a large, developed economy — from Silicon Valley tech jobs to agricultural and construction work.</div>
+    </div>
+    <div class="factor-row">
+      <div class="factor-box old"><div class="factor-title">Then</div>Rapid industrialisation created a huge demand for factory labour in growing cities like New York and Chicago.</div>
+      <div class="factor-box new"><div class="factor-title">Now</div>A persistent demand for labour in specific sectors (agriculture, construction, healthcare, hospitality) that is hard to fill domestically.</div>
+    </div>
+    <div class="factor-row">
+      <div class="factor-box old"><div class="factor-title">Then</div>Religious and political freedom — escaping persecution (e.g. Jewish immigrants fleeing pogroms in the Russian Empire, the group Emma Lazarus advocated for).</div>
+      <div class="factor-box new"><div class="factor-title">Now</div>Asylum and refugee protection for people fleeing war, political persecution, or gang violence, particularly from Central America, Venezuela, and other crisis regions.</div>
+    </div>
+    <div class="factor-row">
+      <div class="factor-box old"><div class="factor-title">Then</div>Family or community members already settled in the US, writing home and encouraging others to follow ("chain migration").</div>
+      <div class="factor-box new"><div class="factor-title">Now</div>Family reunification remains one of the main legal pathways into the US — most green cards are still issued on this basis.</div>
+    </div>
+    <div class="factor-row">
+      <div class="factor-box old"><div class="factor-title">Then</div>A relatively open immigration policy for European arrivals before the restrictive quota laws of the 1920s.</div>
+      <div class="factor-box new"><div class="factor-title">Now</div>A globally recognised university and research system that draws international students, many of whom stay through work visas after graduating.</div>
+    </div>
+    <div class="factor-row">
+      <div class="factor-box old"><div class="factor-title">Then</div>The powerful cultural image of America as a "land of opportunity," reinforced by literature, posters and word of mouth.</div>
+      <div class="factor-box new"><div class="factor-title">Now</div>The same cultural image persists globally through media, social networks and diaspora communities — even as US immigration policy has become far more restrictive and enforcement-heavy.</div>
+    </div>
+  </div>
+  <div class="note-box"><strong>Discussion point:</strong> Which of these pull factors do you think has changed the most since the 19th century — and which has stayed almost exactly the same?</div>
+</section>
+
+<!-- POLICY 1: 1950s-2016 -->
+<section class="panel" id="policy1">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-scale"></i>Building the modern system (1950s–2016)</h2>
+    <p>Before today's headlines, decades of law-making quietly built the immigration system the US still runs on. This period moves from a racially discriminatory quota system, through its abolition in 1965, to the creation of DACA and the last failed attempt at comprehensive reform. Click on any entry to expand it.</p>
+  </div>
+  <div class="timeline" id="tl1"></div>
+</section>
+
+<!-- POLICY 2: 2017-Today -->
+<section class="panel" id="policy2">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-gavel"></i>From Trump's first term to today (2017–2026)</h2>
+    <p>Since 2017, immigration enforcement has swung sharply depending on the administration in office — tightening under Trump's first term, partially reversing under Biden, and tightening further and faster since Trump's second inauguration in January 2025. Click on any entry to expand it.</p>
+  </div>
+  <div class="timeline" id="tl2"></div>
+  <div class="note-box">This is a fast-moving topic: new executive orders, court rulings and enforcement statistics appear regularly. The facts above reflect the state of policy as of September 2026 — always check current, reliable sources before citing exact figures.</div>
+</section>
+
+<!-- ICE & DREAMERS -->
+<section class="panel" id="icedreamers">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-shield"></i>Why these two belong together</h2>
+    <p>ICE and Dreamers are covered as a single topic because they are directly linked: ICE decides whether and when to enforce a removal, and a Dreamer's DACA status only <em>delays</em> that decision — it never fully guarantees protection from it. Understanding one requires understanding the other. Tap each card below to reveal the definition.</p>
+  </div>
+
+  <div class="flip-grid">
+    <div class="flip-card" id="flipIce">
+      <div class="flip-card-inner">
+        <div class="flip-card-front c-red">
+          <div class="fc-icon">🛡️</div>
+          <div class="fc-term">ICE</div>
+          <div class="fc-sub">U.S. Immigration and Customs Enforcement</div>
+          <div class="fc-hint">Tap to reveal definition</div>
+        </div>
+        <div class="flip-card-back c-red">
+          <strong>ICE (Immigration and Customs Enforcement)</strong>
+          The federal agency within the Department of Homeland Security responsible for enforcing immigration law <em>inside</em> the United States — including arresting, detaining and deporting people without legal status. Created in 2003 after 9/11, when the old INS was split into three agencies: ICE (interior enforcement), CBP (border enforcement), and USCIS (legal immigration applications).
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="flipDream">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="fc-icon">✧</div>
+          <div class="fc-term">Dreamers</div>
+          <div class="fc-sub">DACA recipients</div>
+          <div class="fc-hint">Tap to reveal definition</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Dreamers &amp; DACA</strong>
+          "Dreamers" is the informal name for people brought to the US as undocumented children who grew up there, often with no memory of another country. Since 2012, eligible Dreamers can apply for DACA (Deferred Action for Childhood Arrivals) — it grants neither citizenship nor a green card, but temporarily protects against deportation and allows a renewable work permit.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1rem;">
+    <h2 class="section-title" style="font-size:18px;"><i class="ti ti-scale"></i>DACA's legal status: still unresolved</h2>
+    <div class="timeline" id="tlDaca" style="margin-top:0.8rem;"></div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title" style="font-size:18px;"><i class="ti ti-building-fortress"></i>ICE and the scale of enforcement</h2>
+    <ul style="padding-left:1.2rem; font-size:14.5px;">
+      <li>ICE officers reportedly work under a daily arrest quota (widely reported as around 3,000 arrests per day).</li>
+      <li>ICE detention reached a record 73,400 people on a single day in mid-January 2026.</li>
+      <li>Long-standing guidance against ICE operations in "sensitive locations" such as schools, hospitals and places of worship has been ended.</li>
+      <li>Local and state police can now be deputised to act as immigration agents under expanded "287(g)" agreements.</li>
+      <li>The Laken Riley Act expanded mandatory, no-bond detention to people merely arrested — not convicted — of certain crimes.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title" style="font-size:18px;"><i class="ti ti-message-circle-2"></i>The debate</h2>
+    <div class="debate-grid">
+      <div class="debate-col support">
+        <h3>Arguments made by supporters</h3>
+        <ul>
+          <li>Consistent enforcement of immigration law, supporters argue, is necessary for the rule of law to mean anything.</li>
+          <li>Removing "sensitive location" protections and quotas is defended as ensuring the law applies equally everywhere, not just in some places.</li>
+          <li>Some supporters argue that even Dreamers, though raised in the US, entered unlawfully as a matter of fact and that only Congress — not executive action — should be able to grant permanent status.</li>
+        </ul>
+      </div>
+      <div class="debate-col critic">
+        <h3>Arguments made by critics</h3>
+        <ul>
+          <li>Critics argue that deporting Dreamers who have lived in the US since childhood, often with no memory of another country, is disproportionate and inhumane.</li>
+          <li>Arrests at schools, hospitals and courthouses are criticised for discouraging people — including US citizens in mixed-status families — from seeking essential services out of fear.</li>
+          <li>Civil liberties groups warn that arrest quotas create pressure to detain people without sufficient evidence or due process.</li>
+          <li>Critics point to the economic and social cost of deporting long-settled workers, students and parents of US-citizen children.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box">DACA's legal status can change quickly through new court rulings. As of September 2026, current recipients can still renew — but the underlying program remains legally unresolved and no group has certainty about the future.</div>
+</section>
+
+<!-- RESEARCH LINKS -->
+<section class="panel" id="links">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-link"></i>Research links</h2>
+    <p>Verified, reliable starting points for your own research on immigration to the US today — official government sources, independent data organisations, and background history.</p>
+  </div>
+  <div class="link-grid">
+    <a class="link-card" href="https://www.uscis.gov/" target="_blank" rel="noopener">
+      <span class="link-tag">Official · Government</span>
+      <div class="link-title">USCIS</div>
+      <div class="link-desc">U.S. Citizenship and Immigration Services — legal immigration process, forms, green cards, naturalization.</div>
+      <div class="link-url">uscis.gov</div>
+    </a>
+    <a class="link-card" href="https://www.ice.gov/" target="_blank" rel="noopener">
+      <span class="link-tag">Official · Government</span>
+      <div class="link-title">ICE</div>
+      <div class="link-desc">U.S. Immigration and Customs Enforcement — mission, operations, news releases, statistics.</div>
+      <div class="link-url">ice.gov</div>
+    </a>
+    <a class="link-card" href="https://www.cbp.gov/" target="_blank" rel="noopener">
+      <span class="link-tag">Official · Government</span>
+      <div class="link-title">CBP</div>
+      <div class="link-desc">U.S. Customs and Border Protection — border security, entry procedures, trade.</div>
+      <div class="link-url">cbp.gov</div>
+    </a>
+    <a class="link-card" href="https://ohss.dhs.gov/topics/immigration" target="_blank" rel="noopener">
+      <span class="link-tag">Data &amp; statistics</span>
+      <div class="link-title">DHS Office of Homeland Security Statistics</div>
+      <div class="link-desc">Official monthly and annual immigration enforcement and legal-immigration data.</div>
+      <div class="link-url">ohss.dhs.gov/topics/immigration</div>
+    </a>
+    <a class="link-card" href="https://www.migrationpolicy.org/migration-data-hub" target="_blank" rel="noopener">
+      <span class="link-tag">Data &amp; statistics</span>
+      <div class="link-title">Migration Policy Institute — Data Hub</div>
+      <div class="link-desc">Independent, nonpartisan data tools: state profiles, historical trends, maps.</div>
+      <div class="link-url">migrationpolicy.org/migration-data-hub</div>
+    </a>
+    <a class="link-card" href="https://tracreports.org/immigration/" target="_blank" rel="noopener">
+      <span class="link-tag">Data &amp; statistics</span>
+      <div class="link-title">TRAC Immigration (Syracuse University)</div>
+      <div class="link-desc">Independent tracking of immigration court backlogs, enforcement and case outcomes via FOIA data.</div>
+      <div class="link-url">tracreports.org/immigration</div>
+    </a>
+    <a class="link-card" href="https://www.pewresearch.org/short-reads/2025/08/21/key-findings-about-us-immigrants/" target="_blank" rel="noopener">
+      <span class="link-tag">News &amp; analysis</span>
+      <div class="link-title">Pew Research — "What the Data Says About Immigrants in the U.S."</div>
+      <div class="link-desc">Nonpartisan overview of who US immigrants are, where they're from, and their legal status.</div>
+      <div class="link-url">pewresearch.org</div>
+    </a>
+    <a class="link-card" href="https://www.americanimmigrationcouncil.org/fact-sheet/how-united-states-immigration-system-works-fact-sheet/" target="_blank" rel="noopener">
+      <span class="link-tag">News &amp; analysis</span>
+      <div class="link-title">American Immigration Council — How the System Works</div>
+      <div class="link-desc">Plain-language fact sheet explaining legal immigration pathways and visa categories.</div>
+      <div class="link-url">americanimmigrationcouncil.org</div>
+    </a>
+    <a class="link-card" href="https://www.census.gov/library/stories/2026/07/foreign-born-population-250-year-history.html" target="_blank" rel="noopener">
+      <span class="link-tag">History</span>
+      <div class="link-title">US Census Bureau — 250 Years of the Foreign-Born Population</div>
+      <div class="link-desc">Official historical data on immigration to the US since the first count in 1850.</div>
+      <div class="link-url">census.gov</div>
+    </a>
+    <a class="link-card" href="https://www.nps.gov/stli/index.htm" target="_blank" rel="noopener">
+      <span class="link-tag">History</span>
+      <div class="link-title">National Park Service — Statue of Liberty</div>
+      <div class="link-desc">Official history of the statue, its symbolism, and its connection to Ellis Island.</div>
+      <div class="link-url">nps.gov/stli</div>
+    </a>
+  </div>
+</section>
+
+<!-- DISCUSSION -->
+<section class="panel" id="discussion">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-message-circle-2"></i>Bringing it together</h2>
+  </div>
+  <div class="question-card">
+    <div class="question">"Give me your tired, your poor..." — Is Emma Lazarus's 1883 promise still a fair description of American immigration policy today, or has the country moved away from it?</div>
+    <div class="prompts">
+      <p>Use what you've learned in the other tabs to build your argument:</p>
+      <ul>
+        <li>Refer to specific lines or images from "The New Colossus" — what exactly was being promised?</li>
+        <li>Use at least two concrete statistics from the Statistics tab to support your point.</li>
+        <li>Compare at least one historical and one modern pull factor from the Pull Factors tab.</li>
+        <li>Trace how policy has shifted from the 1950s–2016 period to today — is the direction of change toward or away from the poem's promise?</li>
+        <li>Take a position on the ICE/Dreamers debate — and address at least one argument from the opposing side.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="stamp">LK E1 Horlacher · Abitur 2028</footer>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/tabler-icons.min.css">
+<script>
+/* ---------- Accordion timeline builder ---------- */
+function buildTimeline(containerId, data){
+  const container = document.getElementById(containerId);
+  data.forEach((item) => {
+    const el = document.createElement('div');
+    el.className = 'tl-item';
+    el.innerHTML = `
+      <div class="tl-year-dot cat-${item.cat}">${item.dot}</div>
+      <button class="tl-header" type="button">
+        <span class="tl-year">${item.y}</span>
+        <span class="badge ${item.cat}">${item.catLabel}</span>
+        <span class="tl-name">${item.t}</span>
+        <span class="tl-chevron">&#9656;</span>
+      </button>
+      <div class="tl-body">${item.body}</div>
+    `;
+    el.querySelector('.tl-header').addEventListener('click', () => el.classList.toggle('open'));
+    container.appendChild(el);
+  });
+}
+
+const tl1Data = [
+  {y:"1952", dot:"52", cat:"legislation", catLabel:"Law", t:"McCarran-Walter Act",
+   body:"Upholds the national-origin quota system from the 1920s but ends the total exclusion of Asian immigrants, allowing a small quota for most Asian countries for the first time, and adds a new preference category for people with special skills."},
+  {y:"1965", dot:"65", cat:"turning", catLabel:"Turning point", t:"Immigration and Nationality Act (Hart-Celler Act)",
+   body:"Abolishes the racially discriminatory national-origin quota system entirely, replacing it with a system based on family reunification and job skills. This single law reshapes who comes to America for the rest of the century, shifting the origin of most immigrants from Europe toward Latin America and Asia."},
+  {y:"1980", dot:"80", cat:"legislation", catLabel:"Law", t:"Refugee Act",
+   body:"Creates a systematic, ongoing process for admitting refugees into the US, aligned with the international legal definition of a refugee, and separates refugee admissions from other immigration categories."},
+  {y:"1986", dot:"86", cat:"executive", catLabel:"Law (Reagan)", t:"Immigration Reform and Control Act (IRCA)",
+   body:"Grants legal status (\u201camnesty\u201d) to roughly 3 million undocumented immigrants already living in the US, while for the first time making it illegal for employers to knowingly hire undocumented workers."},
+  {y:"1990", dot:"90", cat:"legislation", catLabel:"Law", t:"Immigration Act of 1990",
+   body:"Raises the overall annual limits on legal immigration and creates the Diversity Visa Lottery, which grants a limited number of green cards each year to applicants from countries with historically low rates of immigration to the US."},
+  {y:"1996", dot:"96", cat:"executive", catLabel:"Law (Clinton)", t:"Illegal Immigration Reform and Immigrant Responsibility Act (IIRIRA)",
+   body:"Significantly toughens enforcement: expands the list of crimes that trigger deportation, introduces \u201cexpedited removal\u201d for people caught soon after crossing illegally, and increases border funding and fencing."},
+  {y:"2001\u201302", dot:"01", cat:"turning", catLabel:"Turning point", t:"Post-9/11 restructuring",
+   body:"The September 11 attacks reshape immigration policy around national security. The Homeland Security Act (2002) creates the Department of Homeland Security; the former Immigration and Naturalization Service (INS) is abolished and its functions split between three new agencies: USCIS (legal immigration), ICE (interior enforcement), and CBP (border enforcement)."},
+  {y:"2012", dot:"12", cat:"executive", catLabel:"Executive action (Obama)", t:"DACA created",
+   body:"President Obama creates Deferred Action for Childhood Arrivals (DACA) by executive action, allowing eligible undocumented immigrants who arrived as children to apply for renewable protection from deportation and a work permit \u2014 without needing Congress to pass a law."},
+  {y:"2013", dot:"13", cat:"turning", catLabel:"Turning point", t:"\u201cGang of Eight\u201d reform bill",
+   body:"A bipartisan group of eight senators passes a sweeping immigration reform bill through the Senate, including a path to citizenship for millions of undocumented immigrants. The bill dies in the House of Representatives and never becomes law \u2014 the last serious attempt at comprehensive reform to date."},
+  {y:"2014\u201316", dot:"16", cat:"court", catLabel:"Court ruling", t:"DAPA blocked",
+   body:"Obama attempts to expand DACA and create a similar program for parents of US citizens and permanent residents (DAPA). Texas and 25 other states sue; federal courts block the program before it ever takes effect, and a 4\u20134 deadlocked Supreme Court leaves the block in place in 2016."},
+];
+
+const tl2Data = [
+  {y:"Jan 2017", dot:"17", cat:"executive", catLabel:"Executive order", t:"Trump's first inauguration &amp; travel ban",
+   body:"Within his first week, President Trump issues an executive order restricting travel from several Muslim-majority countries (widely called the \u201cMuslim ban\u201d). After lower courts block early versions, a revised version is upheld by the Supreme Court in Trump v. Hawaii (2018)."},
+  {y:"Sept 2017", dot:"17", cat:"executive", catLabel:"Executive action", t:"DACA rescission attempted",
+   body:"The Trump administration announces it will phase out DACA. Federal courts block full rescission, allowing existing recipients to keep renewing while new applications remain frozen \u2014 a legal limbo that continues for years."},
+  {y:"2018", dot:"18", cat:"turning", catLabel:"Turning point", t:"\u201cZero tolerance\u201d &amp; family separations",
+   body:"A new border policy prosecutes all unauthorized entries as crimes, leading to thousands of children being separated from their parents. Public outcry forces Trump to reverse the policy by executive order in June 2018."},
+  {y:"2019", dot:"19", cat:"executive", catLabel:"Policy", t:"\u201cRemain in Mexico\u201d (MPP)",
+   body:"The Migrant Protection Protocols require asylum seekers to wait in Mexico while their US court case proceeds, rather than being released into the US."},
+  {y:"2020", dot:"20", cat:"turning", catLabel:"Turning point", t:"Title 42 begins",
+   body:"Citing the COVID-19 pandemic, the administration uses a public-health law (Title 42) to rapidly expel most border crossers without an asylum hearing \u2014 a policy that dramatically restricts access to asylum."},
+  {y:"Jan 2021", dot:"21", cat:"executive", catLabel:"Executive action (Biden)", t:"Biden reverses course",
+   body:"President Biden halts border wall construction, ends \u201cRemain in Mexico\u201d (later partly reinstated by courts), and revokes the travel ban \u2014 but keeps Title 42 in place due to the ongoing pandemic."},
+  {y:"2021\u201323", dot:"23", cat:"turning", catLabel:"Turning point", t:"Record encounters &amp; Title 42 continues",
+   body:"Border encounters reach record levels under Biden. Title 42 remains in effect until May 2023, when the COVID public health emergency officially ends; the CBP One app launches to let asylum seekers schedule official appointments."},
+  {y:"Jan 2025", dot:"25", cat:"executive", catLabel:"Executive order (Trump)", t:"Trump's second inauguration &amp; EO 14159",
+   body:"President Trump returns to office and immediately signs Executive Order 14159, \u201cProtecting the American People Against Invasion\u201d \u2014 expanding expedited removal to the fullest extent allowed by law, cutting funding to \u201csanctuary\u201d cities, and ordering large-scale ICE hiring."},
+  {y:"2025", dot:"25", cat:"turning", catLabel:"Turning point", t:"Enforcement expands rapidly",
+   body:"CBP One is shut down and \u201cRemain in Mexico\u201d is reinstated; guidance protecting \u201csensitive locations\u201d like schools and hospitals from ICE arrests is ended; the Laken Riley Act expands mandatory detention to people merely arrested \u2014 not convicted \u2014 of certain crimes. ICE carries out a record 442,637 removals in FY2025."},
+  {y:"2026", dot:"26", cat:"turning", catLabel:"Current situation", t:"Record detention, unresolved DACA",
+   body:"ICE detention reaches a record 73,400 people on a single day in January 2026. DACA remains legally unresolved 14 years after its creation; immigration courts face a backlog of 3.29 million pending cases."},
+];
+
+const tlDacaData = [
+  {y:"2012", dot:"12", cat:"executive", catLabel:"Created", t:"DACA created by executive action",
+   body:"President Obama creates DACA, protecting eligible Dreamers from deportation and granting a renewable work permit \u2014 without a law from Congress."},
+  {y:"2021", dot:"21", cat:"court", catLabel:"Court ruling", t:"Ruled unlawful, but renewals continue",
+   body:"A federal judge in Texas rules DACA unlawful, but allows existing recipients to keep renewing while the case is appealed."},
+  {y:"Jan 2025", dot:"25", cat:"court", catLabel:"Court ruling", t:"Fifth Circuit narrows the block",
+   body:"The Fifth Circuit Court of Appeals again rules DACA unlawful, but narrows the block to Texas only and only to work-permit approval, leaving deferred action itself in place nationwide for existing recipients \u201cfor now.\u201d"},
+  {y:"2026", dot:"26", cat:"turning", catLabel:"Current situation", t:"Renewals continue, new applications frozen",
+   body:"DACA renewals continue to be processed nationwide for existing recipients, but new, first-time applications are accepted by USCIS without being processed \u2014 leaving an estimated 400,000 eligible young people in limbo."},
+  {y:"Apr 2026", dot:"26", cat:"court", catLabel:"Court ruling", t:"DACA status alone no longer stops removal",
+   body:"The Board of Immigration Appeals rules that having DACA status alone is not enough to stop deportation proceedings \u2014 meaning even recipients with no criminal record can be placed in removal proceedings."},
+];
+
+buildTimeline('tl1', tl1Data);
+buildTimeline('tl2', tl2Data);
+buildTimeline('tlDaca', tlDacaData);
+
+/* ---------- Flip cards ---------- */
+document.getElementById('flipIce').addEventListener('click', function(){ this.classList.toggle('flipped'); });
+document.getElementById('flipDream').addEventListener('click', function(){ this.classList.toggle('flipped'); });
+
+/* ---------- Tabs ---------- */
+const tabSelect = document.getElementById('tabSelect');
+function activateTab(tabId){
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === tabId));
+  if(tabSelect) tabSelect.value = tabId;
+}
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+});
+if(tabSelect){
+  tabSelect.addEventListener('change', (e) => activateTab(e.target.value));
+}
+</script>
+</body>
+</html>
