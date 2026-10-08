@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<!--
+  Original author: Horlacher (LK E1, Abitur 2028)
+  This material was created for Horlacher's own English LK course.
+  Not authorized for redistribution under a different author's name.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hate U Give — Background Material</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A3161; --navy-light:#E7EDF4;
+  --red:#B31942; --red-light:#F7E5EA;
+  --gold:#A9843C; --gold-light:#F5EEDD;
+  --slate:#5B6570; --slate-light:#E6E8EA;
+  --accent:#4A535D; --accent-light:#E6E8EA;
+  --ink:#132238; --paper:#F0F1F1; --card:#FFFFFF;
+  --border:#DDD8CB; --border-strong:#C8C2AF;
+}
+*{box-sizing:border-box;}
+body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6; }
+.page{ max-width:880px; margin:0 auto; padding:0 1.5rem 1.5rem; }
+
+header.masthead{ position:relative; padding:2.2rem 0 0; margin-bottom:1.6rem; }
+.flag-corner{ position:absolute; top:0; left:0; width:64px; height:44px; background:var(--accent); border-radius:4px 0 8px 0; display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(3,1fr); padding:6px 7px; gap:2px; }
+.flag-corner span{ width:4px; height:4px; background:#fff; border-radius:50%; justify-self:center; align-self:center; }
+.stripes{ height:22px; margin-top:0.6rem; background:repeating-linear-gradient(to bottom, var(--accent) 0px, var(--accent) 3.14px, #fff 3.14px, #fff 6.28px); border-radius:0 0 4px 4px; }
+.head-text{ text-align:center; padding:0 0 0.2rem; }
+.eyebrow{ font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:0.35rem; }
+h1.title{ font-family:'Source Serif 4',serif; font-weight:700; font-size:34px; margin:0 0 0.3rem; color:var(--navy); }
+.subtitle{ font-size:14px; color:var(--slate); font-style:italic; }
+
+nav.tabs{ display:flex; flex-wrap:nowrap; overflow-x:auto; gap:2px; margin-bottom:1.5rem; border-bottom:2px solid var(--accent); scrollbar-width:thin; }
+.tab-btn{ font-family:'Inter',sans-serif; font-size:12px; font-weight:500; color:var(--slate); background:#E3E5E7; border:1px solid var(--border-strong); border-bottom:none; padding:0.55rem 0.7rem; border-radius:6px 6px 0 0; cursor:pointer; position:relative; top:2px; display:flex; align-items:center; gap:5px; flex:0 0 auto; white-space:nowrap; }
+.tab-btn i{ font-size:15px; }
+.tab-btn:hover{ background:#ECEDEE; color:var(--ink); }
+.tab-btn.active{ background:var(--card); color:var(--accent); border:1px solid var(--accent); border-bottom:2px solid var(--card); font-weight:600; }
+.tab-select-mobile{ display:none; }
+@media (max-width:720px){
+  nav.tabs{ display:none; }
+  .tab-select-mobile{ display:block; width:100%; margin-bottom:1.5rem; font-family:'Inter',sans-serif; font-size:14px; padding:0.6rem 0.7rem; border:2px solid var(--accent); border-radius:6px; background:var(--card); color:var(--ink); }
+}
+.panel{ display:none; }
+.panel.active{ display:block; animation:fade 0.15s ease; }
+@keyframes fade{ from{opacity:0.4;} to{opacity:1;} }
+
+.card{ background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1.4rem 1.6rem; margin-bottom:1rem; }
+h2.section-title{ font-family:'Source Serif 4',serif; font-size:22px; font-weight:600; margin:0 0 0.8rem; color:var(--navy); display:flex; align-items:center; gap:0.5rem; }
+h2.section-title i{ font-size:20px; color:var(--accent); }
+h3.sub{ font-family:'Source Serif 4',serif; font-size:16px; font-weight:600; color:var(--navy); margin:1.2rem 0 0.5rem; }
+p{ margin:0 0 0.9rem; font-size:15px; }
+.lede{ font-size:16px; color:var(--slate); }
+
+.badge{ display:inline-block; font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; padding:2px 8px; border-radius:20px; margin-right:0.4rem; white-space:nowrap; }
+.badge.legislation{ background:var(--navy-light); color:var(--navy); }
+.badge.court{ background:var(--red-light); color:var(--red); }
+.badge.turning{ background:var(--slate-light); color:var(--slate); }
+.badge.executive{ background:var(--gold-light); color:#7A5A18; }
+.badge.soon{ background:var(--gold-light); color:#7A5A18; }
+
+/* stat cards */
+.stat-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:0.8rem; margin-bottom:1rem; }
+.stat-card{ background:var(--accent-light); border-radius:8px; padding:0.9rem 1rem; }
+.stat-card.c-navy{ background:var(--navy-light); }
+.stat-card.c-red{ background:var(--red-light); }
+.stat-card.c-gold{ background:var(--gold-light); }
+.stat-num{ font-family:'Source Serif 4',serif; font-size:22px; font-weight:700; color:var(--accent); }
+.stat-card.c-navy .stat-num{ color:var(--navy); }
+.stat-card.c-red .stat-num{ color:var(--red); }
+.stat-card.c-gold .stat-num{ color:#7A5A18; }
+.stat-label{ font-size:11.5px; color:var(--slate); margin-top:0.2rem; }
+
+.note{ font-size:12.5px; color:var(--slate); }
+.source-note{ font-size:11.5px; color:var(--slate); border-top:1px solid var(--border); padding-top:0.7rem; margin-top:0.3rem; }
+
+/* two-column boxes */
+.factor-row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:0.9rem; align-items:start; }
+@media (max-width:600px){ .factor-row{ grid-template-columns:1fr; } }
+.factor-box{ border-radius:6px; padding:0.7rem 0.9rem; font-size:13px; }
+.factor-box.old{ background:#FBF7EC; border-left:3px solid var(--gold); }
+.factor-box.new{ background:var(--navy-light); border-left:3px solid var(--navy); }
+.factor-title{ font-weight:600; font-size:12.5px; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:0.2rem; }
+.factor-box.old .factor-title{ color:#7A5A18; }
+.factor-box.new .factor-title{ color:var(--navy); }
+
+/* accordion timeline */
+.timeline{ position:relative; padding-left:2rem; }
+.timeline::before{ content:""; position:absolute; left:11px; top:6px; bottom:6px; width:2px; background:var(--border-strong); }
+.tl-item{ position:relative; margin-bottom:0.6rem; }
+.tl-year-dot{ position:absolute; left:-2rem; top:0.55rem; width:24px; height:24px; border-radius:50%; background:var(--navy); color:#fff; font-size:9px; font-weight:600; display:flex; align-items:center; justify-content:center; }
+.tl-year-dot.cat-court{ background:var(--red); }
+.tl-year-dot.cat-turning{ background:var(--slate); }
+.tl-year-dot.cat-executive{ background:#8A6A22; }
+.tl-header{ width:100%; text-align:left; background:var(--card); border:1px solid var(--border); border-radius:6px; padding:0.7rem 1rem; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; color:var(--ink); }
+.tl-header:hover{ border-color:var(--border-strong); }
+.tl-year{ font-family:'Source Serif 4',serif; font-weight:700; font-size:16px; color:var(--navy); min-width:78px; }
+.tl-name{ font-size:14px; font-weight:500; flex:1; min-width:180px; }
+.tl-chevron{ margin-left:auto; color:var(--slate); font-size:13px; transition:transform 0.15s; }
+.tl-item.open .tl-chevron{ transform:rotate(90deg); }
+.tl-body{ display:none; padding:0.9rem 1.1rem 0.3rem 1.1rem; font-size:14px; }
+.tl-item.open .tl-body{ display:block; }
+
+/* flip cards */
+.flip-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-bottom:0.4rem; }
+@media (max-width:760px){ .flip-grid{ grid-template-columns:1fr; } }
+.flip-card{ perspective:1200px; height:270px; cursor:pointer; }
+.flip-card-inner{ position:relative; width:100%; height:100%; transition:transform 0.55s cubic-bezier(.4,.2,.2,1); transform-style:preserve-3d; }
+.flip-card.flipped .flip-card-inner{ transform:rotateY(180deg); }
+.flip-card-front, .flip-card-back{ position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:12px; padding:1.2rem 1.2rem; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+.flip-card-front{ background:var(--navy); color:#fff; }
+.flip-card-front.c-red{ background:var(--red); }
+.flip-card-front.c-slate{ background:var(--accent); }
+.flip-card-front .fc-icon{ font-size:34px; margin-bottom:0.5rem; }
+.flip-card-front .fc-term{ font-family:'Source Serif 4',serif; font-size:22px; font-weight:700; margin-bottom:0.3rem; line-height:1.25; }
+.flip-card-front .fc-sub{ font-size:12.5px; opacity:0.85; }
+.flip-card-front .fc-hint{ font-size:11px; margin-top:0.9rem; opacity:0.7; text-transform:uppercase; letter-spacing:0.04em; }
+.flip-card-back{ background:var(--card); border:2px solid var(--navy); transform:rotateY(180deg); font-size:12.5px; line-height:1.5; overflow-y:auto; justify-content:flex-start; }
+.flip-card-back.c-red{ border-color:var(--red); }
+.flip-card-back.c-slate{ border-color:var(--accent); }
+.flip-card-back strong{ display:block; margin-bottom:0.4rem; font-family:'Source Serif 4',serif; font-size:16px; color:var(--navy); }
+.flip-card-back.c-red strong{ color:var(--red); }
+.flip-card-back.c-slate strong{ color:var(--accent); }
+
+/* link cards */
+.link-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:0.9rem; }
+.link-card{ background:var(--card); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:1rem 1.1rem; text-decoration:none; color:var(--ink); display:block; }
+.link-card:hover{ border-color:var(--border-strong); box-shadow:0 3px 10px rgba(74,83,93,0.12); }
+.link-tag{ font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; color:var(--accent); margin-bottom:0.35rem; display:block; }
+.link-title{ font-family:'Source Serif 4',serif; font-size:15.5px; color:var(--navy); margin-bottom:0.3rem; font-weight:600; }
+.link-desc{ font-size:12.5px; color:var(--slate); margin-bottom:0.5rem; }
+.link-url{ font-size:11.5px; color:var(--accent); word-break:break-all; }
+
+.note-box{ background:var(--accent-light); border:1px solid #CDD1D5; border-left:4px solid var(--accent); border-radius:6px; padding:0.9rem 1.1rem; font-size:13px; margin-top:0.8rem; margin-bottom:1rem; }
+.question-box{ background:var(--gold-light); border:1px solid #E4D6AE; border-left:4px solid var(--gold); border-radius:8px; padding:1.2rem 1.4rem; margin:1.2rem 0 1rem; }
+.question-box .qb-label{ font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:#7A5A18; margin-bottom:0.4rem; }
+.question-box .qb-text{ font-family:'Source Serif 4',serif; font-size:16.5px; color:var(--navy); font-style:italic; line-height:1.5; }
+
+/* THUG LIFE letters */
+.thug-row{ display:flex; gap:0.5rem; flex-wrap:wrap; margin:0.4rem 0 1rem; }
+.thug-letter{ width:46px; height:54px; border-radius:6px; background:var(--accent); color:#fff; font-family:'Source Serif 4',serif; font-weight:700; font-size:26px; display:flex; align-items:center; justify-content:center; }
+.thug-gap{ width:14px; }
+
+/* vocab */
+.vocab-sub{ font-family:'Source Serif 4',serif; font-size:16px; font-weight:600; color:var(--navy); margin:1.3rem 0 0.5rem; }
+.table-scroll{ overflow-x:auto; }
+table.vocab-table{ width:100%; min-width:520px; border-collapse:collapse; font-size:13.5px; table-layout:fixed; }
+table.vocab-table th{ text-align:left; font-size:11.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--slate); border-bottom:2px solid var(--border-strong); padding:0.4rem 0.5rem; }
+table.vocab-table td{ padding:0.5rem; border-bottom:1px solid var(--border); vertical-align:top; word-wrap:break-word; }
+table.vocab-table th:nth-child(1), table.vocab-table td.term{ width:22%; font-weight:600; }
+table.vocab-table th:nth-child(2), table.vocab-table td.de{ width:24%; color:var(--red); font-style:italic; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word; }
+table.vocab-table th:nth-child(3), table.vocab-table td:nth-child(3){ width:54%; }
+
+/* quiz */
+.quiz-q{ margin-bottom:1.2rem; }
+.quiz-q-title{ font-weight:600; font-size:14.5px; margin-bottom:0.5rem; }
+.quiz-opts{ display:grid; gap:6px; }
+.quiz-opt{ text-align:left; background:var(--card); border:1px solid var(--border); border-radius:6px; padding:0.55rem 0.8rem; font-size:14px; cursor:pointer; font-family:'Inter',sans-serif; color:var(--ink); }
+.quiz-opt:hover{ border-color:var(--border-strong); }
+.quiz-opt.correct{ background:#E9F2E9; border-color:#5C8A5C; color:#2C4A2C; font-weight:600; }
+.quiz-opt.incorrect{ background:var(--red-light); border-color:var(--red); color:var(--red); }
+.quiz-opt[disabled]{ cursor:default; }
+.quiz-score{ position:sticky; top:0.5rem; float:right; background:var(--navy); color:#fff; font-size:13px; font-weight:600; padding:0.4rem 0.9rem; border-radius:20px; }
+
+/* coming next */
+.next-list{ list-style:none; padding:0; margin:0; }
+.next-list li{ padding:0.8rem 0; border-bottom:1px solid var(--border); font-size:14px; }
+.next-list li:last-child{ border-bottom:none; }
+.next-list strong{ font-family:'Source Serif 4',serif; font-size:16px; color:var(--navy); display:block; margin-bottom:0.15rem; }
+
+
+/* reading-stage quizzes */
+.stage-card{ background:var(--card); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:10px; padding:1.4rem 1.6rem; margin-bottom:1rem; }
+.stage-card.part2{ border-top-color:var(--navy); }
+.stage-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:0.8rem; flex-wrap:wrap; }
+.stage-label{ font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--accent); margin-bottom:0.15rem; }
+.stage-card.part2 .stage-label{ color:var(--navy); }
+.stage-title{ font-family:'Source Serif 4',serif; font-size:20px; font-weight:600; color:var(--navy); margin:0; }
+.stage-score{ background:var(--navy); color:#fff; font-size:13px; font-weight:600; padding:0.35rem 0.9rem; border-radius:20px; display:none; white-space:nowrap; }
+.stage-warn{ font-size:13px; color:var(--slate); margin:0.6rem 0 0.9rem; }
+.reveal-btn{ display:inline-flex; align-items:center; gap:6px; background:var(--accent); color:#fff; border:none; border-radius:6px; padding:0.6rem 1rem; font-size:13.5px; font-weight:600; cursor:pointer; font-family:'Inter',sans-serif; }
+.stage-card.part2 .reveal-btn{ background:var(--navy); }
+.reveal-btn:hover{ filter:brightness(1.12); }
+.stage-body{ display:none; margin-top:1.1rem; border-top:1px solid var(--border); padding-top:1.1rem; }
+.stage-card.open .stage-body{ display:block; }
+.stage-card.open .reveal-btn{ display:none; }
+.stage-card.open .stage-score{ display:inline-block; }
+.reset-btn{ background:none; border:1px solid var(--border-strong); border-radius:6px; padding:0.4rem 0.8rem; font-size:12.5px; color:var(--slate); cursor:pointer; font-family:'Inter',sans-serif; }
+.reset-btn:hover{ color:var(--ink); border-color:var(--slate); }
+
+a.back{ display:inline-block; margin-top:0.6rem; color:var(--red); text-decoration:none; font-weight:600; font-size:14px; }
+a.back:hover{ text-decoration:underline; }
+footer.stamp{ text-align:center; margin:2rem 0 0.5rem; font-family:'Source Serif 4',serif; font-style:italic; font-size:13px; color:var(--slate); border-top:1px solid var(--border); padding-top:0.9rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="masthead">
+  <div class="flag-corner">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="head-text">
+    <div class="eyebrow">Background material · USA in focus</div>
+    <h1 class="title">The Hate U Give</h1>
+    <div class="subtitle">Angie Thomas's novel on race, police violence and finding one's voice</div>
+  </div>
+  <div class="stripes"></div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab-btn active" data-tab="before"><i class="ti ti-book"></i>Before You Read</button>
+  <button class="tab-btn" data-tab="language"><i class="ti ti-message-language"></i>Language</button>
+  <button class="tab-btn" data-tab="blm"><i class="ti ti-speakerphone"></i>#BlackLivesMatter</button>
+  <button class="tab-btn" data-tab="history"><i class="ti ti-timeline"></i>Slavery to Civil Rights</button>
+  <button class="tab-btn" data-tab="quiz"><i class="ti ti-help-circle"></i>Context Quiz</button>
+  <button class="tab-btn" data-tab="next"><i class="ti ti-hourglass"></i>While Reading</button>
+</nav>
+<select class="tab-select-mobile" id="tabSelect" aria-label="Choose a section">
+  <option value="before">Before You Read</option>
+  <option value="language">Language</option>
+  <option value="blm">#BlackLivesMatter</option>
+  <option value="history">Slavery to Civil Rights</option>
+  <option value="quiz">Context Quiz</option>
+  <option value="next">While Reading</option>
+</select>
+
+<!-- BEFORE YOU READ -->
+<section class="panel active" id="before">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-book"></i>The novel at a glance</h2>
+    <p class="lede">Everything on this page is spoiler-free. It gives you the background you need to understand the world of the novel — not the story itself.</p>
+    <div class="stat-grid">
+      <div class="stat-card c-navy"><div class="stat-num">2017</div><div class="stat-label">year of publication — Angie Thomas's first novel</div></div>
+      <div class="stat-card"><div class="stat-num">16</div><div class="stat-label">age of the narrator, Starr Carter</div></div>
+      <div class="stat-card c-red"><div class="stat-num">2</div><div class="stat-label">worlds Starr moves between every day</div></div>
+      <div class="stat-card c-gold"><div class="stat-num">2018</div><div class="stat-label">film adaptation, directed by George Tillman Jr.</div></div>
+    </div>
+    <p><strong>The author.</strong> Angie Thomas was born in 1988 and grew up in Jackson, Mississippi. As a teenager she was a rapper; later she studied creative writing at Belhaven University. The novel began as a short story she wrote in college, after a young Black man named Oscar Grant was shot by a police officer in 2009 (see the #BlackLivesMatter tab).</p>
+    <p style="margin:0;"><strong>The starting point.</strong> Starr lives in Garden Heights, a poor, mostly Black neighbourhood, and goes to Williamson Prep, a private school where most students are white and wealthy. Garden Heights is fictional — but it is modelled on real American neighbourhoods like the one the author grew up in.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-letter-case"></i>A title in code</h2>
+    <p>The title is taken from an idea by the rapper Tupac Shakur. Read the capital letters of the first three words — they are the beginning of a longer phrase:</p>
+    <div class="thug-row" aria-label="THUG LIFE">
+      <div class="thug-letter">T</div><div class="thug-letter">H</div><div class="thug-letter">U</div><div class="thug-letter">G</div>
+      <div class="thug-gap"></div>
+      <div class="thug-letter">L</div><div class="thug-letter">I</div><div class="thug-letter">F</div><div class="thug-letter">E</div>
+    </div>
+    <p style="margin:0;">Tupac had these two words tattooed across his stomach. For him every letter stood for a word, and together they made a statement about society. What the letters stand for is explained in chapter 1 — so we won't give it away here.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-cards"></i>Three things Starr grew up with</h2>
+    <p>These references appear again and again in the novel. Tap a card to turn it over.</p>
+    <div class="flip-grid">
+      <div class="flip-card" data-flip>
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="fc-icon">📺</div>
+            <div class="fc-term">The Fresh Prince of Bel-Air</div>
+            <div class="fc-sub">TV sitcom, 1990–1996</div>
+            <div class="fc-hint">Tap to flip</div>
+          </div>
+          <div class="flip-card-back">
+            <strong>The Fresh Prince of Bel-Air</strong>
+            Will Smith plays a fictionalized version of himself: a teenager from West Philadelphia who is sent to live with his wealthy aunt and uncle in Bel-Air, an upscale part of Los Angeles. In slang, "fresh" means cool or stylish; "prince" suggests high status and confidence. The comedy comes from a boy who has to live in two very different worlds.
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" data-flip>
+        <div class="flip-card-inner">
+          <div class="flip-card-front c-red">
+            <div class="fc-icon">👟</div>
+            <div class="fc-term">Air Jordans</div>
+            <div class="fc-sub">Sneakers by Nike, since 1985</div>
+            <div class="fc-hint">Tap to flip</div>
+          </div>
+          <div class="flip-card-back c-red">
+            <strong>Air Jordans</strong>
+            A line of basketball shoes created for Michael Jordan of the Chicago Bulls, first sold in 1985. They quickly became far more than sportswear: a status symbol, a collector's item and a central part of hip-hop and street culture. People who collect and care for sneakers call themselves "sneakerheads" — rare pairs can cost hundreds of dollars.
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" data-flip>
+        <div class="flip-card-inner">
+          <div class="flip-card-front c-slate">
+            <div class="fc-icon">🎤</div>
+            <div class="fc-term">Tupac Shakur</div>
+            <div class="fc-sub">Rapper and actor, 1971–1996</div>
+            <div class="fc-hint">Tap to flip</div>
+          </div>
+          <div class="flip-card-back c-slate">
+            <strong>Tupac Shakur (2Pac)</strong>
+            Born in New York in 1971; his mother, Afeni Shakur, was a member of the Black Panther Party. One of the most influential rappers of all time — many of his songs deal with poverty, racism and violence in Black neighbourhoods ("Changes", "Keep Ya Head Up", "Dear Mama"). He was shot in Las Vegas in September 1996 and died six days later, aged 25. The murder remained unsolved for decades.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="question-box">
+      <div class="qb-label">Keep in mind while reading</div>
+      <div class="qb-text">Why might a sitcom about a boy from West Philadelphia living in Bel-Air be the favourite show of a girl like Starr?</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-player-play"></i>Watch &amp; listen</h2>
+    <div class="link-grid">
+      <a class="link-card" href="https://www.youtube.com/watch?v=NpnQ2oIRgB0" target="_blank" rel="noopener">
+        <span class="link-tag">Fresh Prince</span>
+        <div class="link-title">The intro song</div>
+        <div class="link-desc">Listen closely: what does the song tell you about Will's life?</div>
+        <div class="link-url">youtube.com/watch?v=NpnQ2oIRgB0</div>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/watch?v=cXeQJBghvRw" target="_blank" rel="noopener">
+        <span class="link-tag">Air Jordans</span>
+        <div class="link-title">The story of the shoe</div>
+        <div class="link-desc">Video on Air Jordans and what they stand for.</div>
+        <div class="link-url">youtube.com/watch?v=cXeQJBghvRw</div>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/watch?v=1sjxDosvxJo" target="_blank" rel="noopener">
+        <span class="link-tag">Tupac</span>
+        <div class="link-title">Tupac — video 1</div>
+        <div class="link-desc">Getting to know Tupac Shakur.</div>
+        <div class="link-url">youtube.com/watch?v=1sjxDosvxJo</div>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/watch?v=sMI5uRIvNtQ" target="_blank" rel="noopener">
+        <span class="link-tag">Tupac</span>
+        <div class="link-title">Tupac — video 2</div>
+        <div class="link-desc">Getting to know Tupac Shakur.</div>
+        <div class="link-url">youtube.com/watch?v=sMI5uRIvNtQ</div>
+      </a>
+      <a class="link-card" href="https://genius.com/2pac-thug-4-life-original-version-lyrics" target="_blank" rel="noopener">
+        <span class="link-tag">Lyrics</span>
+        <div class="link-title">"Thug 4 Life"</div>
+        <div class="link-desc">The lyrics with annotations on Genius.</div>
+        <div class="link-url">genius.com/2pac-thug-4-life-original-version-lyrics</div>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/watch?v=W9OjkHJdQJ4" target="_blank" rel="noopener">
+        <span class="link-tag">Extra</span>
+        <div class="link-title">Tupac — extra video</div>
+        <div class="link-desc">For those who want to know more.</div>
+        <div class="link-url">youtube.com/watch?v=W9OjkHJdQJ4</div>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/watch?v=nsrOCzUwcjE" target="_blank" rel="noopener">
+        <span class="link-tag">Film recommendation</span>
+        <div class="link-title">All Eyez on Me (2017)</div>
+        <div class="link-desc">Trailer for the film about Tupac's life.</div>
+        <div class="link-url">youtube.com/watch?v=nsrOCzUwcjE</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGE -->
+<section class="panel" id="language">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-message-language"></i>The language of the novel</h2>
+    <p class="lede">Starr tells her own story — and she sounds like a real 16-year-old, not like a textbook.</p>
+    <p>Much of the novel is written in <strong>African American Vernacular English (AAVE)</strong>, the variety of English spoken in many Black communities in the USA. AAVE is not "wrong" or "lazy" English: linguists describe it as a variety with its own consistent grammar and pronunciation rules, with roots that go back centuries.</p>
+    <p style="margin:0;">Many speakers switch between AAVE and Standard American English depending on where they are and who they are talking to. This is called <strong>code-switching</strong> — and it is one of the things to watch for from the very first chapters.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-arrows-right-left"></i>What you will notice on the page</h2>
+    <div class="factor-row">
+      <div class="factor-box old"><div class="factor-title">In the novel (AAVE)</div>"He <strong>ain't</strong> here."</div>
+      <div class="factor-box new"><div class="factor-title">Standard English</div>"He isn't here."</div>
+    </div>
+    <div class="factor-row">
+      <div class="factor-box old"><div class="factor-title">In the novel (AAVE)</div>"She <strong>always be</strong> talking." <span class="note">(habitual "be": something that happens regularly)</span></div>
+      <div class="factor-box new"><div class="factor-title">Standard English</div>"She is always talking."</div>
+    </div>
+    <div class="factor-row">
+      <div class="factor-box old"><div class="factor-title">In the novel (AAVE)</div>"I <strong>ain't</strong> see <strong>nothing</strong>." <span class="note">(double negative)</span></div>
+      <div class="factor-box new"><div class="factor-title">Standard English</div>"I didn't see anything."</div>
+    </div>
+    <div class="factor-row">
+      <div class="factor-box old"><div class="factor-title">In the novel (AAVE)</div>"What <strong>y'all</strong> doing?" <span class="note">(no "are"; y'all = you all)</span></div>
+      <div class="factor-box new"><div class="factor-title">Standard English</div>"What are you doing?"</div>
+    </div>
+    <p class="note" style="margin:0;">The example sentences are invented to show the patterns; they are not quotations from the novel.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-vocabulary"></i>Words you will meet</h2>
+    <div class="vocab-sub" style="margin-top:0;">Slang and everyday words</div>
+    <div class="table-scroll">
+    <table class="vocab-table">
+      <tr><th>Word</th><th>German</th><th>Explanation</th></tr>
+      <tr><td class="term">y'all</td><td class="de">ihr (alle)</td><td>short for "you all"; plural "you"</td></tr>
+      <tr><td class="term">ain't</td><td class="de">bin/ist/sind nicht; habe nicht</td><td>replaces "am not", "isn't", "aren't", "haven't", "didn't"</td></tr>
+      <tr><td class="term">finna</td><td class="de">gleich etw. tun werden</td><td>from "fixing to"; about to do something</td></tr>
+      <tr><td class="term">the hood</td><td class="de">das Viertel, die Gegend</td><td>short for "neighbourhood"; a poor inner-city area</td></tr>
+      <tr><td class="term">the projects</td><td class="de">Sozialwohnungs&shy;siedlung</td><td>government-funded housing for people with low incomes</td></tr>
+      <tr><td class="term">homeboy / homie</td><td class="de">Kumpel</td><td>a close friend, usually from the same neighbourhood</td></tr>
+      <tr><td class="term">kicks</td><td class="de">Sneaker, Treter</td><td>shoes, especially sneakers</td></tr>
+      <tr><td class="term">dope</td><td class="de">cool, stark</td><td>very good, impressive</td></tr>
+      <tr><td class="term">bougie</td><td class="de">schickimicki, abgehoben</td><td>from "bourgeois"; acting richer or "better" than others</td></tr>
+      <tr><td class="term">to trip / trippin'</td><td class="de">überreagieren, spinnen</td><td>to overreact or behave unreasonably</td></tr>
+      <tr><td class="term">to snitch</td><td class="de">jdn. verpfeifen</td><td>to tell the police or other authorities about someone</td></tr>
+      <tr><td class="term">thug</td><td class="de">Schläger, Gangster</td><td>a violent criminal; often used as a stereotype for young Black men</td></tr>
+    </table>
+    </div>
+
+    <div class="vocab-sub">Police, justice and protest</div>
+    <div class="table-scroll">
+    <table class="vocab-table">
+      <tr><th>Word</th><th>German</th><th>Explanation</th></tr>
+      <tr><td class="term">police brutality</td><td class="de">Polizeigewalt</td><td>the use of excessive force by police officers</td></tr>
+      <tr><td class="term">racial profiling</td><td class="de">Racial Profiling; Kontrollen aufgrund der Hautfarbe</td><td>treating someone as a suspect because of their race</td></tr>
+      <tr><td class="term">to pull sb over</td><td class="de">jdn. anhalten (Verkehrs&shy;kontrolle)</td><td>when police make a driver stop at the side of the road</td></tr>
+      <tr><td class="term">unarmed</td><td class="de">unbewaffnet</td><td>not carrying a weapon</td></tr>
+      <tr><td class="term">witness</td><td class="de">Zeuge / Zeugin</td><td>a person who saw an event happen</td></tr>
+      <tr><td class="term">district attorney (DA)</td><td class="de">Staatsanwalt / Staatsanwältin</td><td>the lawyer who brings criminal cases to court for the state</td></tr>
+      <tr><td class="term">grand jury</td><td class="de">Anklagejury</td><td>a group of citizens who decide whether there is enough evidence for a trial</td></tr>
+      <tr><td class="term">to indict <span class="note">/ɪnˈdaɪt/</span></td><td class="de">anklagen</td><td>to officially charge someone with a crime</td></tr>
+      <tr><td class="term">riot</td><td class="de">Aufruhr, Krawall</td><td>a violent disturbance by a crowd</td></tr>
+      <tr><td class="term">gang</td><td class="de">Gang, Bande</td><td>an organized group, often involved in crime and drug dealing</td></tr>
+      <tr><td class="term">to speak out</td><td class="de">die Stimme erheben</td><td>to say publicly what you think, especially to protest</td></tr>
+    </table>
+    </div>
+    <div class="note-box" style="margin-bottom:0;">
+      <strong>A note on offensive language.</strong> The novel contains swear words and the n-word, used by Black characters among themselves. It is part of how the characters really speak — but that does not make it a word for us to use. We will talk in class about how we deal with it when reading aloud and quoting.
+    </div>
+  </div>
+</section>
+
+<!-- BLM -->
+<section class="panel" id="blm">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-speakerphone"></i>#BlackLivesMatter</h2>
+    <p class="lede">The novel is fiction — the names on this page are not.</p>
+    <p>The hashtag #BlackLivesMatter was first used in July 2013 by three activists — Alicia Garza, Patrisse Cullors and Opal Tometi — after the man who had shot the teenager Trayvon Martin was found not guilty. It grew into a worldwide movement against police violence and racism towards Black people.</p>
+    <p style="margin:0;">Angie Thomas has said that cases like these were on her mind when she wrote the novel. Open each name to read what happened.</p>
+  </div>
+  <div class="timeline" id="tlBlm"></div>
+  <div class="note-box">
+    <strong>Why Emmett Till and Rodney King are on this list.</strong> Both cases are much older than the hashtag. They are remembered alongside the others because they show that the problem did not begin in 2012 — and because in each case a picture or a video forced the whole country to look.
+  </div>
+  <div class="question-box">
+    <div class="qb-label">Think about it</div>
+    <div class="qb-text">Look at how each case ended in court. What pattern do you notice — and what might that pattern do to people's trust in the justice system?</div>
+  </div>
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-player-play"></i>Watch</h2>
+    <div class="link-grid">
+      <a class="link-card" href="https://www.youtube.com/watch?v=M-0vClQa1Hw" target="_blank" rel="noopener">
+        <span class="link-tag">Video</span>
+        <div class="link-title">The story of Emmett Till</div>
+        <div class="link-desc">What happened in Mississippi in 1955 — and why it still matters.</div>
+        <div class="link-url">youtube.com/watch?v=M-0vClQa1Hw</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section class="panel" id="history">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-timeline"></i>From slavery to civil rights</h2>
+    <p class="lede">To understand Garden Heights, you need about 400 years of history.</p>
+    <div class="stat-grid">
+      <div class="stat-card c-navy"><div class="stat-num">1619</div><div class="stat-label">first enslaved Africans arrive in the English colony of Virginia</div></div>
+      <div class="stat-card c-red"><div class="stat-num">12.5M</div><div class="stat-label">Africans forced onto slave ships in the transatlantic slave trade (estimate)</div></div>
+      <div class="stat-card c-gold"><div class="stat-num">1865</div><div class="stat-label">slavery abolished in the USA (13th Amendment)</div></div>
+      <div class="stat-card"><div class="stat-num">~100</div><div class="stat-label">more years until legal segregation ended</div></div>
+    </div>
+    <p style="margin:0;">Court action, organized protest and federal laws worked together to end legal segregation — but legal change did not end inequality. Open each entry for details.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-map-2"></i>Where is "the South"?</h2>
+    <p>"The South" can mean different things. The eleven states that left the USA in 1860–61 to protect slavery and formed the <strong>Confederacy</strong> were South Carolina, Mississippi, Florida, Alabama, Georgia, Louisiana, Texas, Virginia, Arkansas, Tennessee and North Carolina.</p>
+    <p style="margin:0;">The <strong>Deep South</strong> usually refers to South Carolina, Georgia, Alabama, Mississippi and Louisiana — the states where the plantation economy and, later, segregation were strongest. Angie Thomas comes from Jackson, the capital of Mississippi.</p>
+  </div>
+
+  <h3 class="sub">Slavery and its end · 1619–1877</h3>
+  <div class="timeline" id="tlSlavery"></div>
+
+  <h3 class="sub">Segregation and the Civil Rights Movement · 1880s–1968</h3>
+  <div class="timeline" id="tlCivil"></div>
+
+  <div class="question-box">
+    <div class="qb-label">A movement unfinished</div>
+    <div class="qb-text">The laws of 1964 and 1965 made discrimination illegal. What can a law change — and what can it not change?</div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-link"></i>Watch &amp; read</h2>
+    <div class="link-grid">
+      <a class="link-card" href="https://www.youtube.com/watch?v=31x0BQzR6Pc" target="_blank" rel="noopener">
+        <span class="link-tag">Video</span>
+        <div class="link-title">Civil rights — video 1</div>
+        <div class="link-desc">Background video for the timeline.</div>
+        <div class="link-url">youtube.com/watch?v=31x0BQzR6Pc</div>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/watch?v=S64zRnnn4Po" target="_blank" rel="noopener">
+        <span class="link-tag">Video</span>
+        <div class="link-title">Civil rights — video 2</div>
+        <div class="link-desc">Background video for the timeline.</div>
+        <div class="link-url">youtube.com/watch?v=S64zRnnn4Po</div>
+      </a>
+      <a class="link-card" href="https://www.history.com/topics/black-history/black-history-milestones" target="_blank" rel="noopener">
+        <span class="link-tag">Overview</span>
+        <div class="link-title">Black history milestones</div>
+        <div class="link-desc">A longer timeline of African American history on history.com.</div>
+        <div class="link-url">history.com/topics/black-history/black-history-milestones</div>
+      </a>
+    </div>
+    <div class="source-note">Sources for the timeline: Library of Congress; U.S. National Archives; National Park Service; Smithsonian Institution.</div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="panel" id="quiz">
+  <div class="card">
+    <span class="quiz-score" id="quizScore">Score: 0/0</span>
+    <h2 class="section-title"><i class="ti ti-help-circle"></i>Test yourself: the context</h2>
+    <p style="margin:0;">Ten questions on the background — no knowledge of the plot needed. Click an answer to see if it's correct.</p>
+  </div>
+  <div class="card" id="quizContainer"></div>
+</section>
+
+<!-- WHILE READING -->
+<section class="panel" id="next">
+  <div class="card">
+    <h2 class="section-title"><i class="ti ti-book-2"></i>While reading</h2>
+    <p class="lede">Check your reading after each section of the novel.</p>
+    <p style="margin:0;">Each quiz only covers the chapters of its section. To avoid spoilers, the questions stay hidden until you open them &mdash; so only open a quiz once you have finished those chapters.</p>
+  </div>
+
+  <div class="stage-card" id="stage1">
+    <div class="stage-head">
+      <div>
+        <div class="stage-label">Reading section 1</div>
+        <h3 class="stage-title">Chapters 1&ndash;3</h3>
+      </div>
+      <span class="stage-score" id="stage1Score">Score: 0/10</span>
+    </div>
+    <p class="stage-warn">The party, the ride home and the morning after.</p>
+    <button class="reveal-btn" type="button" data-open="stage1"><i class="ti ti-eye"></i>I've finished chapter 3 &ndash; show the quiz</button>
+    <div class="stage-body">
+      <div id="stage1Quiz"></div>
+      <button class="reset-btn" type="button" data-reset="stage1">Start again</button>
+    </div>
+  </div>
+
+  <div class="stage-card part2" id="stage2">
+    <div class="stage-head">
+      <div>
+        <div class="stage-label">Reading section 2</div>
+        <h3 class="stage-title">Chapters 4&ndash;8</h3>
+      </div>
+      <span class="stage-score" id="stage2Score">Score: 0/10</span>
+    </div>
+    <p class="stage-warn"><strong>Spoiler warning:</strong> only open this quiz after you have finished chapter 8.</p>
+    <button class="reveal-btn" type="button" data-open="stage2"><i class="ti ti-eye"></i>I've finished chapter 8 &ndash; show the quiz</button>
+    <div class="stage-body">
+      <div id="stage2Quiz"></div>
+      <button class="reset-btn" type="button" data-reset="stage2">Start again</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="badge soon">Coming soon</span>
+    <ul class="next-list" style="margin-top:0.6rem;">
+      <li><strong>More reading sections</strong>Further quizzes will follow as we read on.</li>
+      <li><strong>Mind map</strong>A framework for your own map of Starr's world, to fill in as the story unfolds.</li>
+      <li><strong>Core sheet</strong>Characters, settings, themes and key quotations at a glance &mdash; unlocked at the end, for revision.</li>
+    </ul>
+  </div>
+</section>
+
+<a class="back" href="https://kat-hor.github.io/USA-AD/">&larr; Back to unit overview</a>
+<footer class="stamp">LK E1 Horlacher · Abitur 2028</footer>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/tabler-icons.min.css">
+<script>
+/* ---------- Accordion timeline builder ---------- */
+function buildTimeline(containerId, data){
+  const container = document.getElementById(containerId);
+  data.forEach((item) => {
+    const el = document.createElement('div');
+    el.className = 'tl-item';
+    el.innerHTML = `
+      <div class="tl-year-dot cat-${item.cat}">${item.dot}</div>
+      <button class="tl-header" type="button">
+        <span class="tl-year">${item.y}</span>
+        <span class="badge ${item.cat}">${item.catLabel}</span>
+        <span class="tl-name">${item.t}</span>
+        <span class="tl-chevron">&#9656;</span>
+      </button>
+      <div class="tl-body">${item.body}</div>
+    `;
+    el.querySelector('.tl-header').addEventListener('click', () => el.classList.toggle('open'));
+    container.appendChild(el);
+  });
+}
+
+const tlBlmData = [
+  {y:"1955", dot:"55", cat:"turning", catLabel:"Mississippi", t:"Emmett Till, 14",
+   body:"A boy from Chicago visiting relatives in Mississippi. After he was accused of offending a white woman in a shop, two white men kidnapped and murdered him. His mother insisted on an open coffin so the world could see what had been done to her son; the photographs shocked the nation. An all-white jury found the two men not guilty \u2014 a few months later they admitted the murder in a magazine interview. The case became a turning point for the Civil Rights Movement."},
+  {y:"1991", dot:"91", cat:"court", catLabel:"Los Angeles", t:"Rodney King, 25",
+   body:"After a car chase, King was beaten by Los Angeles police officers while a man filmed the scene from his balcony \u2014 one of the first times police violence was caught on video and shown on television. King survived. When four officers were found not guilty in April 1992, several days of riots broke out in Los Angeles in which more than 50 people died. Two of the officers were later convicted in a second, federal trial."},
+  {y:"2009", dot:"09", cat:"court", catLabel:"Oakland", t:"Oscar Grant, 22",
+   body:"Shot in the back by a transit police officer on a station platform in Oakland, California, in the early hours of New Year's Day, while he was lying face down. Other passengers filmed the shooting on their phones. The officer said he had meant to use his Taser; he was convicted of involuntary manslaughter and spent less than a year in prison. This is the case that moved Angie Thomas to write the short story that became the novel."},
+  {y:"2012", dot:"12", cat:"court", catLabel:"Florida", t:"Trayvon Martin, 17",
+   body:"Walking back from a shop to the house where he was staying in Sanford, Florida, the unarmed teenager was followed and shot by George Zimmerman, a neighbourhood watch volunteer, who said he had acted in self-defence. Zimmerman was found not guilty in July 2013. The hashtag #BlackLivesMatter was created in response to the verdict."},
+  {y:"2014", dot:"14", cat:"court", catLabel:"New York", t:"Eric Garner, 43",
+   body:"Stopped by police on Staten Island on suspicion of selling single cigarettes. An officer held him in a chokehold that police rules did not allow; Garner said \u201cI can't breathe\u201d eleven times and died. A bystander filmed everything. A grand jury decided not to indict the officer, who was dismissed from the police five years later. \u201cI can't breathe\u201d became a protest slogan."},
+  {y:"2014", dot:"14", cat:"court", catLabel:"Missouri", t:"Michael Brown, 18",
+   body:"The unarmed teenager was shot by a police officer in Ferguson, Missouri. What exactly happened is disputed; witnesses gave different accounts. Weeks of protests followed, some of them violent. A grand jury decided not to indict the officer. A later investigation by the US Department of Justice did not charge the officer, but found that the Ferguson police had systematically discriminated against Black residents."},
+  {y:"2014", dot:"14", cat:"court", catLabel:"Ohio", t:"Tamir Rice, 12",
+   body:"Playing with a toy gun in a park in Cleveland when someone called the police \u2014 the caller said the gun was \u201cprobably fake\u201d, but this information did not reach the officers. One of them shot Tamir within seconds of arriving. A grand jury decided not to indict the officers."},
+  {y:"2020", dot:"20", cat:"turning", catLabel:"Minnesota", t:"George Floyd, 46",
+   body:"Arrested in Minneapolis on suspicion of paying with a fake 20-dollar bill. A police officer knelt on his neck for more than nine minutes while Floyd said he could not breathe. A 17-year-old filmed it on her phone. His death led to the largest protests in the USA in decades and to demonstrations around the world. In 2021 the officer was convicted of murder and sentenced to 22\u00bd years in prison. Note: this happened three years after the novel was published."},
+];
+
+const tlSlaveryData = [
+  {y:"1619", dot:"19", cat:"turning", catLabel:"Beginning", t:"First enslaved Africans in Virginia",
+   body:"A ship brings about twenty captured Africans to the English colony of Virginia, where they are sold. Over the next two centuries slavery becomes the basis of the economy in the southern colonies, above all on tobacco and, later, cotton plantations."},
+  {y:"1500s\u20131800s", dot:"TT", cat:"turning", catLabel:"Trade", t:"The triangular trade and the Middle Passage",
+   body:"Ships carried goods from Europe to West Africa, enslaved people from Africa to the Americas, and sugar, tobacco and cotton back to Europe. The crossing of the Atlantic \u2014 the \u201cMiddle Passage\u201d \u2014 took weeks; people were chained below deck with almost no space, and roughly one in seven did not survive. On arrival, people were sold at auctions and families were torn apart."},
+  {y:"1808", dot:"08", cat:"legislation", catLabel:"Law", t:"Import of enslaved people banned",
+   body:"The USA makes it illegal to bring enslaved people into the country from abroad. Slavery itself continues: the trade inside the country grows, and children of enslaved mothers are born into slavery."},
+  {y:"1861\u201365", dot:"61", cat:"turning", catLabel:"War", t:"The Civil War",
+   body:"Eleven southern states leave the USA to protect slavery and form the Confederate States of America. Four years of war between North and South follow, with more than 600,000 dead. The North wins."},
+  {y:"1863", dot:"63", cat:"executive", catLabel:"Proclamation", t:"Emancipation Proclamation",
+   body:"President Abraham Lincoln declares all enslaved people in the Confederate states free. In practice, freedom only arrives as the Northern army advances."},
+  {y:"1865\u201370", dot:"65", cat:"legislation", catLabel:"Constitution", t:"13th, 14th and 15th Amendments",
+   body:"Three changes to the Constitution: the 13th abolishes slavery (1865), the 14th promises citizenship and equal protection of the laws (1868), and the 15th says the right to vote may not be denied because of race (1870)."},
+  {y:"1877", dot:"77", cat:"turning", catLabel:"Turning point", t:"End of Reconstruction",
+   body:"For about twelve years after the war, federal troops protected the new rights of Black Americans in the South; Black men voted and were elected to office. In 1877 the troops are withdrawn \u2014 and white southern governments begin taking those rights away again."},
+];
+
+const tlCivilData = [
+  {y:"1880s\u20131960s", dot:"JC", cat:"legislation", catLabel:"Laws", t:"Jim Crow laws",
+   body:"State and local laws in the South enforce segregation \u2014 separate schools, buses, restaurants, toilets, even drinking fountains \u2014 and keep Black citizens from voting through tests, fees and violence."},
+  {y:"1896", dot:"96", cat:"court", catLabel:"Court ruling", t:"Plessy v. Ferguson",
+   body:"The Supreme Court rules that segregation is legal as long as the separate facilities are equal. \u201cSeparate but equal\u201d becomes the legal basis for Jim Crow for almost sixty years \u2014 although in reality the facilities were never equal."},
+  {y:"1954", dot:"54", cat:"court", catLabel:"Court ruling", t:"Brown v. Board of Education",
+   body:"The Supreme Court rules that segregated schools are unconstitutional. Many southern states resist the ruling for years."},
+  {y:"1955", dot:"55", cat:"turning", catLabel:"Turning point", t:"The murder of Emmett Till",
+   body:"The murder of a 14-year-old boy in Mississippi, and the acquittal of his killers, shocks the nation and moves many people to join the movement. (See the #BlackLivesMatter tab.)"},
+  {y:"1955\u201356", dot:"55", cat:"turning", catLabel:"Protest", t:"Montgomery bus boycott",
+   body:"After Rosa Parks is arrested for refusing to give up her seat to a white passenger, the Black citizens of Montgomery, Alabama, refuse to use the city buses for 381 days. The boycott defeats segregation on the buses and makes a young pastor, Martin Luther King Jr., known across the country."},
+  {y:"1961", dot:"61", cat:"turning", catLabel:"Protest", t:"Freedom Rides",
+   body:"Black and white activists ride buses together through the South to test whether segregation in interstate travel has really ended. They are attacked and beaten; one bus is set on fire. Federal action finally ends segregation in interstate travel."},
+  {y:"1963", dot:"63", cat:"turning", catLabel:"Protest", t:"March on Washington",
+   body:"About 250,000 people demonstrate in the capital for jobs and freedom. Martin Luther King Jr. gives his \u201cI Have a Dream\u201d speech. Civil rights becomes a national demand."},
+  {y:"1964", dot:"64", cat:"legislation", catLabel:"Law", t:"Civil Rights Act",
+   body:"Segregation in public places and discrimination in employment are outlawed."},
+  {y:"1964\u201365", dot:"MX", cat:"turning", catLabel:"Movement", t:"Malcolm X",
+   body:"Malcolm X, the best-known voice for Black pride and self-defence, leaves the Nation of Islam and founds the Organization of Afro-American Unity (OAAU) for Black empowerment. Unlike King, he does not rule out violence in self-defence. He is assassinated in February 1965."},
+  {y:"1965", dot:"65", cat:"legislation", catLabel:"Law", t:"Voting Rights Act",
+   body:"After the marches from Selma to Montgomery, Congress outlaws the tests and other barriers that had kept Black citizens from voting."},
+  {y:"1966", dot:"66", cat:"turning", catLabel:"Movement", t:"The Black Panther Party",
+   body:"Founded in Oakland, California, by Huey Newton and Bobby Seale. The Panthers patrol their neighbourhoods to watch the police, run free breakfast programmes for children and set out their demands in a \u201cTen-Point Program\u201d. Keep that programme in mind \u2014 you will meet it again in the novel."},
+  {y:"1968", dot:"68", cat:"turning", catLabel:"Turning point", t:"Martin Luther King Jr. assassinated",
+   body:"King is shot in Memphis, Tennessee, on 4 April 1968. Riots break out in more than a hundred cities. The struggle continues \u2014 a movement unfinished."},
+];
+
+buildTimeline('tlBlm', tlBlmData);
+buildTimeline('tlSlavery', tlSlaveryData);
+buildTimeline('tlCivil', tlCivilData);
+
+/* ---------- Flip cards ---------- */
+document.querySelectorAll('[data-flip]').forEach(card => {
+  card.addEventListener('click', function(){ this.classList.toggle('flipped'); });
+});
+
+/* ---------- Quiz ---------- */
+const quizData = [
+  {q:"Where did Angie Thomas grow up?", opts:["Los Angeles, California","Jackson, Mississippi","Chicago, Illinois","Philadelphia, Pennsylvania"], correct:1},
+  {q:"Where does the title of the novel come from?", opts:["A speech by Martin Luther King Jr.","A line from The Fresh Prince of Bel-Air","A concept by the rapper Tupac Shakur","A slogan of the Black Panther Party"], correct:2},
+  {q:"What is \u201ccode-switching\u201d?", opts:["Changing the way you speak depending on where you are and who you are with","Using secret words so that the police cannot understand you","Translating slang into Standard English in writing","Mixing two foreign languages in one sentence"], correct:0},
+  {q:"What does a grand jury decide?", opts:["Whether a person is guilty or not guilty","How long a prison sentence should be","Whether a police officer loses his or her job","Whether there is enough evidence for a trial"], correct:3},
+  {q:"When was the hashtag #BlackLivesMatter first used?", opts:["1992, after the Los Angeles riots","2009, after the death of Oscar Grant","2013, after the verdict in the Trayvon Martin case","2020, after the death of George Floyd"], correct:2},
+  {q:"Which case led Angie Thomas to write the short story that became the novel?", opts:["Oscar Grant","Emmett Till","Rodney King","Eric Garner"], correct:0},
+  {q:"Why did Emmett Till's mother insist on an open coffin?", opts:["It was a tradition in Chicago","The court had ordered it","She wanted the world to see what had been done to her son","Newspapers had paid her for the photographs"], correct:2},
+  {q:"What did the Supreme Court decide in Brown v. Board of Education (1954)?", opts:["That segregation was legal if facilities were equal","That segregated schools were unconstitutional","That Black citizens had the right to vote","That slavery was abolished"], correct:1},
+  {q:"Which amendment to the Constitution abolished slavery?", opts:["The 1st Amendment","The 2nd Amendment","The 15th Amendment","The 13th Amendment"], correct:3},
+  {q:"Which of these was part of the Black Panther Party's work?", opts:["Free breakfast programmes for children","Organizing the March on Washington","Leading the Montgomery bus boycott","Writing the Civil Rights Act"], correct:0}
+];
+const quizContainer = document.getElementById('quizContainer');
+const scoreEl = document.getElementById('quizScore');
+let score = 0;
+scoreEl.textContent = `Score: 0/${quizData.length}`;
+quizData.forEach((item, qi) => {
+  const wrap = document.createElement('div');
+  wrap.className = 'quiz-q';
+  const optsHtml = item.opts.map((o,oi) => `<button class="quiz-opt" data-qi="${qi}" data-oi="${oi}" type="button">${o}</button>`).join('');
+  wrap.innerHTML = `<div class="quiz-q-title">${qi+1}. ${item.q}</div><div class="quiz-opts">${optsHtml}</div>`;
+  quizContainer.appendChild(wrap);
+});
+quizContainer.addEventListener('click', (e) => {
+  const btn = e.target.closest('.quiz-opt');
+  if(!btn) return;
+  const qi = Number(btn.dataset.qi);
+  const oi = Number(btn.dataset.oi);
+  const group = btn.parentElement;
+  if(group.dataset.answered) return;
+  group.dataset.answered = "1";
+  const correctIdx = quizData[qi].correct;
+  Array.from(group.children).forEach((b, i) => {
+    b.setAttribute('disabled','true');
+    if(i === correctIdx) b.classList.add('correct');
+    else if(i === oi) b.classList.add('incorrect');
+  });
+  if(oi === correctIdx){ score++; }
+  scoreEl.textContent = `Score: ${score}/${quizData.length}`;
+});
+
+
+/* ---------- Reading-section quizzes ---------- */
+const stageQuizzes = {
+  stage1: [
+    {q:"Where is Starr at the very beginning of the novel?", opts:["At a basketball game at Williamson Prep","At a spring break party in Garden Heights","At her father's grocery store","At a family barbecue at Uncle Carlos's house"], correct:1},
+    {q:"What is Williamson Prep?", opts:["A public high school in Garden Heights","A community college Starr wants to attend","A private school in a rich, mostly white neighbourhood, about 45 minutes away","A youth club run by Starr's father"], correct:2},
+    {q:"How are Starr and Kenya connected?", opts:["They are cousins through their mothers","They share an older brother, Seven","Kenya is Khalil's younger sister","They used to be on the same basketball team"], correct:1},
+    {q:"Why does Starr suspect that Khalil is selling drugs?", opts:["He is dressed in expensive clothes","Kenya tells her so","She sees him with members of a gang","He offers her money"], correct:0},
+    {q:"Which two gangs are fighting over territory in Garden Heights?", opts:["The Crips and the Bloods","The Cedar Grove Boys and the Riverton Hills Crew","The Garden Disciples and the King Lords","The Black Panthers and the Garden Disciples"], correct:2},
+    {q:"Who was Natasha?", opts:["Khalil's older sister","A childhood friend of Starr and Khalil who was killed in front of Starr","A girl from Williamson Prep who invited Starr to the party","Kenya's mother"], correct:1},
+    {q:"When Starr was twelve, her parents gave her a talk about the police. What was the main message?", opts:["Always ask an officer why you have been stopped","Do what the police tell you and don't talk back","Never get into a car with friends at night","Call your parents before you answer any question"], correct:1},
+    {q:"What does Khalil do right before he is shot?", opts:["He runs away from the car","He reaches for his driver's license","He opens the driver's door to ask Starr if she is OK","He starts arguing with the officer about the music in the car"], correct:2},
+    {q:"What do Starr and her family decide after the shooting?", opts:["To move out of Garden Heights immediately","To tell nobody, not even her brother Sekani, that Starr was there","To call a lawyer right away","To go to the police station the next morning"], correct:1},
+    {q:"King says Maverick owes him a favour. Why does Maverick think they are “even”?", opts:["Because Maverick kept King out of prison","Because King has paid back all the money for the store","Because Maverick lets King's children work in his store","Because King helped Seven get into college"], correct:0}
+  ],
+  stage2: [
+    {q:"What is Uncle Carlos's job?", opts:["He is a lawyer","He is a nurse at a hospital","He is a police officer (a detective)","He owns a barbershop"], correct:2},
+    {q:"Why does Starr think her father does not like Carlos?", opts:["Carlos once arrested Maverick","Carlos became a father figure to her while Maverick was in prison","Carlos wants Starr to change schools","Carlos lives in the suburbs"], correct:1},
+    {q:"Who is Ms. Rosalie?", opts:["Starr's grandmother","The principal of Williamson Prep","Khalil's grandmother, who used to look after Starr and Sekani","April Ofrah's assistant"], correct:2},
+    {q:"Why has Hailey unfollowed Starr on Tumblr?", opts:["Starr posted photos of the party","Starr re-blogged a picture of Emmett Till","Starr wrote something about Hailey's family","Starr posted that she had a boyfriend"], correct:1},
+    {q:"Lisa says Brenda has a right to grieve. Why?", opts:["Because Brenda has stopped taking drugs","Because Brenda raised Khalil on her own without help","Because she was Khalil's mother, no matter what","Because Brenda saw the shooting"], correct:2},
+    {q:"Which questions at the police station take Starr by surprise?", opts:["Whether Khalil sold drugs and whether they had been drinking at the party","Why she goes to a school outside Garden Heights","Whether she knows the name of the officer","Why her parents did not come with her"], correct:0},
+    {q:"What does Hailey say during the basketball game that makes Starr storm off?", opts:["That Starr only plays well because she is tall","That Starr should go back to Garden Heights","That Starr should pretend the ball is fried chicken","That Starr is spending too much time with Chris"], correct:2},
+    {q:"When Hailey and Maya ask Starr whether she knew Khalil, what does she do?", opts:["She tells them the whole story","She denies knowing him","She says he was her cousin","She refuses to answer and walks away"], correct:1},
+    {q:"What does King do at Khalil's funeral?", opts:["He gives a speech about Khalil","He pays for the funeral","He places a grey bandana on Khalil's body to show he was a King Lord","He starts a fight with Maverick in the church"], correct:2},
+    {q:"Who is April Ofrah?", opts:["A journalist from a national TV channel","A representative of the group Just Us for Justice, who wants Starr to tell her story publicly","Khalil's aunt","Starr's teacher at Williamson Prep"], correct:1}
+  ]
+};
+
+function buildStageQuiz(stageId){
+  const data = stageQuizzes[stageId];
+  const box = document.getElementById(stageId + 'Quiz');
+  const scoreBadge = document.getElementById(stageId + 'Score');
+  let points = 0;
+  box.innerHTML = '';
+  scoreBadge.textContent = `Score: 0/${data.length}`;
+  data.forEach((item, qi) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'quiz-q';
+    const optsHtml = item.opts.map((o,oi) => `<button class="quiz-opt" data-oi="${oi}" type="button">${o}</button>`).join('');
+    wrap.innerHTML = `<div class="quiz-q-title">${qi+1}. ${item.q}</div><div class="quiz-opts">${optsHtml}</div>`;
+    const group = wrap.querySelector('.quiz-opts');
+    group.addEventListener('click', (e) => {
+      const btn = e.target.closest('.quiz-opt');
+      if(!btn || group.dataset.answered) return;
+      group.dataset.answered = '1';
+      const oi = Number(btn.dataset.oi);
+      Array.from(group.children).forEach((b, i) => {
+        b.setAttribute('disabled','true');
+        if(i === item.correct) b.classList.add('correct');
+        else if(i === oi) b.classList.add('incorrect');
+      });
+      if(oi === item.correct) points++;
+      scoreBadge.textContent = `Score: ${points}/${data.length}`;
+    });
+    box.appendChild(wrap);
+  });
+}
+document.querySelectorAll('[data-open]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.dataset.open;
+    buildStageQuiz(id);
+    document.getElementById(id).classList.add('open');
+  });
+});
+document.querySelectorAll('[data-reset]').forEach(btn => {
+  btn.addEventListener('click', () => buildStageQuiz(btn.dataset.reset));
+});
+
+/* ---------- Tabs ---------- */
+const tabSelect = document.getElementById('tabSelect');
+function activateTab(tabId){
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === tabId));
+  if(tabSelect) tabSelect.value = tabId;
+}
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+});
+if(tabSelect){
+  tabSelect.addEventListener('change', (e) => activateTab(e.target.value));
+}
+</script>
+</body>
+</html>
